@@ -227,7 +227,7 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
           <div className="target-showcase-content">
             {/* Left Column: Product Visual with Revolving Controls */}
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <div style={{ position: 'relative', overflow: 'hidden', height: 380, border: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ position: 'relative', overflow: 'hidden', height: 475, border: '1px solid rgba(255,255,255,0.14)', boxShadow: '0 15px 35px rgba(0, 0, 0, 0.7)' }}>
                 <img
                   src={currentItem.image}
                   alt={currentItem.title}
@@ -243,22 +243,23 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
                 <div
                   style={{
                     position: 'absolute',
-                    top: 14,
-                    left: 14,
+                    top: 16,
+                    left: 16,
                     backgroundColor: 'rgba(5, 9, 22, 0.94)',
-                    border: '1px solid rgba(255, 107, 0, 0.5)',
-                    padding: '0.45rem 0.85rem',
-                    fontSize: '0.78rem',
+                    border: '1px solid rgba(255, 107, 0, 0.55)',
+                    padding: '0.55rem 0.95rem',
+                    fontSize: '0.84rem',
                     fontFamily: 'var(--font-mono)',
                     color: '#FFFFFF',
-                    fontWeight: 700,
+                    fontWeight: 800,
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.45rem',
+                    gap: '0.5rem',
                     textShadow: '0 1px 2px rgba(0,0,0,0.8)',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
                   }}
                 >
-                  <Box size={13} color="#FFA733" />
+                  <Box size={15} color="#FFA733" />
                   <span>SWEET SPOT: {currentItem.orderVolume}</span>
                 </div>
 
@@ -269,16 +270,17 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    backgroundColor: 'rgba(5, 9, 20, 0.95)',
-                    padding: '0.6rem 1rem',
-                    fontSize: '0.74rem',
+                    backgroundColor: 'rgba(5, 9, 20, 0.96)',
+                    padding: '0.75rem 1.15rem',
+                    fontSize: '0.82rem',
                     fontFamily: 'var(--font-mono)',
                     color: '#FFA733',
-                    fontWeight: 600,
-                    borderTop: '1px solid rgba(255, 107, 0, 0.3)',
+                    fontWeight: 700,
+                    borderTop: '1px solid rgba(255, 107, 0, 0.35)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
+                    boxShadow: '0 -4px 12px rgba(0,0,0,0.4)',
                   }}
                 >
                   <span>{currentItem.sopHighlight}</span>

@@ -1,0 +1,6 @@
+Raw_Video
+tools
+node_modules
+.agents
+.git
+*.log

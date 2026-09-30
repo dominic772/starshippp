@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /portal/
+Disallow: /management/
+
+Sitemap: https://starshippp.com/sitemap.xml

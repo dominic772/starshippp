@@ -27,3 +27,5 @@ dist-ssr
 .env*
 Raw_Video/
 .agents/
+*.kdbx
+tools/

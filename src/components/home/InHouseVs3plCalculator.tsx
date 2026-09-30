@@ -91,11 +91,11 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
       >
         {/* Slider 1: Monthly Orders */}
         <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-            <label style={{ fontSize: '0.82rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.55rem' }}>
+            <label style={{ fontSize: '0.84rem', fontFamily: 'var(--font-mono)', color: '#FFFFFF', fontWeight: 800, letterSpacing: '0.03em' }}>
               MONTHLY ORDER VOLUME
             </label>
-            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--brand-orange-light)', fontSize: '0.95rem' }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: '#FFA733', fontSize: '1.05rem' }}>
               {monthlyOrders.toLocaleString()} orders/mo
             </span>
           </div>
@@ -108,7 +108,7 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
             onChange={(e) => setMonthlyOrders(parseInt(e.target.value, 10))}
             style={{ width: '100%', accentColor: 'var(--brand-orange)' }}
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: '#CBD5E1', fontWeight: 600, marginTop: '0.35rem' }}>
             <span>300 (Boutique)</span>
             <span>1,500 (Scaling)</span>
             <span>3,500+ (High Growth)</span>
@@ -117,11 +117,11 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
 
         {/* Slider 2: Founder / Labor Value per Hour */}
         <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-            <label style={{ fontSize: '0.82rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.55rem' }}>
+            <label style={{ fontSize: '0.84rem', fontFamily: 'var(--font-mono)', color: '#FFFFFF', fontWeight: 800, letterSpacing: '0.03em' }}>
               LABOR / FOUNDER TIME VALUE
             </label>
-            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--brand-orange-light)', fontSize: '0.95rem' }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: '#FFA733', fontSize: '1.05rem' }}>
               ${laborRatePerHour}/hr
             </span>
           </div>
@@ -134,7 +134,7 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
             onChange={(e) => setLaborRatePerHour(parseInt(e.target.value, 10))}
             style={{ width: '100%', accentColor: 'var(--brand-orange)' }}
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: '#CBD5E1', fontWeight: 600, marginTop: '0.35rem' }}>
             <span>$15/hr (Contract)</span>
             <span>$50/hr (Founder)</span>
             <span>$120/hr (Exec Time)</span>
@@ -143,11 +143,11 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
 
         {/* Slider 3: Packing Time Per Order */}
         <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-            <label style={{ fontSize: '0.82rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.55rem' }}>
+            <label style={{ fontSize: '0.84rem', fontFamily: 'var(--font-mono)', color: '#FFFFFF', fontWeight: 800, letterSpacing: '0.03em' }}>
               TIME TO PACK & TAPE EACH BOX
             </label>
-            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--brand-orange-light)', fontSize: '0.95rem' }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: '#FFA733', fontSize: '1.05rem' }}>
               {packingMinutesPerOrder} min / order
             </span>
           </div>
@@ -160,7 +160,7 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
             onChange={(e) => setPackingMinutesPerOrder(parseInt(e.target.value, 10))}
             style={{ width: '100%', accentColor: 'var(--brand-orange)' }}
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: '#CBD5E1', fontWeight: 600, marginTop: '0.35rem' }}>
             <span>2 min (Fast Poly)</span>
             <span>5 min (Standard Box)</span>
             <span>15 min (Kitting/Wrap)</span>
@@ -169,11 +169,11 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
 
         {/* Slider 4: Packaging Supplies Cost per Box */}
         <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-            <label style={{ fontSize: '0.82rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.55rem' }}>
+            <label style={{ fontSize: '0.84rem', fontFamily: 'var(--font-mono)', color: '#FFFFFF', fontWeight: 800, letterSpacing: '0.03em' }}>
               BOX & PACKAGING COST / ORDER
             </label>
-            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--brand-orange-light)', fontSize: '0.95rem' }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: '#FFA733', fontSize: '1.05rem' }}>
               ${suppliesCostPerBox.toFixed(2)} / box
             </span>
           </div>
@@ -186,7 +186,7 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
             onChange={(e) => setSuppliesCostPerBox(parseFloat(e.target.value))}
             style={{ width: '100%', accentColor: 'var(--brand-orange)' }}
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: '#CBD5E1', fontWeight: 600, marginTop: '0.35rem' }}>
             <span>$0.40 (Polymailer)</span>
             <span>$1.25 (Box + Tape)</span>
             <span>$3.50 (Custom Kit)</span>
@@ -195,11 +195,11 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
 
         {/* Slider 5: Monthly Storage / Facility Overhead */}
         <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-            <label style={{ fontSize: '0.82rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.55rem' }}>
+            <label style={{ fontSize: '0.84rem', fontFamily: 'var(--font-mono)', color: '#FFFFFF', fontWeight: 800, letterSpacing: '0.03em' }}>
               STORAGE / GARAGE / SHELVING RENT
             </label>
-            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--brand-orange-light)', fontSize: '0.95rem' }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: '#FFA733', fontSize: '1.05rem' }}>
               ${monthlyStorageCost} / month
             </span>
           </div>
@@ -212,7 +212,7 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
             onChange={(e) => setMonthlyStorageCost(parseInt(e.target.value, 10))}
             style={{ width: '100%', accentColor: 'var(--brand-orange)' }}
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: '#CBD5E1', fontWeight: 600, marginTop: '0.35rem' }}>
             <span>$100 (Home room)</span>
             <span>$800 (Storage unit)</span>
             <span>$2,500 (Flex warehouse)</span>
@@ -232,41 +232,41 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
         {/* Metric 1: Monthly Cost In-House */}
         <div
           style={{
-            padding: '1.25rem',
+            padding: '1.35rem',
             borderRadius: 0,
-            backgroundColor: 'rgba(239, 68, 68, 0.08)',
-            border: '1px solid rgba(239, 68, 68, 0.25)',
+            backgroundColor: 'rgba(239, 68, 68, 0.09)',
+            border: '1.5px solid rgba(239, 68, 68, 0.35)',
           }}
         >
-          <div style={{ fontSize: '0.76rem', color: '#F87171', fontFamily: 'var(--font-mono)', textTransform: 'uppercase' }}>
+          <div style={{ fontSize: '0.82rem', color: '#F87171', fontFamily: 'var(--font-mono)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.03em' }}>
             In-House DIY Total Cost
           </div>
-          <div style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-white)', margin: '0.25rem 0' }}>
+          <div style={{ fontSize: '2rem', fontWeight: 900, color: '#FFFFFF', margin: '0.35rem 0' }}>
             ${roi.totalInHouseCost.toLocaleString()}
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>/mo</span>
+            <span style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 500 }}>/mo</span>
           </div>
-          <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
-            Includes ${roi.monthlyLaborCost.toLocaleString()} labor + ${roi.monthlySuppliesCost.toLocaleString()} packaging supplies
+          <div style={{ fontSize: '0.8rem', color: '#FECACA', fontWeight: 500 }}>
+            Includes ${roi.monthlyLaborCost.toLocaleString()} labor + ${roi.monthlySuppliesCost.toLocaleString()} packaging
           </div>
         </div>
 
         {/* Metric 2: Starshippp All-In Cost */}
         <div
           style={{
-            padding: '1.25rem',
+            padding: '1.35rem',
             borderRadius: 0,
-            backgroundColor: 'rgba(52, 211, 153, 0.08)',
-            border: '1px solid rgba(52, 211, 153, 0.35)',
+            backgroundColor: 'rgba(52, 211, 153, 0.09)',
+            border: '1.5px solid rgba(52, 211, 153, 0.4)',
           }}
         >
-          <div style={{ fontSize: '0.76rem', color: '#34D399', fontFamily: 'var(--font-mono)', fontWeight: 700, textTransform: 'uppercase' }}>
+          <div style={{ fontSize: '0.82rem', color: '#34D399', fontFamily: 'var(--font-mono)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.03em' }}>
             Starshippp Pontiac All-In
           </div>
-          <div style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-white)', margin: '0.25rem 0' }}>
+          <div style={{ fontSize: '2rem', fontWeight: 900, color: '#FFFFFF', margin: '0.35rem 0' }}>
             ${roi.starshipppAllInCost.toLocaleString()}
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>/mo</span>
+            <span style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 500 }}>/mo</span>
           </div>
-          <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+          <div style={{ fontSize: '0.8rem', color: '#A7F3D0', fontWeight: 500 }}>
             Full pick, pack, custom tissue unboxing & dedicated floor Slack
           </div>
         </div>
@@ -274,40 +274,41 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
         {/* Metric 3: Reclaimed Founder Time */}
         <div
           style={{
-            padding: '1.25rem',
+            padding: '1.35rem',
             borderRadius: 0,
-            backgroundColor: 'rgba(34, 211, 238, 0.08)',
-            border: '1px solid rgba(34, 211, 238, 0.3)',
+            backgroundColor: 'rgba(34, 211, 238, 0.09)',
+            border: '1.5px solid rgba(34, 211, 238, 0.4)',
           }}
         >
-          <div style={{ fontSize: '0.76rem', color: '#22D3EE', fontFamily: 'var(--font-mono)', fontWeight: 700, textTransform: 'uppercase' }}>
+          <div style={{ fontSize: '0.82rem', color: '#22D3EE', fontFamily: 'var(--font-mono)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.03em' }}>
             Reclaimed Founder Hours
           </div>
-          <div style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-white)', margin: '0.25rem 0' }}>
+          <div style={{ fontSize: '2rem', fontWeight: 900, color: '#FFFFFF', margin: '0.35rem 0' }}>
             {roi.reclaimedFounderHours} hrs
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>/mo</span>
+            <span style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 500 }}>/mo</span>
           </div>
-          <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
-            Redirect {Math.round(roi.reclaimedFounderHours / 4)} full days/mo to customer acquisition & product
+          <div style={{ fontSize: '0.8rem', color: '#BAE6FD', fontWeight: 500 }}>
+            Redirect {Math.round(roi.reclaimedFounderHours / 4)} full work days/mo to customer acquisition
           </div>
         </div>
 
         {/* Metric 4: Annual Net Savings */}
         <div
           style={{
-            padding: '1.25rem',
+            padding: '1.35rem',
             borderRadius: 0,
-            backgroundColor: 'rgba(255, 107, 0, 0.12)',
-            border: '2px solid var(--brand-orange)',
+            backgroundColor: 'rgba(255, 107, 0, 0.14)',
+            border: '2px solid #FF6B00',
+            boxShadow: '0 8px 24px rgba(255, 107, 0, 0.15)',
           }}
         >
-          <div style={{ fontSize: '0.76rem', color: 'var(--brand-orange-light)', fontFamily: 'var(--font-mono)', textTransform: 'uppercase' }}>
+          <div style={{ fontSize: '0.82rem', color: '#FFA733', fontFamily: 'var(--font-mono)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.03em' }}>
             Estimated Net Annual ROI
           </div>
-          <div style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-white)', margin: '0.25rem 0' }}>
+          <div style={{ fontSize: '2rem', fontWeight: 900, color: '#FFFFFF', margin: '0.35rem 0' }}>
             +${roi.annualSavings.toLocaleString()}
           </div>
-          <div style={{ fontSize: '0.78rem', color: '#34D399', fontWeight: 700 }}>
+          <div style={{ fontSize: '0.82rem', color: '#34D399', fontWeight: 800 }}>
             {roi.roiMultiplier}x Operational Efficiency Multiplier
           </div>
         </div>

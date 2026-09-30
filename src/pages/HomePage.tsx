@@ -94,60 +94,23 @@ export const HomePage: React.FC<HomePageProps> = ({
               See how our Tier-1 commercial volume discounts and zero-minimum fee structure outperform retail carrier counters and mega-3PL contracts.
             </p>
 
-            {/* Calculator Tab Switcher - Sharp Cyber Industrial */}
-            <div
-              style={{
-                display: 'inline-flex',
-                background: 'var(--tab-bg)',
-                padding: '0.25rem',
-                borderRadius: 0,
-                border: '1px solid var(--border-card)',
-                borderLeft: '3px solid var(--brand-orange)',
-                marginTop: '1.5rem',
-                gap: '0.35rem',
-              }}
-            >
+            {/* Calculator Tab Switcher - High-Legibility Cockpit Controls */}
+            <div className="calculator-tool-tabs">
               <button
                 type="button"
                 onClick={() => setActiveCalculator('dim')}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  padding: '0.85rem 1.6rem',
-                  borderRadius: 0,
-                  fontFamily: 'var(--font-heading)',
-                  fontWeight: 800,
-                  fontSize: '1.02rem',
-                  color: activeCalculator === 'dim' ? '#050811' : '#FFFFFF',
-                  backgroundColor: activeCalculator === 'dim' ? 'var(--brand-orange)' : 'transparent',
-                  transition: 'all 0.2s ease',
-                  cursor: 'pointer',
-                }}
+                className={`calc-tool-tab-btn ${activeCalculator === 'dim' ? 'active' : ''}`}
               >
-                <Box size={18} />
+                <Box size={19} className="calc-tool-tab-icon" />
                 <span>Tool 1: Dimensional Weight (DIM) Calculator</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setActiveCalculator('roi')}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  padding: '0.85rem 1.6rem',
-                  borderRadius: 0,
-                  fontFamily: 'var(--font-heading)',
-                  fontWeight: 800,
-                  fontSize: '1.02rem',
-                  color: activeCalculator === 'roi' ? '#050811' : '#FFFFFF',
-                  backgroundColor: activeCalculator === 'roi' ? 'var(--brand-orange)' : 'transparent',
-                  transition: 'all 0.2s ease',
-                  cursor: 'pointer',
-                }}
+                className={`calc-tool-tab-btn ${activeCalculator === 'roi' ? 'active' : ''}`}
               >
-                <TrendingUp size={18} />
+                <TrendingUp size={19} className="calc-tool-tab-icon" />
                 <span>Tool 2: True Cost In-House vs. 3PL ROI</span>
               </button>
             </div>

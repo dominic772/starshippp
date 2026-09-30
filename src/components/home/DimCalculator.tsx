@@ -105,30 +105,41 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
       </div>
 
       {/* Preset Buttons */}
-      <div style={{ marginBottom: '1.5rem' }}>
-        <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', display: 'block', marginBottom: '0.5rem' }}>
+      <div style={{ marginBottom: '1.75rem' }}>
+        <span style={{ fontSize: '0.8rem', color: '#F8FAFC', fontWeight: 800, fontFamily: 'var(--font-mono)', display: 'block', marginBottom: '0.65rem', letterSpacing: '0.04em' }}>
           QUICK LOAD COMMON DTC PARCEL SIZES:
         </span>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-          {PRESET_BOXES.map((box) => (
-            <button
-              key={box.name}
-              type="button"
-              onClick={() => applyPreset(box)}
-              style={{
-                fontSize: '0.76rem',
-                fontFamily: 'var(--font-mono)',
-                padding: '0.35rem 0.65rem',
-                borderRadius: 0,
-                background: length === box.l && width === box.w && height === box.h ? 'rgba(255, 107, 0, 0.25)' : 'var(--bg-surface-elevated)',
-                border: length === box.l && width === box.w && height === box.h ? '1px solid var(--brand-orange)' : '1px solid var(--border-card)',
-                color: length === box.l && width === box.w && height === box.h ? 'var(--brand-orange)' : 'var(--text-secondary)',
-                transition: 'all 0.15s ease',
-              }}
-            >
-              {box.name} ({box.l}×{box.w}×{box.h}")
-            </button>
-          ))}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
+          {PRESET_BOXES.map((box) => {
+            const isSelected = length === box.l && width === box.w && height === box.h;
+            return (
+              <button
+                key={box.name}
+                type="button"
+                onClick={() => applyPreset(box)}
+                style={{
+                  fontSize: '0.8rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontWeight: isSelected ? 800 : 600,
+                  padding: '0.45rem 0.85rem',
+                  borderRadius: 0,
+                  background: isSelected ? 'rgba(255, 107, 0, 0.22)' : 'rgba(255, 255, 255, 0.06)',
+                  border: isSelected ? '1.5px solid #FF8800' : '1px solid rgba(255, 255, 255, 0.18)',
+                  color: isSelected ? '#FFFFFF' : '#E2E8F0',
+                  boxShadow: isSelected ? '0 0 12px rgba(255, 107, 0, 0.35)' : 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                }}
+              >
+                {isSelected && <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#FF6B00', boxShadow: '0 0 6px #FF6B00', display: 'inline-block' }} />}
+                <span>{box.name}</span>
+                <span style={{ color: isSelected ? '#FFD188' : '#94A3B8', fontWeight: 500 }}>({box.l}×{box.w}×{box.h}")</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -136,150 +147,202 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
-          gap: '1rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+          gap: '1.25rem',
           marginBottom: '2rem',
         }}
       >
+        {/* Length Input */}
         <div>
-          <label style={{ display: 'block', fontSize: '0.78rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', marginBottom: '0.35rem' }}>
-            LENGTH (IN)
-          </label>
-          <input
-            type="number"
-            min="1"
-            max="48"
-            step="0.5"
-            value={length}
-            onChange={(e) => setLength(Math.max(1, parseFloat(e.target.value) || 1))}
-            style={{
-              width: '100%',
-              padding: '0.65rem 0.85rem',
-              backgroundColor: 'var(--bg-input)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: 0,
-              color: 'var(--text-white)',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '1.05rem',
-            }}
-          />
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
+            <label style={{ fontSize: '0.82rem', color: '#FFFFFF', fontWeight: 800, fontFamily: 'var(--font-mono)', letterSpacing: '0.03em' }}>
+              LENGTH
+            </label>
+            <span style={{ fontSize: '0.72rem', color: '#FFA733', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
+              INCHES
+            </span>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <input
+              type="number"
+              min="1"
+              max="48"
+              step="0.5"
+              value={length}
+              onChange={(e) => setLength(Math.max(1, parseFloat(e.target.value) || 1))}
+              style={{
+                width: '100%',
+                padding: '0.75rem 2.2rem 0.75rem 0.95rem',
+                backgroundColor: '#0F1833',
+                border: '1.5px solid rgba(255, 255, 255, 0.25)',
+                borderRadius: 0,
+                color: '#FFFFFF',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '1.35rem',
+                fontWeight: 800,
+                boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.5)',
+              }}
+            />
+            <span style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94A3B8', fontFamily: 'var(--font-mono)', fontSize: '0.85rem', fontWeight: 700, pointerEvents: 'none' }}>
+              in
+            </span>
+          </div>
         </div>
 
+        {/* Width Input */}
         <div>
-          <label style={{ display: 'block', fontSize: '0.78rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', marginBottom: '0.35rem' }}>
-            WIDTH (IN)
-          </label>
-          <input
-            type="number"
-            min="1"
-            max="48"
-            step="0.5"
-            value={width}
-            onChange={(e) => setWidth(Math.max(1, parseFloat(e.target.value) || 1))}
-            style={{
-              width: '100%',
-              padding: '0.65rem 0.85rem',
-              backgroundColor: 'var(--bg-input)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: 0,
-              color: 'var(--text-white)',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '1.05rem',
-            }}
-          />
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
+            <label style={{ fontSize: '0.82rem', color: '#FFFFFF', fontWeight: 800, fontFamily: 'var(--font-mono)', letterSpacing: '0.03em' }}>
+              WIDTH
+            </label>
+            <span style={{ fontSize: '0.72rem', color: '#FFA733', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
+              INCHES
+            </span>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <input
+              type="number"
+              min="1"
+              max="48"
+              step="0.5"
+              value={width}
+              onChange={(e) => setWidth(Math.max(1, parseFloat(e.target.value) || 1))}
+              style={{
+                width: '100%',
+                padding: '0.75rem 2.2rem 0.75rem 0.95rem',
+                backgroundColor: '#0F1833',
+                border: '1.5px solid rgba(255, 255, 255, 0.25)',
+                borderRadius: 0,
+                color: '#FFFFFF',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '1.35rem',
+                fontWeight: 800,
+                boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.5)',
+              }}
+            />
+            <span style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94A3B8', fontFamily: 'var(--font-mono)', fontSize: '0.85rem', fontWeight: 700, pointerEvents: 'none' }}>
+              in
+            </span>
+          </div>
         </div>
 
+        {/* Height Input */}
         <div>
-          <label style={{ display: 'block', fontSize: '0.78rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', marginBottom: '0.35rem' }}>
-            HEIGHT (IN)
-          </label>
-          <input
-            type="number"
-            min="1"
-            max="48"
-            step="0.5"
-            value={height}
-            onChange={(e) => setHeight(Math.max(1, parseFloat(e.target.value) || 1))}
-            style={{
-              width: '100%',
-              padding: '0.65rem 0.85rem',
-              backgroundColor: 'var(--bg-input)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: 0,
-              color: 'var(--text-white)',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '1.05rem',
-            }}
-          />
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
+            <label style={{ fontSize: '0.82rem', color: '#FFFFFF', fontWeight: 800, fontFamily: 'var(--font-mono)', letterSpacing: '0.03em' }}>
+              HEIGHT
+            </label>
+            <span style={{ fontSize: '0.72rem', color: '#FFA733', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
+              INCHES
+            </span>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <input
+              type="number"
+              min="1"
+              max="48"
+              step="0.5"
+              value={height}
+              onChange={(e) => setHeight(Math.max(1, parseFloat(e.target.value) || 1))}
+              style={{
+                width: '100%',
+                padding: '0.75rem 2.2rem 0.75rem 0.95rem',
+                backgroundColor: '#0F1833',
+                border: '1.5px solid rgba(255, 255, 255, 0.25)',
+                borderRadius: 0,
+                color: '#FFFFFF',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '1.35rem',
+                fontWeight: 800,
+                boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.5)',
+              }}
+            />
+            <span style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94A3B8', fontFamily: 'var(--font-mono)', fontSize: '0.85rem', fontWeight: 700, pointerEvents: 'none' }}>
+              in
+            </span>
+          </div>
         </div>
 
+        {/* Actual Weight Input */}
         <div>
-          <label style={{ display: 'block', fontSize: '0.78rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', marginBottom: '0.35rem' }}>
-            ACTUAL WT (LBS)
-          </label>
-          <input
-            type="number"
-            min="0.1"
-            max="150"
-            step="0.1"
-            value={actualWeight}
-            onChange={(e) => setActualWeight(Math.max(0.1, parseFloat(e.target.value) || 0.1))}
-            style={{
-              width: '100%',
-              padding: '0.65rem 0.85rem',
-              backgroundColor: 'var(--bg-input)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: 0,
-              color: 'var(--text-white)',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '1.05rem',
-            }}
-          />
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
+            <label style={{ fontSize: '0.82rem', color: '#FFFFFF', fontWeight: 800, fontFamily: 'var(--font-mono)', letterSpacing: '0.03em' }}>
+              ACTUAL WT
+            </label>
+            <span style={{ fontSize: '0.72rem', color: '#FFA733', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
+              POUNDS
+            </span>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <input
+              type="number"
+              min="0.1"
+              max="150"
+              step="0.1"
+              value={actualWeight}
+              onChange={(e) => setActualWeight(Math.max(0.1, parseFloat(e.target.value) || 0.1))}
+              style={{
+                width: '100%',
+                padding: '0.75rem 2.4rem 0.75rem 0.95rem',
+                backgroundColor: '#0F1833',
+                border: '1.5px solid rgba(255, 255, 255, 0.25)',
+                borderRadius: 0,
+                color: '#FFFFFF',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '1.35rem',
+                fontWeight: 800,
+                boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.5)',
+              }}
+            />
+            <span style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94A3B8', fontFamily: 'var(--font-mono)', fontSize: '0.85rem', fontWeight: 700, pointerEvents: 'none' }}>
+              lbs
+            </span>
+          </div>
         </div>
       </div>
 
       {/* DIM Calculation Breakdown Banner */}
       <div
         style={{
-          padding: '1.25rem',
+          padding: '1.35rem 1.5rem',
           borderRadius: 0,
-          backgroundColor: 'var(--bg-surface-elevated)',
-          border: '1px solid var(--border-subtle)',
+          backgroundColor: 'rgba(12, 19, 42, 0.96)',
+          border: '1px solid rgba(255, 107, 0, 0.35)',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)',
           marginBottom: '1.75rem',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-          gap: '1rem',
-          fontSize: '0.85rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+          gap: '1.25rem',
         }}
       >
         <div>
-          <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', display: 'block' }}>
+          <span style={{ color: '#E2E8F0', fontSize: '0.76rem', fontWeight: 700, fontFamily: 'var(--font-mono)', letterSpacing: '0.04em', display: 'block' }}>
             CUBIC VOLUME:
           </span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--text-white)' }}>
-            {calc.cubicInches} in³ ({((calc.cubicInches / 1728)).toFixed(2)} cu ft)
-          </span>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1.2rem', fontWeight: 800, color: '#FFFFFF', marginTop: '0.25rem' }}>
+            {calc.cubicInches} in³ <span style={{ color: '#94A3B8', fontSize: '0.85rem', fontWeight: 500 }}>({((calc.cubicInches / 1728)).toFixed(2)} cu ft)</span>
+          </div>
         </div>
 
         <div>
-          <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', display: 'block' }}>
+          <span style={{ color: '#FFD188', fontSize: '0.76rem', fontWeight: 700, fontFamily: 'var(--font-mono)', letterSpacing: '0.04em', display: 'block' }}>
             DIM WEIGHT (DIVISOR 166):
           </span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--brand-orange-light)' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1.2rem', fontWeight: 800, color: '#FFA733', marginTop: '0.25rem' }}>
             {calc.dimWeightDomestic} lbs
-          </span>
+          </div>
         </div>
 
         <div>
-          <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', display: 'block' }}>
+          <span style={{ color: '#6EE7B7', fontSize: '0.76rem', fontWeight: 700, fontFamily: 'var(--font-mono)', letterSpacing: '0.04em', display: 'block' }}>
             BILLABLE WEIGHT CHARGED:
           </span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: '#34D399' }}>
-            {calc.billableWeightUps} lbs
-          </span>
-          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginLeft: 4 }}>
-            ({calc.dimWeightDomestic > actualWeight ? 'DIM penalty applied' : 'Actual weight billed'})
-          </span>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1.2rem', fontWeight: 800, color: '#34D399', marginTop: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <span>{calc.billableWeightUps} lbs</span>
+            <span style={{ fontSize: '0.74rem', fontWeight: 700, padding: '0.15rem 0.5rem', backgroundColor: 'rgba(52, 211, 153, 0.16)', border: '1px solid rgba(52, 211, 153, 0.45)', color: '#6EE7B7' }}>
+              {calc.dimWeightDomestic > actualWeight ? '⚡ DIM penalty applied' : '✓ Actual weight billed'}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -287,44 +350,47 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '1rem',
-          marginBottom: '1.5rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gap: '1.25rem',
+          marginBottom: '1.75rem',
         }}
       >
         {/* Starshippp Rate */}
         <div
           style={{
-            padding: '1.25rem',
+            padding: '1.4rem',
             borderRadius: 0,
-            backgroundColor: 'rgba(255, 107, 0, 0.12)',
-            border: '2px solid var(--brand-orange)',
+            backgroundColor: 'rgba(255, 107, 0, 0.14)',
+            border: '2px solid #FF6B00',
+            boxShadow: '0 10px 25px rgba(255, 107, 0, 0.15)',
             position: 'relative',
           }}
         >
           <div
             style={{
               position: 'absolute',
-              top: -10,
+              top: -11,
               right: 12,
-              padding: '0.2rem 0.5rem',
+              padding: '0.22rem 0.65rem',
               borderRadius: 0,
-              backgroundColor: 'var(--brand-orange)',
-              color: '#000',
+              backgroundColor: '#FF6B00',
+              color: '#000000',
               fontFamily: 'var(--font-mono)',
-              fontSize: '0.68rem',
-              fontWeight: 800,
+              fontSize: '0.72rem',
+              fontWeight: 900,
+              boxShadow: '0 2px 8px rgba(255, 107, 0, 0.5)',
+              letterSpacing: '0.04em',
             }}
           >
             TIER-1 DISCOUNTED
           </div>
-          <div style={{ fontSize: '0.8rem', color: 'var(--brand-orange-light)', fontFamily: 'var(--font-mono)' }}>
+          <div style={{ fontSize: '0.88rem', color: '#FFA733', fontFamily: 'var(--font-mono)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.03em' }}>
             starshippp.com Rate
           </div>
-          <div style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-white)', margin: '0.35rem 0' }}>
+          <div style={{ fontSize: '2.1rem', fontWeight: 900, color: '#FFFFFF', margin: '0.35rem 0' }}>
             ${calc.starshipppRateEstimate}
           </div>
-          <div style={{ fontSize: '0.78rem', color: '#34D399', fontWeight: 700 }}>
+          <div style={{ fontSize: '0.82rem', color: '#34D399', fontWeight: 800 }}>
             Save approx. ~{calc.estimatedSavingsPct}% vs counter rack rates
           </div>
         </div>
@@ -332,19 +398,19 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
         {/* USPS Ground Advantage Card */}
         <div
           style={{
-            padding: '1.25rem',
+            padding: '1.4rem',
             borderRadius: 0,
-            backgroundColor: 'rgba(34, 211, 238, 0.08)',
-            border: '1px solid rgba(34, 211, 238, 0.3)',
+            backgroundColor: 'rgba(34, 211, 238, 0.09)',
+            border: '1.5px solid rgba(34, 211, 238, 0.4)',
           }}
         >
-          <div style={{ fontSize: '0.8rem', color: 'var(--status-cyan)', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
+          <div style={{ fontSize: '0.88rem', color: '#38BDF8', fontFamily: 'var(--font-mono)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.03em' }}>
             USPS Ground Advantage
           </div>
-          <div style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--text-white)', margin: '0.35rem 0' }}>
+          <div style={{ fontSize: '2.1rem', fontWeight: 900, color: '#FFFFFF', margin: '0.35rem 0' }}>
             ${calc.billableWeightUsps.toFixed(2)}
           </div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+          <div style={{ fontSize: '0.82rem', color: '#E2E8F0', fontWeight: 500 }}>
             Standard commercial postal rate
           </div>
         </div>
@@ -352,19 +418,19 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
         {/* Standard Retail Rate */}
         <div
           style={{
-            padding: '1.25rem',
+            padding: '1.4rem',
             borderRadius: 0,
-            backgroundColor: 'var(--bg-surface-elevated)',
-            border: '1px solid var(--border-card)',
+            backgroundColor: 'rgba(15, 23, 44, 0.95)',
+            border: '1.5px solid rgba(255, 255, 255, 0.18)',
           }}
         >
-          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
+          <div style={{ fontSize: '0.88rem', color: '#CBD5E1', fontFamily: 'var(--font-mono)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.03em' }}>
             Standard UPS / FedEx Rack Rate
           </div>
-          <div style={{ fontSize: '1.85rem', fontWeight: 800, color: '#E2E8F0', margin: '0.35rem 0' }}>
+          <div style={{ fontSize: '2.1rem', fontWeight: 900, color: '#FFFFFF', margin: '0.35rem 0' }}>
             ${calc.standardCarrierRate}
           </div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+          <div style={{ fontSize: '0.82rem', color: '#94A3B8', fontWeight: 500 }}>
             Includes non-negotiated residential fuel surcharges
           </div>
         </div>

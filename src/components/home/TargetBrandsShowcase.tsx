@@ -11,6 +11,10 @@ import {
   ChevronLeft, 
   ChevronRight,
   Send,
+  Sparkles,
+  Shirt,
+  Crown,
+  Flame,
 } from 'lucide-react';
 
 interface TargetBrandsShowcaseProps {
@@ -22,6 +26,7 @@ interface ProductShowcaseItem {
   id: string;
   category: string;
   badge: string;
+  icon: React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>;
   title: string;
   orderVolume: string;
   image: string;
@@ -36,6 +41,7 @@ const TARGET_PRODUCTS: ProductShowcaseItem[] = [
     id: 'skincare',
     category: 'Cosmetics & Skincare',
     badge: 'Fragile Glass & Serums',
+    icon: Sparkles,
     title: 'Clean Beauty & Amber Glass Unboxing',
     orderVolume: '300 to 2,500 Orders / Month',
     image: '/images/target-skincare-unboxing.jpg',
@@ -53,6 +59,7 @@ const TARGET_PRODUCTS: ProductShowcaseItem[] = [
     id: 'apparel',
     category: 'Apparel & Streetwear',
     badge: 'Multi-SKU & Drops',
+    icon: Shirt,
     title: 'Curated Streetwear & High-End Fashion',
     orderVolume: '400 to 3,000 Orders / Month',
     image: '/images/target-apparel-packaging.jpg',
@@ -70,6 +77,7 @@ const TARGET_PRODUCTS: ProductShowcaseItem[] = [
     id: 'unboxing',
     category: 'Custom Luxury Goods',
     badge: 'Wax Seals & Tissue Wrap',
+    icon: Crown,
     title: 'Artisan Goods & High-AOV Keepsakes',
     orderVolume: '300 to 1,800 Orders / Month',
     image: '/images/target-luxury-waxseal.jpg',
@@ -87,6 +95,7 @@ const TARGET_PRODUCTS: ProductShowcaseItem[] = [
     id: 'tiktok',
     category: 'TikTok Shop & Viral DTC',
     badge: '24-Hour Dispatch SLA',
+    icon: Flame,
     title: 'Fast-Paced Social Commerce & Tumblers',
     orderVolume: '500 to 3,000 Orders / Month',
     image: '/images/target-tiktok-viral.jpg',
@@ -188,6 +197,7 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
           <div className="target-showcase-tabs">
             {TARGET_PRODUCTS.map((prod, idx) => {
               const isActive = idx === activeIndex;
+              const IconComp = prod.icon;
               return (
                 <button
                   key={prod.id}
@@ -196,9 +206,18 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
                     setIsAutoPlaying(false);
                   }}
                   className={`target-tab-btn ${isActive ? 'active' : ''}`}
+                  type="button"
                 >
-                  <span className="target-tab-category">{prod.category}</span>
-                  <span className="target-tab-badge">{prod.badge}</span>
+                  <div className="target-tab-header">
+                    <span className="target-tab-icon">
+                      <IconComp size={16} />
+                    </span>
+                    <span className="target-tab-category">{prod.category}</span>
+                  </div>
+                  <span className="target-tab-badge">
+                    <span className="target-tab-badge-dot" />
+                    <span>{prod.badge}</span>
+                  </span>
                 </button>
               );
             })}

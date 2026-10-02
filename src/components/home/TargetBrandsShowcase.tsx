@@ -176,7 +176,7 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
           </h2>
 
           <p style={{ fontSize: '1.15rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.6, maxWidth: 760, margin: '0 auto', textShadow: '0 2px 10px rgba(0,0,0,0.85)' }}>
-            Starshippp is built specifically for brands neglected by mega-warehouses. While multi-billion-dollar fulfillment conglomerates are engineered for 50,000-order commodity accounts, brands shipping <strong style={{ color: '#FFFFFF', fontWeight: 800 }}>300 to 3,000 orders/month</strong> get relegated to offshore ticket queues, punitive idle fees, and careless packaging. In Pontiac, Michigan, you are our VIP tier.
+            Starshippp is built specifically for brands neglected by mega-warehouses. While multi-billion-dollar fulfillment conglomerates are engineered for 50,000-order commodity accounts, brands shipping <strong style={{ color: '#FFFFFF', fontWeight: 800 }}>300 to 3,000 orders/month</strong> get relegated to offshore ticket queues, punitive idle fees, and careless packaging. With our mobile app and dedicated Slack floor channels, you get direct VIP access and radical transparency every day.
           </p>
         </div>
 
@@ -284,7 +284,7 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
                   }}
                 >
                   <span>{currentItem.sopHighlight}</span>
-                  <span style={{ color: '#34D399', fontWeight: 800 }}>PONTIAC VERIFIED</span>
+                  <span style={{ color: '#34D399', fontWeight: 800 }}>STARSHIP VERIFIED</span>
                 </div>
               </div>
 
@@ -466,12 +466,12 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
                 <MessageSquare size={20} />
               </div>
               <div>
-                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>Direct Slack vs Ticket #49281</h4>
-                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--brand-orange-light)' }}>NO CALL-CENTERS</div>
+                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>App or Slack: Zero Ticket Queues</h4>
+                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--brand-orange-light)' }}>YOUR CHOICE OF COMMUNICATION</div>
               </div>
             </div>
             <p style={{ fontSize: '0.9rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.55, textShadow: '0 1px 3px rgba(0,0,0,0.85)' }}>
-              Tired of 72-hour email ticket queues with automated bots? Starshippp puts your team in a shared Slack channel directly with our warehouse floor leads in Pontiac. Need to hold an order or swap an SKU? Ping us and get a confirmation photo in minutes.
+              Tired of 72-hour email ticket queues with automated bots? Choose how you stay connected. Use our mobile app for automated daily payouts and real-time order tracking, or hop into a shared Slack channel directly with our warehouse packing floor leads. Need to hold an order or swap an SKU? Ping us and get a confirmation photo in minutes.
             </p>
           </div>
 

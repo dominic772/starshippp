@@ -21,11 +21,11 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
       avatarColor: '#3B82F6',
       isStaff: false,
       time: '11:42 AM',
-      text: 'Hey Pontiac team! We just had 85 orders drop for our Dual Slip-On Exhausts and Touring Fender kits. Can we confirm the heavy-duty foam corner cradles are queued for today’s 1:00 PM trailer sweep?',
+      text: 'Hey Starship team! We just had 85 orders drop for our Dual Slip-On Exhausts and Touring Fender kits. Can we confirm the heavy-duty foam corner cradles are queued for today’s 1:00 PM trailer sweep?',
     },
     {
       id: '2',
-      sender: 'Marcus Miller (Pontiac Floor Supervisor)',
+      sender: 'Marcus Miller (Warehouse Floor Supervisor)',
       avatarColor: '#FF6B00',
       isStaff: true,
       time: '11:45 AM',
@@ -42,7 +42,7 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
     },
     {
       id: '4',
-      sender: 'Marcus Miller (Pontiac Floor Supervisor)',
+      sender: 'Marcus Miller (Warehouse Floor Supervisor)',
       avatarColor: '#FF6B00',
       isStaff: true,
       time: '11:49 AM',
@@ -84,7 +84,7 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
       if (text.toLowerCase().includes('hold') || text.toLowerCase().includes('address')) {
         replyText = 'Order #8492 has been pulled from staging bay #3 and placed on hold! Send over the revised address and we will relabel it before the 1:00 PM trailer sweep.';
       } else if (text.toLowerCase().includes('photo') || text.toLowerCase().includes('sticker') || text.toLowerCase().includes('proof') || text.toLowerCase().includes('pack')) {
-        replyText = 'Here is the high-res photo proof of the packaging line right off our Pontiac packing bench:';
+        replyText = 'Here is the high-res photo proof of the packaging line right off our warehouse packing bench:';
         replyImg = '/images/target-motorcycle-parts.jpg';
       } else if (text.toLowerCase().includes('count') || text.toLowerCase().includes('sku') || text.toLowerCase().includes('inventory')) {
         replyText = 'Scanned high-bay rack #A-14: Exactly 184 units of SKU-EXH-FATBOY-BLK counted across 4 pallets. WMS inventory count is 100% synchronized.';
@@ -94,7 +94,7 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
 
       const floorReply: SlackMessage = {
         id: (Date.now() + 1).toString(),
-        sender: 'Dave Kowalski (Pontiac Operations Lead)',
+        sender: 'Dave Kowalski (Floor Operations Lead)',
         avatarColor: '#FF6B00',
         isStaff: true,
         time: 'Just now',
@@ -127,12 +127,12 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
 
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
         {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: 760, margin: '0 auto 3rem' }}>
+        <div style={{ textAlign: 'center', maxWidth: 780, margin: '0 auto 3rem' }}>
           <h2 style={{ marginBottom: '1.25rem' }}>
-            No Support Ticket Purgatory. Chat Directly with Your Packing Bench.
+            App or Slack: Complete Visibility Your Way.
           </h2>
           <p style={{ fontSize: '1.15rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.6, textShadow: '0 1px 3px rgba(0,0,0,0.95)' }}>
-            When you need an address updated before carrier pickup, or want photo verification of a special holiday gift insert, you message our Pontiac packing leads in a shared Slack channel. Average response time: under 5 minutes.
+            Whether you prefer checking live automated payouts and order dispatch in our mobile app, or collaborating directly with our packing leads in dedicated Slack, Starshippp delivers complete transparency with zero ticket delays. Average response time on the floor: under 5 minutes.
           </p>
         </div>
 
@@ -183,7 +183,7 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
                   </span>
                 </div>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)' }}>
-                  3 Pontiac Warehouse Floor Leads & 2 DTC Brand Operators Active
+                  3 Dedicated Warehouse Floor Leads & 2 DTC Brand Operators Active
                 </div>
               </div>
             </div>

@@ -37,8 +37,8 @@ export const HomePage: React.FC<HomePageProps> = ({
     <div>
       {/* Schema Injection */}
       <StructuredData
-        pageTitle="starshippp.com | Bulky & DIM-Weight 3PL Fulfillment | Midwest Hub"
-        pageDescription="Specialized 3PL for large boxes and low weight. Negotiated carrier DIM factor relief, cheap bulk storage, transparent $250/mo minimum, and direct warehouse-floor Slack access."
+        pageTitle="starshippp.com | Radical Transparency 3PL | Mobile App & Floor Slack"
+        pageDescription="Fulfillment powered by radical transparency. Choose between our high-speed mobile app for automated payouts and live telemetry, or direct warehouse floor Slack access. Fair $250/mo minimum and negotiated carrier DIM factor relief."
         canonicalUrl="https://starshippp.com"
         faqs={STARSHIPPP_FAQS}
         includeTools={true}

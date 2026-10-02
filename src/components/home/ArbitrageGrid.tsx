@@ -91,15 +91,15 @@ export const ArbitrageGrid: React.FC<ArbitrageGridProps> = ({
       isSuperior: true,
     },
     {
-      category: 'Warehouse Support',
-      metric: 'Direct Communication Channel',
+      category: 'Radical Transparency',
+      metric: 'App & Direct Floor Slack Access',
       icon: MessagesSquare,
       iconColor: '#2DD4BF',
       iconBg: 'rgba(45, 212, 191, 0.12)',
       iconBorder: 'rgba(45, 212, 191, 0.35)',
-      starshippp: 'Direct Floor Slack (< 5 Min)',
-      starshipppHoverNote: 'Direct live chat with Pontiac pick/pack operators, not tier-1 ticket bots.',
-      shipbob: 'Ticketing Portal (24-48 hr delay)',
+      starshippp: 'Starship App + Floor Slack (< 5 Min)',
+      starshipppHoverNote: 'Run your brand your way. Check automated daily payouts and live telemetry in the app, or message our warehouse floor leads directly in Slack. Zero tickets.',
+      shipbob: 'Ticketing Portal (24 to 48 hr delay)',
       redstag: 'Email / Account Rep queue',
       inHouseDiy: 'You are the only support',
       isSuperior: true,
@@ -159,7 +159,7 @@ export const ArbitrageGrid: React.FC<ArbitrageGridProps> = ({
             Why Boutique DTC Brands Escape Legacy Mega-3PLs.
           </h2>
           <p style={{ fontSize: '1.15rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.6, textShadow: '0 2px 10px rgba(0,0,0,0.85)' }}>
-            Mega-3PLs are optimized for 50,000 orders/month conglomerates. If you do 300 to 3,000 orders/month, you get ignored, penalized with monthly minimums, and buried under customer support tickets. Starshippp is engineered specifically for you.
+            Mega-3PLs are optimized for 50,000 orders/month conglomerates. If you do 300 to 3,000 orders/month, you get ignored, penalized with monthly minimums, and buried under customer support tickets. With Starshippp, you get complete transparency with our real-time mobile app for automated payouts, and direct Slack access to our warehouse packing floor.
           </p>
         </div>
 

@@ -61,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 letterSpacing: '-0.02em',
               }}
             >
-              Fulfillment Built for Big Boxes & Low Weight.{' '}
+              Fulfillment Powered by Radical Transparency.{' '}
               <span
                 style={{
                   display: 'inline-block',
@@ -70,7 +70,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                Crush Carrier DIM Penalties.
+                Our Mobile App or Direct Slack.
               </span>
             </h1>
 
@@ -85,7 +85,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 maxWidth: 680,
               }}
             >
-              The dedicated 3PL for brands shipping bulky, lightweight freight, from motorcycle exhaust systems and fenders to automotive body panels, wheels, and outdoor gear. Leverage our <strong style={{ color: '#FFA733' }}>aggressive negotiated carrier DIM factor</strong>, low-cost central warehouse storage, and transparent <strong style={{ color: '#FFFFFF' }}>$250/mo minimum</strong> with USPS Ground Advantage, FedEx Home Delivery, and direct warehouse-floor Slack access.
+              Run fulfillment your way with zero tickets and complete clarity. Manage inventory, live dispatch, and automated daily payouts directly in our mobile app, or chat with our actual warehouse packing floor leads in dedicated Slack. Combined with low-cost central warehouse storage, aggressive carrier DIM relief, and an honest $250 monthly commitment, we give you true peace of mind.
             </p>
 
             {/* Primary High-Contrast Solid CTAs */}
@@ -109,7 +109,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 }}
               >
                 <Send size={20} />
-                <span>Get DIM-Relieved Quote</span>
+                <span>Get Quote & Slack Access</span>
                 <ArrowRight size={18} />
               </button>
 
@@ -151,7 +151,171 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             boxShadow: '0 16px 40px -8px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
           }}
         >
-          {/* Metric 1: DIM Factor Arbitrage */}
+          {/* Metric 1: Communication Choice */}
+          <div>
+            <div
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.74rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                color: '#FFA733',
+                letterSpacing: '0.08em',
+                marginBottom: '0.35rem',
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
+              }}
+            >
+              Communication Choice
+            </div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', lineHeight: 1.1 }}>
+              <span
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '1.75rem',
+                  fontWeight: 800,
+                  color: '#FFFFFF',
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                App or Slack
+              </span>
+              <span
+                style={{
+                  fontSize: '0.78rem',
+                  color: '#34D399',
+                  fontWeight: 700,
+                  letterSpacing: '0.01em',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
+                }}
+              >
+                (Your Way)
+              </span>
+            </div>
+            <div
+              style={{
+                fontSize: '0.82rem',
+                color: '#FFFFFF',
+                fontWeight: 500,
+                lineHeight: 1.42,
+                marginTop: '0.25rem',
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
+              }}
+            >
+              Direct floor Slack under 5 minutes or real-time mobile app telemetry.
+            </div>
+          </div>
+
+          {/* Metric 2: Automated Payouts */}
+          <div>
+            <div
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.74rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                color: '#FFA733',
+                letterSpacing: '0.08em',
+                marginBottom: '0.35rem',
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
+              }}
+            >
+              Automated Payouts
+            </div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', lineHeight: 1.1 }}>
+              <span
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '1.75rem',
+                  fontWeight: 800,
+                  color: '#34D399',
+                  letterSpacing: '-0.02em',
+                  textShadow: '0 2px 10px rgba(52, 211, 153, 0.25)',
+                }}
+              >
+                Daily Sync
+              </span>
+              <span
+                style={{
+                  fontSize: '0.78rem',
+                  color: '#34D399',
+                  fontWeight: 700,
+                  letterSpacing: '0.01em',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
+                }}
+              >
+                (Auto-Deposit)
+              </span>
+            </div>
+            <div
+              style={{
+                fontSize: '0.82rem',
+                color: '#FFFFFF',
+                fontWeight: 500,
+                lineHeight: 1.42,
+                marginTop: '0.25rem',
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
+              }}
+            >
+              Funds clear automatically straight to your operating bank account.
+            </div>
+          </div>
+
+          {/* Metric 3: Transparent Minimum */}
+          <div>
+            <div
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.74rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                color: '#FFA733',
+                letterSpacing: '0.08em',
+                marginBottom: '0.35rem',
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
+              }}
+            >
+              Account Commitment
+            </div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', lineHeight: 1.1 }}>
+              <span
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '2.1rem',
+                  fontWeight: 800,
+                  color: '#22D3EE',
+                  letterSpacing: '-0.02em',
+                  textShadow: '0 2px 10px rgba(34, 211, 238, 0.25)',
+                }}
+              >
+                $250
+              </span>
+              <span
+                style={{
+                  fontSize: '0.8rem',
+                  color: '#34D399',
+                  fontWeight: 700,
+                  letterSpacing: '0.01em',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
+                }}
+              >
+                (Fair & Honest)
+              </span>
+            </div>
+            <div
+              style={{
+                fontSize: '0.82rem',
+                color: '#FFFFFF',
+                fontWeight: 500,
+                lineHeight: 1.42,
+                marginTop: '0.25rem',
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
+              }}
+            >
+              Accessible entry floor with no predatory monthly dead fees.
+            </div>
+          </div>
+
+          {/* Metric 4: Carrier DIM Factor */}
           <div>
             <div
               style={{
@@ -202,158 +366,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               }}
             >
               Slash billable dimensional weight on large boxes by 30% to 55%.
-            </div>
-          </div>
-
-          {/* Metric 2: Transparent Minimum */}
-          <div>
-            <div
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.74rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                color: '#FFA733',
-                letterSpacing: '0.08em',
-                marginBottom: '0.35rem',
-                textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
-              }}
-            >
-              Monthly Account Commitment
-            </div>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', lineHeight: 1.1 }}>
-              <span
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '2.1rem',
-                  fontWeight: 800,
-                  color: '#22D3EE',
-                  letterSpacing: '-0.02em',
-                  textShadow: '0 2px 10px rgba(34, 211, 238, 0.25)',
-                }}
-              >
-                $250
-              </span>
-              <span
-                style={{
-                  fontSize: '0.8rem',
-                  color: '#34D399',
-                  fontWeight: 700,
-                  letterSpacing: '0.01em',
-                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
-                }}
-              >
-                (Fair & Honest)
-              </span>
-            </div>
-            <div
-              style={{
-                fontSize: '0.82rem',
-                color: '#FFFFFF',
-                fontWeight: 500,
-                lineHeight: 1.42,
-                marginTop: '0.25rem',
-                textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
-              }}
-            >
-              Accessible entry floor with no predatory $1,500+ dead fees.
-            </div>
-          </div>
-
-          {/* Metric 3: Bulky Storage & Multi-SKU Capacity */}
-          <div>
-            <div
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.74rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                color: '#FFA733',
-                letterSpacing: '0.08em',
-                marginBottom: '0.35rem',
-                textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
-              }}
-            >
-              Bulk Storage & SKUs
-            </div>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', lineHeight: 1.1 }}>
-              <span
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '2.1rem',
-                  fontWeight: 800,
-                  color: '#FFFFFF',
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                7,000+
-              </span>
-              <span
-                style={{
-                  fontSize: '0.82rem',
-                  color: '#CBD5E1',
-                  fontWeight: 700,
-                  letterSpacing: '0.04em',
-                }}
-              >
-                SQ FT
-              </span>
-            </div>
-            <div
-              style={{
-                fontSize: '0.82rem',
-                color: '#FFFFFF',
-                fontWeight: 500,
-                lineHeight: 1.42,
-                marginTop: '0.25rem',
-                textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
-              }}
-            >
-              Low-cost Michigan high-bay space for complex parts catalogs.
-            </div>
-          </div>
-
-          {/* Metric 4: Floor Access & Carrier Trailers */}
-          <div>
-            <div
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.74rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                color: '#FFA733',
-                letterSpacing: '0.08em',
-                marginBottom: '0.35rem',
-                textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
-              }}
-            >
-              Dedicated Floor Slack
-            </div>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', lineHeight: 1.1 }}>
-              <span
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '2.1rem',
-                  fontWeight: 800,
-                  color: '#34D399',
-                  letterSpacing: '-0.02em',
-                  textShadow: '0 2px 10px rgba(52, 211, 153, 0.25)',
-                }}
-              >
-                &lt; 5 Min
-              </span>
-            </div>
-            <div
-              style={{
-                fontSize: '0.82rem',
-                color: '#FFFFFF',
-                fontWeight: 500,
-                lineHeight: 1.42,
-                marginTop: '0.25rem',
-                textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
-              }}
-            >
-              Daily USPS Ground Advantage & FedEx Home Delivery sweeps.
             </div>
           </div>
         </div>

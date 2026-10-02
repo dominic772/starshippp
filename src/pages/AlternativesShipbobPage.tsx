@@ -12,7 +12,7 @@ const SHIPBOB_FAQS: FaqItem[] = [
   {
     question: 'Why do DTC brands switch from ShipBob to starshippp.com?',
     answer:
-      'Brands switch because ShipBob enforces $1,500+ monthly spend minimums, inflates rates on large cartons with default 139 DIM divisors, penalizes custom unboxing with excessive kitting markups, and forces founders into 48-hour Zendesk ticketing delays. Starshippp offers an accessible $250/mo minimum, aggressive carrier DIM factor relief, transparent pallet receiving, and direct Slack floor access.',
+      'Brands switch because ShipBob enforces $1,500+ monthly spend minimums, inflates rates on large cartons with default 139 DIM divisors, penalizes custom unboxing with excessive kitting markups, and forces founders into 48-hour Zendesk ticketing delays. Starshippp offers an accessible $250 per month minimum, aggressive carrier DIM factor relief, transparent pallet receiving, and radical transparency through our real-time mobile app and direct warehouse floor Slack.',
   },
   {
     question: 'Does Starshippp charge hidden carrier fuel surcharges or invoice markups like legacy 3PLs?',
@@ -30,7 +30,7 @@ export const AlternativesShipbobPage: React.FC<{
     <div style={{ paddingTop: '5.5rem' }}>
       <StructuredData
         pageTitle="The Anti-ShipBob 3PL Alternative | Negotiated DIM Relief & $250 Minimum | starshippp.com"
-        pageDescription="Looking for a ShipBob alternative? Starshippp provides aggressive carrier DIM factor relief, fair $250/mo minimum commitment, transparent receiving, and direct floor Slack access."
+        pageDescription="Looking for a ShipBob alternative? Starshippp provides aggressive carrier DIM factor relief, fair $250/mo minimum commitment, automated payouts via our mobile app, and direct warehouse floor Slack access."
         canonicalUrl="https://starshippp.com/alternatives/shipbob/"
         faqs={SHIPBOB_FAQS}
         breadcrumbs={[
@@ -74,7 +74,7 @@ export const AlternativesShipbobPage: React.FC<{
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--hero-subtitle-color)', maxWidth: 720, marginBottom: '2.25rem' }}>
-            ShipBob is designed for venture-backed conglomerates. If you ship bulky boxes or products that hit dimensional weight, you're subsidizing their mega-warehouses. Starshippp is the boutique 3PL alternative, offering aggressive carrier DIM factor relief, cheap bulk storage, transparent pallet receiving, and a fair $250/mo minimum.
+            ShipBob is designed for venture-backed conglomerates. If you ship bulky boxes or products that hit dimensional weight, you are subsidizing their mega-warehouses. Starshippp is the boutique 3PL alternative, offering aggressive carrier DIM factor relief, cheap bulk storage, transparent pallet receiving, a fair $250 per month minimum, and your choice of mobile app telemetry or direct warehouse floor Slack.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -115,8 +115,8 @@ export const AlternativesShipbobPage: React.FC<{
                     <td style={{ padding: '1.1rem', color: '#F87171' }}>Standard 139/166 (Punitive rate hikes)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-                    <td style={{ padding: '1.1rem', fontWeight: 600 }}>Support Channel</td>
-                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Direct Floor Slack (&lt; 5 min)</td>
+                    <td style={{ padding: '1.1rem', fontWeight: 600 }}>Communication Channel</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Starship App + Floor Slack (&lt; 5 min)</td>
                     <td style={{ padding: '1.1rem', color: '#F87171' }}>Ticketing portal (24 to 48 hr delay)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>

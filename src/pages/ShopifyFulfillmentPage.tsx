@@ -17,12 +17,12 @@ const SHOPIFY_FAQS: FaqItem[] = [
   {
     question: 'Do you support Shopify bundles, kitting, and multi-location inventory routing?',
     answer:
-      'Yes. Starshippp natively handles virtual SKU bundle disassembly (e.g. promotional gift sets, buy-one-get-one kits) and multi-location inventory fulfillment rules. If you sell across Shopify POS, online store, or Shopify B2B wholesale, orders route dynamically to our floor.',
+      'Yes. Starshippp natively handles virtual SKU bundle disassembly (such as promotional gift sets or buy-one-get-one kits) and multi-location inventory fulfillment rules. If you sell across Shopify POS, online store, or Shopify B2B wholesale, orders route dynamically to our floor.',
   },
   {
     question: 'Why choose Starshippp over legacy Shopify 3PL networks or ShipBob?',
     answer:
-      'Mega-3PLs enforce $1,500 to $2,500 monthly spend penalties, charge steep receiving surcharges per pallet, and route support through impersonal Zendesk ticketing queues. Starshippp offers a fair $250 monthly minimum, direct floor Slack access, and transparent receiving for growing brands doing 300 to 3,500 orders/month.',
+      'Mega-3PLs enforce $1,500 to $2,500 monthly spend penalties, charge steep receiving surcharges per pallet, and route support through impersonal Zendesk ticketing queues. Starshippp offers a fair $250 monthly minimum, our real-time mobile app with automated daily payouts, and direct floor Slack access for growing brands doing 300 to 3,500 orders per month.',
   },
 ];
 
@@ -35,7 +35,7 @@ export const ShopifyFulfillmentPage: React.FC<{
     <div style={{ paddingTop: '5.5rem' }}>
       <StructuredData
         pageTitle="Shopify 3PL Fulfillment Center | Real-Time Sync & $250 Minimum | starshippp.com"
-        pageDescription="The premier Shopify 3PL fulfillment partner for DTC brands doing 300 to 3,500 orders/month. Instant 60-second Shopify integration, automated tracking writebacks, and direct floor Slack."
+        pageDescription="The premier Shopify 3PL fulfillment partner for DTC brands doing 300 to 3,500 orders per month. Instant 60-second Shopify integration, mobile app with automated payouts, and direct floor Slack."
         canonicalUrl="https://starshippp.com/shopify-3pl-fulfillment/"
         faqs={SHOPIFY_FAQS}
         breadcrumbs={[
@@ -54,7 +54,7 @@ export const ShopifyFulfillmentPage: React.FC<{
             },
             {
               name: 'Step 2: Inventory Inbound to Freight Docks',
-              text: 'Ship factory cartons or pallets to our Michigan facility. We barcode, check-in, and stow inventory within 24 hours with transparent pallet receiving fees.',
+              text: 'Ship factory cartons or pallets to our central facility. We barcode, check-in, and stow inventory within 24 hours with transparent pallet receiving fees.',
             },
             {
               name: 'Step 3: Automated Real-Time Fulfillment & Tracking Writebacks',
@@ -78,7 +78,7 @@ export const ShopifyFulfillmentPage: React.FC<{
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--hero-subtitle-color)', maxWidth: 740, marginBottom: '2.25rem' }}>
-            Native Shopify app integration with 60-second onboarding. Zero manual CSV exports, zero $1,500 monthly minimum penalties, direct two-way sync with Shopify, instant tracking writebacks, and direct warehouse-floor Slack access.
+            Native Shopify app integration with 60-second onboarding. Zero manual CSV exports, zero $1,500 monthly minimum penalties, automated daily payouts and live telemetry in our mobile app, and direct warehouse floor Slack access.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -96,7 +96,7 @@ export const ShopifyFulfillmentPage: React.FC<{
           <div style={{ maxWidth: 780, margin: '0 auto 3.5rem', textAlign: 'center' }}>
             <h2 style={{ marginBottom: '1rem' }}>Engineered for Frictionless Shopify Operations</h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6 }}>
-              Everything your brand needs to scale from 300 to 3,000 orders/month without adding headcount or dealing with mega-3PL red tape.
+              Everything your brand needs to scale from 300 to 3,000 orders per month without adding headcount or dealing with mega-3PL red tape.
             </p>
           </div>
 
@@ -127,7 +127,7 @@ export const ShopifyFulfillmentPage: React.FC<{
                 <h3 style={{ fontSize: '1.25rem', margin: 0 }}>Bundle & Kit Disassembly</h3>
               </div>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.6 }}>
-                Sell combo gift sets, BOGOs, or holiday bundles on Shopify. Our pick-and-pack stations dynamically pull the component items with zero manual SKU mapping.
+                Sell combo gift sets, BOGOs, or holiday bundles on Shopify. Our pick and pack stations dynamically pull the component items with zero manual SKU mapping.
               </p>
             </div>
           </div>
@@ -155,8 +155,8 @@ export const ShopifyFulfillmentPage: React.FC<{
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Support Channel</td>
-                    <td style={{ padding: '1.1rem', color: '#34D399', fontWeight: 700 }}>Direct Floor Slack Channel (&lt; 5 min)</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>Zendesk support queue (24-48 hr delay)</td>
+                    <td style={{ padding: '1.1rem', color: '#34D399', fontWeight: 700 }}>Starship App + Floor Slack (&lt; 5 min)</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>Zendesk support queue (24 to 48 hr delay)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Inbound Receiving Fees</td>

@@ -12,27 +12,27 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      'We ship slip-on exhausts and fender kits that standard carriers were dinging us 32 lbs DIM weight for. Starshippp’s negotiated DIM factor and cheap bulk warehouse storage cut our fulfillment bills by 40%, and we’ve literally had zero returns.',
+      'We ship slip-on exhausts and fender kits that standard carriers were dinging us 32 lbs DIM weight for. Starshippp’s mobile app lets us watch daily payouts clear automatically, and their floor Slack channel gets back to us in two minutes whenever we have custom packing notes. It is complete night and day compared to waiting on ShipBob Zendesk tickets.',
     author: 'Brett M.',
     role: 'Founder',
     brand: 'Apex Moto Gear',
-    metric: '1,400 orders/mo • 40% Carrier DIM Savings',
+    metric: '1,400 orders/mo • App Payouts & 2-Min Slack',
   },
   {
     quote:
-      'Storing 350 large bumper and spoiler SKUs at our old 3PL triggered $2,000 monthly oversized storage penalties. Starshippp stores our parts across 6,500 sq ft affordably, and our daily orders hit FedEx Home Delivery without delay.',
+      'Having our own dedicated Slack channel directly with the packing team is a superpower. If a customer needs an address change or we want to verify how a carbon splitter is boxed, Dave on the floor snaps a photo in five minutes. Plus, the app gives our team total visibility into live inventory without logging into clunky portals.',
     author: 'Tyler R.',
     role: 'Operations Director',
     brand: 'TrackCraft Aero',
-    metric: '6,500 sq ft Storage • Multi-SKU Auto Parts',
+    metric: '6,500 sq ft Storage • Direct Floor Slack',
   },
   {
     quote:
-      'Pre-assembled patio furniture and cushion sets are bulky and low weight. The fair $250/mo minimum, transparent pallet receiving, and USPS Ground Advantage contract saved our business from mega-3PL gouging.',
+      'Other 3PLs treated us like a number and hid behind 48-hour email queues. With Starshippp, we have our app showing live carrier tracking writebacks and an honest team on Slack who genuinely cares about our unboxing quality. Total transparency and a fair $250 minimum.',
     author: 'Sarah V.',
     role: 'Founder',
     brand: 'Timber & Sky Outdoor',
-    metric: '850 orders/mo • $250 Fair Account Minimum',
+    metric: '850 orders/mo • Transparent App & Slack',
   },
 ];
 
@@ -96,7 +96,7 @@ export const TestimonialStrip: React.FC = () => {
             }}
           >
             <ShieldCheck size={14} color="#34D399" />
-            <span>$250 FAIR MINIMUM • NEGOTIATED DIM FACTOR</span>
+            <span>APP & SLACK TRANSPARENCY • $250 FAIR MINIMUM</span>
           </div>
         </div>
 

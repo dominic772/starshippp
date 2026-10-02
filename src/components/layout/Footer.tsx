@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '1.25rem' }}>
-              The anti-mega-3PL built for large boxes, low weights, and high-footprint catalogs. Fair $250/mo minimums, transparent pallet intake, negotiated carrier DIM factor relief, and direct warehouse-floor Slack access.
+              The anti-mega-3PL built for large boxes, low weights, and high-footprint catalogs. Fair $250/mo minimums, transparent pallet intake, negotiated carrier DIM factor relief, and radical transparency via our mobile app or warehouse floor Slack.
             </p>
 
             <div

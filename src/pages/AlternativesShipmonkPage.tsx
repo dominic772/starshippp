@@ -7,7 +7,7 @@ const SHIPMONK_FAQS: FaqItem[] = [
   {
     question: 'Why do DTC brands switch from ShipMonk to Starshippp?',
     answer:
-      'Brands leave ShipMonk due to steep software platform subscription fees, hidden account management charges, punitive $2,000+ monthly minimum invoice penalties, and delayed ticketing support. Starshippp offers $0 software fees, an accessible $250/mo minimum, and direct Slack access to our warehouse floor.',
+      'Brands leave ShipMonk due to steep software platform subscription fees, hidden account management charges, punitive $2,000+ monthly minimum invoice penalties, and delayed ticketing support. Starshippp offers $0 software fees, an accessible $250 per month minimum, and direct transparency through our mobile app with automated daily payouts or direct Slack access to our warehouse floor.',
   },
   {
     question: 'How do you transfer inventory from ShipMonk without pausing sales?',
@@ -17,7 +17,7 @@ const SHIPMONK_FAQS: FaqItem[] = [
   {
     question: 'Does Starshippp charge separate monthly software or portal access fees?',
     answer:
-      'No. Access to the Starshippp merchant portal, live SKU inventory telemetry, Shopify integration, and direct floor Slack communication is 100% free and included with every account.',
+      'No. Access to the Starshippp mobile app, automated payouts, live SKU inventory telemetry, Shopify integration, and direct floor Slack communication is 100% free and included with every account.',
   },
   {
     question: 'How does Starshippp pricing compare to ShipMonk for custom unboxing?',
@@ -35,7 +35,7 @@ export const AlternativesShipmonkPage: React.FC<{
     <div style={{ paddingTop: '5.5rem' }}>
       <StructuredData
         pageTitle="The ShipMonk Alternative | Zero Software Fees & $250 Minimum | starshippp.com"
-        pageDescription="Looking for a ShipMonk alternative? Starshippp eliminates monthly software fees, invoice minimum penalties, and support ticket delays with direct floor Slack access."
+        pageDescription="Looking for a ShipMonk alternative? Starshippp eliminates monthly software fees, invoice minimum penalties, and support ticket delays with our mobile app and direct floor Slack access."
         canonicalUrl="https://starshippp.com/alternatives/shipmonk/"
         faqs={SHIPMONK_FAQS}
         breadcrumbs={[
@@ -78,7 +78,7 @@ export const AlternativesShipmonkPage: React.FC<{
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--hero-subtitle-color)', maxWidth: 740, marginBottom: '2.25rem' }}>
-            The boutique 3PL alternative to ShipMonk. Stop paying monthly software platform subscriptions and $2,000 minimum spend fees. Starshippp delivers high-touch boutique fulfillment with direct warehouse Slack access and $0 platform fees.
+            The boutique 3PL alternative to ShipMonk. Stop paying monthly software platform subscriptions and $2,000 minimum spend fees. Starshippp delivers high-touch boutique fulfillment with real-time mobile app telemetry, automated daily payouts, direct warehouse Slack access, and $0 platform fees.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -115,12 +115,12 @@ export const AlternativesShipmonkPage: React.FC<{
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Software & Platform Fees</td>
-                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>$0 / mo (Free portal & API access)</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>$0 / mo (Free app & API access)</td>
                     <td style={{ padding: '1.1rem', color: '#F87171' }}>Platform license & tech surcharge fees</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-                    <td style={{ padding: '1.1rem', fontWeight: 600 }}>Support Access</td>
-                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Direct Floor Slack Channel (&lt; 5 min)</td>
+                    <td style={{ padding: '1.1rem', fontWeight: 600 }}>Communication Access</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Starship App + Floor Slack (&lt; 5 min)</td>
                     <td style={{ padding: '1.1rem', color: '#F87171' }}>Ticketing queue & Happiness Engineers</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>

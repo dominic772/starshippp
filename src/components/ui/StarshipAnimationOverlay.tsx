@@ -25,7 +25,7 @@ export const StarshipAnimationOverlay: React.FC<StarshipAnimationOverlayProps> =
       }}
       aria-hidden="true"
     >
-      {/* 1. SVG Laser Radar Hull Contour Scanner */}
+      {/* SVG Laser Contour Perimeter Scanner */}
       <svg
         viewBox="0 0 484 123"
         style={{
@@ -37,7 +37,7 @@ export const StarshipAnimationOverlay: React.FC<StarshipAnimationOverlayProps> =
         }}
       >
         <defs>
-          {/* High-intensity Laser Glow Filter */}
+          {/* Laser Glow Filter */}
           <filter id="laserGlow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="2.5" result="blur" />
             <feMerge>
@@ -46,16 +46,16 @@ export const StarshipAnimationOverlay: React.FC<StarshipAnimationOverlayProps> =
             </feMerge>
           </filter>
 
-          {/* Traveling Laser Pulse Gradient */}
+          {/* Traveling Multi-Color Laser Pulse Gradient (Cyan -> Goldenrod -> Vivid Orange) */}
           <linearGradient id="laserStrokeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.1" />
-            <stop offset="40%" stopColor="#00E5FF" stopOpacity="0.9" />
+            <stop offset="35%" stopColor="#00E5FF" stopOpacity="0.95" />
             <stop offset="70%" stopColor="#FFAA00" stopOpacity="1" />
             <stop offset="100%" stopColor="#FF4400" stopOpacity="0.2" />
           </linearGradient>
         </defs>
 
-        {/* Ambient Subtle Static Hull Guide */}
+        {/* Subtle Static Hull Guide Track */}
         <path
           d={HULL_SILHOUETTE_PATH}
           fill="none"
@@ -63,44 +63,17 @@ export const StarshipAnimationOverlay: React.FC<StarshipAnimationOverlayProps> =
           strokeWidth="1.2"
         />
 
-        {/* Animated Traveling Laser Scan Beam */}
+        {/* Animated Traveling Multi-Color Laser Scan Beam */}
         <path
           d={HULL_SILHOUETTE_PATH}
           className="starship-laser-beam"
           fill="none"
           stroke="url(#laserStrokeGrad)"
-          strokeWidth="1.8"
+          strokeWidth="2"
           strokeLinecap="round"
           filter="url(#laserGlow)"
         />
       </svg>
-
-      {/* 2. Warp-Speed Holographic Light Sweep */}
-      <div className="starship-warp-sweep" />
-
-      {/* 3. Nosecone 3D Star Diamond Twinkle Glint */}
-      <div className="starship-star-glint">
-        <svg
-          viewBox="0 0 24 24"
-          width="22"
-          height="22"
-          style={{ display: 'block', transform: 'translate(-50%, -50%)' }}
-        >
-          {/* 4-Point Radiant Diamond Flare */}
-          <path
-            d="M 12,0 Q 12,12 24,12 Q 12,12 12,24 Q 12,12 0,12 Q 12,12 12,0 Z"
-            fill="#FFFFFF"
-            filter="drop-shadow(0 0 6px #FFD700) drop-shadow(0 0 12px #FFA700)"
-          />
-          {/* Center Intense Core Spark */}
-          <circle cx="12" cy="12" r="2.5" fill="#FFF9D2" />
-        </svg>
-      </div>
-
-      {/* 4. Afterburner Exhaust Micro-Ember Particles */}
-      <div className="starship-ember ember-1" />
-      <div className="starship-ember ember-2" />
-      <div className="starship-ember ember-3" />
     </div>
   );
 };

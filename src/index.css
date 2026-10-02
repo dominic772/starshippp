@@ -837,158 +837,32 @@ input[type="range"]::-moz-range-thumb {
    LIVING STARSHIP LOGO & TOP MENU MICRO-ANIMATIONS (Tier 2 Cyber Flight Deck)
    ========================================================================== */
 
-/* 1. Laser Radar Scan Beam */
+/* 1. Laser Radar Contour Trace Beam */
 .starship-laser-beam {
-  stroke-dasharray: 220 900;
-  stroke-dashoffset: 1120;
-  animation: starshipLaserScan 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  stroke-dasharray: 240 900;
+  stroke-dashoffset: 1140;
+  animation: starshipLaserScan 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes starshipLaserScan {
-  0%, 25% {
-    stroke-dashoffset: 1120;
+  0% {
+    stroke-dashoffset: 1140;
     opacity: 0;
   }
-  30% {
+  8% {
     opacity: 1;
   }
-  65% {
-    stroke-dashoffset: -200;
+  78% {
+    stroke-dashoffset: -220;
     opacity: 1;
   }
-  70%, 100% {
-    stroke-dashoffset: -200;
+  86%, 100% {
+    stroke-dashoffset: -220;
     opacity: 0;
   }
 }
 
-/* 2. Warp Holographic Light Sweep */
-.starship-warp-sweep {
-  position: absolute;
-  top: -20%;
-  left: -40%;
-  width: 45%;
-  height: 140%;
-  background: linear-gradient(
-    105deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.05) 25%,
-    rgba(255, 255, 255, 0.85) 50%,
-    rgba(255, 140, 0, 0.6) 75%,
-    transparent 100%
-  );
-  transform: skewX(-28deg);
-  opacity: 0;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  animation: starshipWarpSweep 10s ease-in-out infinite;
-}
-
-@keyframes starshipWarpSweep {
-  0%, 63% {
-    left: -40%;
-    opacity: 0;
-  }
-  65% {
-    opacity: 0.95;
-  }
-  74% {
-    left: 130%;
-    opacity: 0.95;
-  }
-  76%, 100% {
-    left: 130%;
-    opacity: 0;
-  }
-}
-
-/* 3. Nosecone 3D Star Diamond Twinkle Glint */
-.starship-star-glint {
-  position: absolute;
-  left: 91.5%;
-  top: 39.8%;
-  transform: translate(-50%, -50%) scale(0) rotate(0deg);
-  pointer-events: none;
-  opacity: 0;
-  animation: starshipDiamondGlint 10s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-}
-
-@keyframes starshipDiamondGlint {
-  0%, 73% {
-    transform: translate(-50%, -50%) scale(0) rotate(0deg);
-    opacity: 0;
-  }
-  76% {
-    transform: translate(-50%, -50%) scale(1.35) rotate(45deg);
-    opacity: 1;
-  }
-  80% {
-    transform: translate(-50%, -50%) scale(0) rotate(90deg);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(0) rotate(90deg);
-    opacity: 0;
-  }
-}
-
-/* 4. Afterburner Exhaust Micro-Ember Particles */
-.starship-ember {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-}
-
-.starship-ember.ember-1 {
-  width: 3px;
-  height: 3px;
-  background: #FF8800;
-  box-shadow: 0 0 6px #FF4400;
-  left: 18%;
-  top: 48%;
-  animation: emberDrift1 4s ease-out infinite;
-}
-
-.starship-ember.ember-2 {
-  width: 2.5px;
-  height: 2.5px;
-  background: #FFAA00;
-  box-shadow: 0 0 5px #FF6600;
-  left: 14%;
-  top: 62%;
-  animation: emberDrift2 5.5s ease-out 1.2s infinite;
-}
-
-.starship-ember.ember-3 {
-  width: 2px;
-  height: 2px;
-  background: #FFCC00;
-  box-shadow: 0 0 4px #FF8800;
-  left: 10%;
-  top: 35%;
-  animation: emberDrift3 4.8s ease-out 2.5s infinite;
-}
-
-@keyframes emberDrift1 {
-  0% { transform: translate(0, 0) scale(1); opacity: 0; }
-  20% { opacity: 0.9; }
-  100% { transform: translate(-38px, -8px) scale(0.2); opacity: 0; }
-}
-
-@keyframes emberDrift2 {
-  0% { transform: translate(0, 0) scale(1); opacity: 0; }
-  20% { opacity: 0.85; }
-  100% { transform: translate(-45px, 6px) scale(0.2); opacity: 0; }
-}
-
-@keyframes emberDrift3 {
-  0% { transform: translate(0, 0) scale(1); opacity: 0; }
-  25% { opacity: 0.8; }
-  100% { transform: translate(-30px, -12px) scale(0.2); opacity: 0; }
-}
-
-/* 5. Living Flame Breathing Glow on Base Starship */
+/* 2. Living Subtle Flame Breathing Glow on Base Starship */
 .starship-logo-speed .starship-img-glow {
   animation: starshipFlameBreathing 4.5s ease-in-out infinite;
 }
@@ -1002,16 +876,10 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 
-/* User Hover Boost */
-.starship-fx-overlay-container.is-hovered .starship-warp-sweep {
-  animation: none;
-  opacity: 0.4;
-}
-
-.starship-fx-overlay-container.is-hovered .starship-star-glint {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.2) rotate(45deg);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+/* User Hover Boost: Trace speeds up on cursor hover */
+.starship-fx-overlay-container.is-hovered .starship-laser-beam {
+  animation-duration: 2.2s;
+  stroke-width: 2.4px;
 }
 
 /* 6. Top Menu Telemetry Radar Indicator */

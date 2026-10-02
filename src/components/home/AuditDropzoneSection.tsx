@@ -77,13 +77,13 @@ export const AuditDropzoneSection: React.FC<AuditDropzoneSectionProps> = ({ onOp
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                   <CheckCircle2 size={18} color="#34D399" strokeWidth={2.5} />
                   <span style={{ color: '#FFFFFF', fontWeight: 600, fontSize: '0.94rem' }}>
-                    Zero monthly minimum commitments during your 30-day pilot
+                    Transparent, fair $250/mo account commitment (never $1,500+ predatory fines)
                   </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                   <CheckCircle2 size={18} color="#34D399" strokeWidth={2.5} />
                   <span style={{ color: '#FFFFFF', fontWeight: 600, fontSize: '0.94rem' }}>
-                    Zero receiving surcharges on incoming pallets or factory shipments
+                    Transparent pallet intake & SKU verification fees (no hidden billing tricks)
                   </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>

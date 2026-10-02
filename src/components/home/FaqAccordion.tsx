@@ -5,40 +5,46 @@ import type { FaqItem } from '../../types';
 
 export const STARSHIPPP_FAQS: FaqItem[] = [
   {
-    question: 'What is the average pick and pack fee for a boutique 3PL?',
+    question: 'How does Starshippp save brands money on dimensional (DIM) weight for big boxes?',
     answer:
-      'At starshippp.com, our transparent flat pick and pack fee starts at $2.65 for the primary pick (which includes standard mailer/box packaging, tape, shipping label, and void fill), plus $0.45 per additional item. Unlike mega-3PLs, we charge $0 monthly minimum penalties, $0 receiving dock surcharges, and include custom tissue folding without extra line-item gouging.',
+      'Standard carriers use punitive 139 or 166 dimensional divisors, meaning a lightweight 8.5 lb motorcycle exhaust or automotive body panel in a large box is billed as 32+ lbs. Starshippp has an aggressive negotiated carrier DIM factor with USPS Ground Advantage and FedEx Home Delivery that slashes billable dimensional weight by 35% to 55%. Combined with our low-cost central warehouse storage, brands save thousands every month on shipping.',
+    category: 'DIM Shipping',
+  },
+  {
+    question: 'What types of products and clients are ideal for Starshippp?',
+    answer:
+      'We specialize in brands that ship large boxes with low actual weight, including motorcycle parts (exhausts, fenders, saddlebag kits), automotive body panels & aero, outdoor patio furniture, tires, and bulky lifestyle gear. We excel with complex, multi-SKU catalogs requiring extensive high-bay storage (3,000 to 10,000+ sq ft) and near-zero customer return rates. We intentionally avoid small parcel fast-fashion and assemble-yourself flatpack furniture.',
+    category: 'Clients & SKUs',
+  },
+  {
+    question: 'What is the monthly minimum account commitment?',
+    answer:
+      'We maintain an accessible, transparent $250/month minimum account commitment. This protects our warehouse team while ensuring emerging and seasonal brands never face predatory $1,500 to $2,500 monthly dead-minimum penalties common at legacy mega-3PLs.',
     category: 'Pricing',
   },
   {
-    question: 'How does starshippp.com handle TikTok Shop fulfillment SLAs?',
+    question: 'How do inbound receiving and pallet fees work?',
     answer:
-      'TikTok Shop mandates strict 24-to-48 hour ship-by-date dispatch requirements to protect seller health ratings. starshippp.com maintains a guaranteed same-day 1:00 PM EST SLA cutoff with direct native TikTok Shop API integrations. Orders automatically sync and generate carrier dispatch scans within hours, eliminating late dispatch penalty points.',
-    category: 'Operations',
+      'We charge a fair, transparent receiving fee (typically $25 to $35 per pallet plus standard carton SKU breakdown). Multi-SKU pallets require rigorous counting, inspection, and barcoded bin staging. We bill honestly for the actual physical labor required without hidden dock surcharges or surprise penalty invoices.',
+    category: 'Receiving',
   },
   {
     question: 'Why choose a Pontiac, Michigan fulfillment center over coastal 3PLs?',
     answer:
-      'Located in Pontiac, Michigan within the Metro Detroit logistics corridor, starshippp.com reaches over 68% of the United States consumer population in 1 to 2 ground shipping days via USPS, UPS, and FedEx Zone 2 to 4. This provides lower postage costs than coastal California or New York warehouses while avoiding coastal port congestion and high warehouse labor overhead.',
+      'Located in Pontiac, Michigan within the Metro Detroit logistics corridor, starshippp.com reaches over 68% of the United States consumer population in 1 to 2 ground shipping days via USPS Ground Advantage and FedEx Home Delivery. This provides lower postage costs than coastal California or New York warehouses while offering vastly cheaper square footage for bulky inventory storage.',
     category: 'Geography',
   },
   {
-    question: 'What is the minimum order volume to work with starshippp.com?',
+    question: 'Can Starshippp execute custom packaging, unboxing, or reinforced boxing?',
     answer:
-      'Our boutique fulfillment hub is specifically optimized for brands shipping between 300 and 3,000 orders per month. We enforce zero monthly minimum order spend penalties, so emerging founders never receive punitive $1,500 monthly idle invoices during off-peak seasonal cycles.',
-    category: 'Onboarding',
+      'Yes. While our standard pick and pack covers heavy-duty corrugated cartons and protective void fill, we offer premium custom packaging, structural foam corner cradling, branded tape, and white-glove unboxing as transparent add-on services tailored to your exact brand SOPs.',
+    category: 'Packaging',
   },
   {
     question: 'How does direct warehouse-floor Slack access work?',
     answer:
-      'Upon onboarding, your brand is given a private Slack channel connected directly to our Pontiac warehouse floor supervisors and packing benches. Founders can request real-time address modifications, inventory count verification, or photo proofs of custom unboxing setups in under 5 minutes without ever waiting 48 hours for a support ticket.',
+      'Upon onboarding, your team is given a private Slack channel connected directly to our Pontiac warehouse floor supervisors and packing benches. Founders can request real-time address modifications, inventory count verification, or photo proofs of large carton packaging in under 5 minutes without ever waiting 48 hours for a support ticket.',
     category: 'Support',
-  },
-  {
-    question: 'Can starshippp.com execute custom luxury unboxing with wax seals and tissue?',
-    answer:
-      'Yes. High-touch unboxing is our specialty. Our Pontiac cleanroom packing bays handle custom branded tissue wrapping, hand-stamped wax seals, branded sticker application, handwritten thank-you inserts, and delicate glass cosmetics cushioning standard with precision SOPs.',
-    category: 'Unboxing',
   },
   {
     question: 'How does zero-downtime migration from ShipBob or in-house work?',

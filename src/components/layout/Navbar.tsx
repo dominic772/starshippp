@@ -53,15 +53,15 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   const verticals = [
-    { title: 'Shopify 3PL Fulfillment', path: '/shopify-3pl-fulfillment/', desc: 'Native 60-sec sync, instant tracking & zero minimums' },
-    { title: 'Michigan & Midwest DTC', path: '/michigan-fulfillment/', desc: '1-Day ground reach to 68% of US population' },
-    { title: 'TikTok Shop Engine', path: '/tiktok-shop-fulfillment/', desc: '24-hour fast SLA dispatch compliance engine' },
-    { title: 'Apparel & Fashion 3PL', path: '/apparel-fashion-fulfillment/', desc: 'Polybagging, variant matrix & returns inspection' },
-    { title: 'Cosmetics & Skincare', path: '/cosmetics-skincare-fulfillment/', desc: 'Climate-controlled, lot tracking & fragile glass SOPs' },
-    { title: 'Custom Luxury Unboxing', path: '/custom-unboxing-3pl/', desc: 'Wax seals, custom tissue, sticker placement & cards' },
-    { title: 'Anti-ShipBob Alternative', path: '/alternatives/shipbob/', desc: 'Zero minimum penalties & seamless migration' },
-    { title: 'ShipMonk Alternative', path: '/alternatives/shipmonk/', desc: 'Zero software subscription markups & floor Slack' },
-    { title: 'In-House Fulfillment Transition', path: '/alternatives/in-house-fulfillment/', desc: 'Stop packing boxes at 2 AM — reclaim 20 hrs/wk' },
+    { title: 'Motorcycle & Powersports', path: '/motorcycle-powersports-fulfillment/', desc: 'Exhausts, fenders & saddlebags with negotiated DIM relief' },
+    { title: 'Automotive Body Panels & Aero', path: '/automotive-parts-fulfillment/', desc: 'Bumpers, splitters & spoilers with high-cube storage' },
+    { title: 'Bulky & DIM-Weight Parcels', path: '/bulky-oversized-fulfillment/', desc: 'Large boxes, low actual weight, cut carrier DIM markups' },
+    { title: 'Michigan & Midwest Freight Hub', path: '/michigan-fulfillment/', desc: '1-Day ground reach to 68% of US via USPS & FedEx' },
+    { title: 'Shopify 3PL Fulfillment', path: '/shopify-3pl-fulfillment/', desc: 'Native 60-sec sync, instant tracking & $250 fair minimum' },
+    { title: 'Anti-ShipBob Alternative', path: '/alternatives/shipbob/', desc: 'Escape $1,500 minimum penalties & punitive DIM rates' },
+    { title: 'Custom Packaging & Kitting', path: '/custom-unboxing-3pl/', desc: 'Premium white-glove packaging, foam blocking & cards' },
+    { title: 'ShipMonk Alternative', path: '/alternatives/shipmonk/', desc: 'Zero software markups & direct floor Slack channel' },
+    { title: 'In-House Fulfillment Transition', path: '/alternatives/in-house-fulfillment/', desc: 'Stop packing boxes at 2 AM and reclaim 20 hrs/wk' },
   ];
 
   return (
@@ -88,24 +88,28 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div
         className="container"
         style={{
-          height: 64,
+          minHeight: 80,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '1rem',
+          paddingTop: '0.35rem',
+          paddingBottom: '0.35rem',
         }}
       >
         {/* Brand Logo - Crisp Single Line Lockup */}
         <div
           onClick={() => handleLinkClick('/')}
-          style={{ cursor: 'pointer', flexShrink: 0 }}
+          style={{ cursor: 'pointer', flexShrink: 0, display: 'flex', alignItems: 'center' }}
           aria-label="starshippp.com homepage"
         >
           <StarshipppLogo 
             variant="horizontal" 
             colorMode="dark" 
-            height={34} 
-            showTagline={false}
+            height={61} 
+            showTagline={true}
+            taglineText="3PL, WAREHOUSING & LOGISTICS"
+            taglineColor="#FF8500"
           />
         </div>
 
@@ -343,6 +347,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Action Controls & High-Polish CTA */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }} className="desktop-nav">
+          {/* Live Floor Ops Telemetry Radar Indicator */}
+          <div className="nav-telemetry-badge" title="Live Starshippp fulfillment operations floor status">
+            <span className="nav-telemetry-blip" />
+            <span>Floor Ops Live</span>
+          </div>
 
           {/* High-Polish Primary CTA: Get Quote */}
           <button

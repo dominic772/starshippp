@@ -12,27 +12,27 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      'Switched from ShipBob after getting slapped with $1,500 monthly dead-minimum penalties during off-peak season. First month at Starshippp: exactly $0 in fees beyond actual boxes shipped.',
-    author: 'Marcus L.',
+      'We ship slip-on exhausts and fender kits that standard carriers were dinging us 32 lbs DIM weight for. Starshippp’s negotiated DIM factor and cheap bulk warehouse storage cut our fulfillment bills by 40%, and we’ve literally had zero returns.',
+    author: 'Brett M.',
     role: 'Founder',
-    brand: 'Kinekt Activewear',
-    metric: '1,400 orders/mo • $0 Minimum Penalty',
+    brand: 'Apex Moto Gear',
+    metric: '1,400 orders/mo • 40% Carrier DIM Savings',
   },
   {
     quote:
-      'Dispatched 2,100 units same-day during our viral TikTok Shop drop with zero late dispatch rate (LDR) violations. The 1:00 PM EST guaranteed cutoff saved our merchant health badge.',
-    author: 'Elena S.',
-    role: 'COO',
-    brand: 'Glow Botanic Skincare',
-    metric: '2,200 orders/mo • 100% On-Time SLA',
+      'Storing 350 large bumper and spoiler SKUs at our old 3PL triggered $2,000 monthly oversized storage penalties. Starshippp stores our parts across 6,500 sq ft affordably, and our daily orders hit FedEx Home Delivery without delay.',
+    author: 'Tyler R.',
+    role: 'Operations Director',
+    brand: 'TrackCraft Aero',
+    metric: '6,500 sq ft Storage • Multi-SKU Auto Parts',
   },
   {
     quote:
-      'Having a direct Slack channel with our Pontiac packing lead replaced 48-hour Zendesk black holes. We hot-swap promotional cards and custom tissue folds in 5 minutes flat.',
-    author: 'David K.',
-    role: 'Co-Founder',
-    brand: 'Norden Hearth & Home',
-    metric: '850 orders/mo • &lt; 5 min Slack Response',
+      'Pre-assembled patio furniture and cushion sets are bulky and low weight. The fair $250/mo minimum, transparent pallet receiving, and USPS Ground Advantage contract saved our business from mega-3PL gouging.',
+    author: 'Sarah V.',
+    role: 'Founder',
+    brand: 'Timber & Sky Outdoor',
+    metric: '850 orders/mo • $250 Fair Account Minimum',
   },
 ];
 
@@ -80,7 +80,7 @@ export const TestimonialStrip: React.FC = () => {
             </span>
             <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>&bull;</span>
             <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>
-              Verified DTC brands doing 300 to 3,000 orders/month
+              Bulky parcel & multi-SKU brands doing 300 to 3,500 orders/month
             </span>
           </div>
 
@@ -96,7 +96,7 @@ export const TestimonialStrip: React.FC = () => {
             }}
           >
             <ShieldCheck size={14} color="#34D399" />
-            <span>ZERO MONTHLY MINIMUM PENALTIES GUARANTEED</span>
+            <span>$250 FAIR MINIMUM • NEGOTIATED DIM FACTOR</span>
           </div>
         </div>
 

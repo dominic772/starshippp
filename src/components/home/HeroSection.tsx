@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { HeroVideoSequencer } from '../video/HeroVideoSequencer';
+import { StarshipPhoneMockup } from './StarshipPhoneMockup';
 import {
   ArrowRight,
   Calculator,
   Send,
-  TrendingUp,
 } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -22,15 +22,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onScrollToCalculators,
   onOpenContactModal,
 }) => {
-  const [orderCounter, setOrderCounter] = useState<number>(1842);
-
-  // Subtle live order increment simulation
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setOrderCounter((prev) => prev + 1);
-    }, 18000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <section
@@ -39,7 +30,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        paddingTop: '6.5rem',
+        paddingTop: '9.25rem',
         paddingBottom: '5rem',
         overflow: 'hidden',
       }}
@@ -49,88 +40,99 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       <div className="container" style={{ position: 'relative', zIndex: 10 }}>
 
-        {/* Main Hero Header */}
-        <div style={{ maxWidth: 920 }}>
-
-          <h1
-            style={{
-              marginBottom: '1.25rem',
-              lineHeight: 1.08,
-              fontSize: 'clamp(2.1rem, 4.4vw, 3.8rem)',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            Boutique 3PL Fulfillment for DTC Brands.{' '}
-            <span
+        {/* Main Hero 2-Column Grid: Copy + Starship iPhone Mockup */}
+        <div
+          className="hero-grid-responsive"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 0.8fr)',
+            alignItems: 'center',
+            gap: '3rem',
+            marginBottom: '3.5rem',
+          }}
+        >
+          {/* Left Column: Mission Narrative & CTAs */}
+          <div style={{ maxWidth: 720 }}>
+            <h1
               style={{
-                display: 'inline-block',
-                background: 'linear-gradient(135deg, var(--text-white) 30%, #FF8800 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
+                marginBottom: '1.25rem',
+                lineHeight: 1.08,
+                fontSize: 'clamp(2.1rem, 3.8vw, 3.6rem)',
+                letterSpacing: '-0.02em',
               }}
             >
-              $0 Monthly Minimums.
-            </span>
-          </h1>
+              Fulfillment Built for Big Boxes & Low Weight.{' '}
+              <span
+                style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, var(--text-white) 30%, #FF8800 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                Crush Carrier DIM Penalties.
+              </span>
+            </h1>
 
-          <p
-            style={{
-              fontSize: 'clamp(1.15rem, 2vw, 1.38rem)',
-              lineHeight: 1.6,
-              color: '#FFFFFF',
-              fontWeight: 600,
-              textShadow: '0 1px 3px rgba(0, 0, 0, 0.95)',
-              marginBottom: '2.5rem',
-              maxWidth: 760,
-            }}
-          >
-            Logistics built for the next generation of DTC brands. Located in the Metro Detroit freight corridor with{' '}
-            <strong style={{ color: '#FFFFFF', fontWeight: 800 }}>$0 monthly minimum penalties</strong>,{' '}
-            zero hidden intake surcharges, high-touch custom unboxing (tissue, wax seals, custom inserts),{' '}
-            and a shared Slack channel directly to our Pontiac warehouse floor.
-          </p>
-
-          {/* Primary High-Contrast Solid CTAs (Zero Transparent Buttons) */}
-          {/* Streamlined Call to Action Row (Single-Line Fit) */}
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              gap: '1rem',
-              marginBottom: '3rem',
-            }}
-          >
-            {/* Pop-up Contact & Quote Form Trigger */}
-            <button
-              onClick={onOpenContactModal}
-              className="btn-primary"
+            <p
               style={{
-                padding: '1.25rem 2.6rem',
-                fontSize: '1.18rem',
-                fontWeight: 800,
-                letterSpacing: '0.01em',
+                fontSize: 'clamp(1.05rem, 1.5vw, 1.25rem)',
+                lineHeight: 1.6,
+                color: '#FFFFFF',
+                fontWeight: 600,
+                textShadow: '0 1px 3px rgba(0, 0, 0, 0.95)',
+                marginBottom: '2.5rem',
+                maxWidth: 680,
               }}
             >
-              <Send size={20} />
-              <span>Get Instant Quote</span>
-              <ArrowRight size={18} />
-            </button>
+              The dedicated 3PL for brands shipping bulky, lightweight freight, from motorcycle exhaust systems and fenders to automotive body panels, wheels, and outdoor gear. Leverage our <strong style={{ color: '#FFA733' }}>aggressive negotiated carrier DIM factor</strong>, low-cost central warehouse storage, and transparent <strong style={{ color: '#FFFFFF' }}>$250/mo minimum</strong> with USPS Ground Advantage, FedEx Home Delivery, and direct warehouse-floor Slack access.
+            </p>
 
-            {/* Rate Calculator Anchor */}
-            <button
-              onClick={onScrollToCalculators}
-              className="btn-secondary"
+            {/* Primary High-Contrast Solid CTAs */}
+            <div
               style={{
-                padding: '1.25rem 2.4rem',
-                fontSize: '1.15rem',
-                fontWeight: 800,
-                letterSpacing: '0.01em',
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                gap: '1rem',
               }}
             >
-              <Calculator size={20} color="var(--brand-orange)" />
-              <span>Calculate Your Rates</span>
-            </button>
+              {/* Pop-up Contact & Quote Form Trigger */}
+              <button
+                onClick={onOpenContactModal}
+                className="btn-primary"
+                style={{
+                  padding: '1.2rem 2.4rem',
+                  fontSize: '1.14rem',
+                  fontWeight: 800,
+                  letterSpacing: '0.01em',
+                }}
+              >
+                <Send size={20} />
+                <span>Get DIM-Relieved Quote</span>
+                <ArrowRight size={18} />
+              </button>
+
+              {/* Rate Calculator Anchor */}
+              <button
+                onClick={onScrollToCalculators}
+                className="btn-secondary"
+                style={{
+                  padding: '1.2rem 2.2rem',
+                  fontSize: '1.12rem',
+                  fontWeight: 800,
+                  letterSpacing: '0.01em',
+                }}
+              >
+                <Calculator size={20} color="var(--brand-orange)" />
+                <span>Calculate DIM Savings</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column: Starship Mobile App on iPhone 16 Pro */}
+          <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+            <StarshipPhoneMockup onOpenContactModal={onOpenContactModal} />
           </div>
         </div>
 
@@ -149,7 +151,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             boxShadow: '0 16px 40px -8px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
           }}
         >
-          {/* Metric 1: Monthly Minimums */}
+          {/* Metric 1: DIM Factor Arbitrage */}
           <div>
             <div
               style={{
@@ -163,7 +165,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
               }}
             >
-              Monthly Spend Minimum
+              Carrier DIM Factor
             </div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', lineHeight: 1.1 }}>
               <span
@@ -175,7 +177,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   letterSpacing: '-0.02em',
                 }}
               >
-                $0
+                Tier-1
               </span>
               <span
                 style={{
@@ -186,7 +188,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
                 }}
               >
-                (Never pay $1,500 penalty)
+                (Low-Density Relief)
               </span>
             </div>
             <div
@@ -199,11 +201,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
               }}
             >
-              Scale from 300 to 3,000+ orders without punitive idle fees.
+              Slash billable dimensional weight on large boxes by 30% to 55%.
             </div>
           </div>
 
-          {/* Metric 2: Live Daily Orders */}
+          {/* Metric 2: Transparent Minimum */}
           <div>
             <div
               style={{
@@ -217,7 +219,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
               }}
             >
-              Today's Orders Dispatched
+              Monthly Account Commitment
             </div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', lineHeight: 1.1 }}>
               <span
@@ -230,20 +232,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   textShadow: '0 2px 10px rgba(34, 211, 238, 0.25)',
                 }}
               >
-                {orderCounter.toLocaleString()}
+                $250
               </span>
               <span
                 style={{
                   fontSize: '0.8rem',
                   color: '#34D399',
                   fontWeight: 700,
-                  display: 'flex',
-                  alignItems: 'center',
                   letterSpacing: '0.01em',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
                 }}
               >
-                <TrendingUp size={14} strokeWidth={2.5} style={{ marginRight: 3, flexShrink: 0, color: '#34D399' }} /> 99.98% SLA
+                (Fair & Honest)
               </span>
             </div>
             <div
@@ -256,11 +256,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
               }}
             >
-              Live sweep synced to UPS, FedEx & USPS trailers.
+              Accessible entry floor with no predatory $1,500+ dead fees.
             </div>
           </div>
 
-          {/* Metric 3: Same-Day Cutoff */}
+          {/* Metric 3: Bulky Storage & Multi-SKU Capacity */}
           <div>
             <div
               style={{
@@ -274,7 +274,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
               }}
             >
-              Same-Day Cutoff
+              Bulk Storage & SKUs
             </div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', lineHeight: 1.1 }}>
               <span
@@ -286,7 +286,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   letterSpacing: '-0.02em',
                 }}
               >
-                1:00 PM
+                7,000+
               </span>
               <span
                 style={{
@@ -296,7 +296,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   letterSpacing: '0.04em',
                 }}
               >
-                EST
+                SQ FT
               </span>
             </div>
             <div
@@ -309,11 +309,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
               }}
             >
-              Orders sync via API and get on wheels before dusk.
+              Low-cost Michigan high-bay space for complex parts catalogs.
             </div>
           </div>
 
-          {/* Metric 4: Floor Access */}
+          {/* Metric 4: Floor Access & Carrier Trailers */}
           <div>
             <div
               style={{
@@ -353,7 +353,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.9)',
               }}
             >
-              Talk directly with packing leads, not 48-hr support bots.
+              Daily USPS Ground Advantage & FedEx Home Delivery sweeps.
             </div>
           </div>
         </div>

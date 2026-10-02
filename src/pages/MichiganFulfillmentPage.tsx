@@ -12,12 +12,12 @@ const MICHIGAN_FAQS: FaqItem[] = [
   {
     question: 'How do local Michigan and Midwest brands benefit from inventory injection in Pontiac?',
     answer:
-      'Local Michigan brands can drop inventory directly at our freight docks with $0 receiving surcharges, bypass costly cross-country LTL freight shipping to California, and offer their Midwest customers true next-day delivery.',
+      'Local Michigan brands can deliver inventory directly to our freight docks with transparent, honest receiving fees, bypass costly cross-country LTL freight shipping to California, and offer their Midwest customers true next-day delivery.',
   },
   {
     question: 'What carriers pick up daily from the Starshippp Pontiac facility?',
     answer:
-      'We have direct daily scheduled trailer sweeps from UPS (17:30 EST), FedEx Ground & Express (18:15 EST), and direct USPS postal hub sorting injections (17:00 EST).',
+      'We have direct daily scheduled trailer sweeps from USPS Ground Advantage, FedEx Home Delivery & Ground (18:15 EST), and UPS (17:30 EST), plus full international shipping dispatch.',
   },
 ];
 
@@ -30,7 +30,7 @@ export const MichiganFulfillmentPage: React.FC<{
     <div style={{ paddingTop: '5.5rem' }}>
       <StructuredData
         pageTitle="Michigan 3PL & Fulfillment Services | Pontiac Midwest Hub | starshippp.com"
-        pageDescription="Regional Metro Detroit and Midwest DTC fulfillment center in Pontiac, Michigan. 1-day ground shipping to 68% of the US, zero minimum order spend, and direct floor Slack access."
+        pageDescription="Regional Metro Detroit and Midwest fulfillment center in Pontiac, Michigan. 1-day ground shipping to 68% of the US, fair $250/mo minimum, and direct floor Slack access."
         canonicalUrl="https://starshippp.com/michigan-fulfillment/"
         faqs={MICHIGAN_FAQS}
         breadcrumbs={[
@@ -84,10 +84,10 @@ export const MichiganFulfillmentPage: React.FC<{
             <div className="glass-panel" style={{ padding: '2rem', borderRadius: 0, borderLeft: '3px solid #10B981' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1rem' }}>
                 <Truck size={20} color="#10B981" />
-                <h3 style={{ fontSize: '1.3rem', margin: 0 }}>$0 Pallet Receiving Fees</h3>
+                <h3 style={{ fontSize: '1.3rem', margin: 0 }}>Transparent Pallet Intake</h3>
               </div>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.6 }}>
-                Local and regional suppliers can deliver full truckloads or LTL pallets directly to our Pontiac loading docks with zero intake penalties, zero carton check fees, and 24-hr stock put-away.
+                Suppliers can deliver full truckloads or LTL pallets directly to our loading docks with transparent, fair intake fees ($25 to $35 per pallet), detailed SKU verification, and 24-hr stock put-away.
               </p>
             </div>
 

@@ -7,12 +7,12 @@ const SHIPBOB_FAQS: FaqItem[] = [
   {
     question: 'How do I migrate inventory from ShipBob to Starshippp without interrupting Shopify sales?',
     answer:
-      'We execute a Zero-Downtime Migration Protocol. First, we mirror your Shopify SKUs and catalog in Starshippp. Next, you issue a freight removal order from ShipBob directly to our Pontiac loading docks. During transit, ShipBob continues fulfilling orders from remaining units. The second your pallets are scanned into Starshippp (within 24 hours of arrival), order routing automatically shifts to our warehouse with zero sales blackout.',
+      'We execute a Zero-Downtime Migration Protocol. First, we mirror your Shopify SKUs and catalog in Starshippp. Next, you issue a freight removal order from ShipBob directly to our loading docks. During transit, ShipBob continues fulfilling orders from remaining units. The second your pallets are scanned into Starshippp (within 24 hours of arrival), order routing automatically shifts to our warehouse with zero sales blackout.',
   },
   {
     question: 'Why do DTC brands switch from ShipBob to starshippp.com?',
     answer:
-      'Brands switch because ShipBob enforces $1,500+ monthly spend minimums, charges $35-$45 per pallet inbound receiving fees, penalizes custom unboxing with excessive kitting markups, and forces founders into 48-hour Zendesk support ticket delays. Starshippp offers $0 minimums, $0 receiving surcharges, included tissue unboxing, and direct Slack floor access.',
+      'Brands switch because ShipBob enforces $1,500+ monthly spend minimums, inflates rates on large cartons with default 139 DIM divisors, penalizes custom unboxing with excessive kitting markups, and forces founders into 48-hour Zendesk ticketing delays. Starshippp offers an accessible $250/mo minimum, aggressive carrier DIM factor relief, transparent pallet receiving, and direct Slack floor access.',
   },
   {
     question: 'Does Starshippp charge hidden carrier fuel surcharges or invoice markups like legacy 3PLs?',
@@ -29,8 +29,8 @@ export const AlternativesShipbobPage: React.FC<{
   return (
     <div style={{ paddingTop: '5.5rem' }}>
       <StructuredData
-        pageTitle="The Anti-ShipBob 3PL Alternative | Zero Minimum Spend | starshippp.com"
-        pageDescription="Looking for a ShipBob alternative? Starshippp provides $0 monthly minimum penalties, zero receiving fees, direct floor Slack access, and a 30-day zero-downtime migration."
+        pageTitle="The Anti-ShipBob 3PL Alternative | Negotiated DIM Relief & $250 Minimum | starshippp.com"
+        pageDescription="Looking for a ShipBob alternative? Starshippp provides aggressive carrier DIM factor relief, fair $250/mo minimum commitment, transparent receiving, and direct floor Slack access."
         canonicalUrl="https://starshippp.com/alternatives/shipbob/"
         faqs={SHIPBOB_FAQS}
         breadcrumbs={[
@@ -41,15 +41,15 @@ export const AlternativesShipbobPage: React.FC<{
         howTo={{
           name: 'The 3-Step Zero-Downtime 3PL Migration Protocol',
           description:
-            'How to safely migrate e-commerce inventory from ShipBob to Starshippp in Pontiac, MI without disrupting live Shopify customer orders or suffering stockouts.',
+            'How to safely migrate e-commerce inventory from ShipBob to Starshippp without disrupting live Shopify customer orders or suffering stockouts.',
           steps: [
             {
               name: 'Step 1: Shopify SKU Catalog Mirroring',
               text: 'We clone your product catalog and barcode registry into Starshippp WMS in one click. Zero disruption to active frontends.',
             },
             {
-              name: 'Step 2: Coordinated Freight Transfer to Pontiac Hub',
-              text: 'ShipBob pallets ship to our Pontiac loading dock. ShipBob fulfills buffer inventory orders while freight is in transit.',
+              name: 'Step 2: Coordinated Freight Transfer to Midwest Hub',
+              text: 'ShipBob pallets ship to our loading dock. ShipBob fulfills buffer inventory orders while freight is in transit.',
             },
             {
               name: 'Step 3: 24-Hour Scan Check-In & Live Cutover',
@@ -70,11 +70,11 @@ export const AlternativesShipbobPage: React.FC<{
         <div className="container" style={{ position: 'relative', zIndex: 10 }}>
 
           <h1 style={{ maxWidth: 840, marginBottom: '1.25rem' }}>
-            Escape $1,500/Month Minimums & 48-Hour Support Tickets.
+            Escape $1,500/Month Minimums & Punitive DIM Penalties.
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--hero-subtitle-color)', maxWidth: 720, marginBottom: '2.25rem' }}>
-            ShipBob is designed for venture-backed conglomerates. If you're doing 300 to 3,000 orders/month, you're subsidizing their mega-warehouses. Starshippp is the boutique 3PL alternative to ShipBob—offering direct warehouse-floor Slack access, zero receiving fees, and zero monthly minimum penalties.
+            ShipBob is designed for venture-backed conglomerates. If you ship bulky boxes or products that hit dimensional weight, you're subsidizing their mega-warehouses. Starshippp is the boutique 3PL alternative, offering aggressive carrier DIM factor relief, cheap bulk storage, transparent pallet receiving, and a fair $250/mo minimum.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -106,23 +106,28 @@ export const AlternativesShipbobPage: React.FC<{
                 <tbody style={{ fontSize: '0.9rem' }}>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Monthly Minimum Spend</td>
-                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>$0 / mo (Zero penalty)</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$1,500 - $2,500 / mo penalty</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>$250 / mo (Fair & Sustainable)</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$1,500 to $2,500 / mo penalty</td>
+                  </tr>
+                  <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+                    <td style={{ padding: '1.1rem', fontWeight: 600 }}>Carrier DIM Weight Factor</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Aggressive Negotiated Divisor</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>Standard 139/166 (Punitive rate hikes)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Support Channel</td>
                     <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Direct Floor Slack (&lt; 5 min)</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>Ticketing portal (24-48 hr delay)</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>Ticketing portal (24 to 48 hr delay)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Receiving Intake Surcharge</td>
-                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>$0 Pallet Receiving Fee</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$35 - $45 / Pallet + SKU fees</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Transparent $25 to $35 / Pallet + SKU Audit</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$35 to $45 / Pallet + SKU scan gouging</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-                    <td style={{ padding: '1.1rem', fontWeight: 600 }}>Custom Tissue & Kitting</td>
-                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Included Standard</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$0.75 - $1.85 / item markup</td>
+                    <td style={{ padding: '1.1rem', fontWeight: 600 }}>Custom Packaging & Kitting</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Available Premium Add-On</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$0.75 to $1.85 / item markup</td>
                   </tr>
                   <tr>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Same-Day Dispatch Cutoff</td>
@@ -155,9 +160,9 @@ export const AlternativesShipbobPage: React.FC<{
                 <div style={{ color: 'var(--brand-orange)', fontFamily: 'var(--font-mono)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '0.5rem' }}>
                   STEP 02
                 </div>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Freight Transfer to Pontiac</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Freight Transfer to Midwest Hub</h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                  ShipBob pallets ship to our Pontiac freight docks. ShipBob fulfills the buffer while freight is in transit.
+                  ShipBob pallets ship to our freight docks. ShipBob fulfills the buffer while freight is in transit.
                 </p>
               </div>
 

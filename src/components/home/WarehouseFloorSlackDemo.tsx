@@ -17,11 +17,11 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
   const [messages, setMessages] = useState<SlackMessage[]>([
     {
       id: '1',
-      sender: 'Elena Vance (Founder @ Aurélien Skincare)',
+      sender: 'Brett Vance (Founder @ Vance Moto Performance)',
       avatarColor: '#3B82F6',
       isStaff: false,
       time: '11:42 AM',
-      text: 'Hey Pontiac team! Just dropped 200 orders from our TikTok live drop. Can we confirm the gold wax seal and black tissue wrap SOP is queued for today’s 1:00 PM dispatch?',
+      text: 'Hey Pontiac team! We just had 85 orders drop for our Dual Slip-On Exhausts and Touring Fender kits. Can we confirm the heavy-duty foam corner cradles are queued for today’s 1:00 PM trailer sweep?',
     },
     {
       id: '2',
@@ -29,16 +29,16 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
       avatarColor: '#FF6B00',
       isStaff: true,
       time: '11:45 AM',
-      text: 'Hey Elena! Packing Station 4 has all 200 orders on the staging rack right now. Tissue wrap and branded gold wax seals are dialed in. Here’s a live photo proof right off the packing line:',
-      imageUrl: '/images/boutique-unboxing.jpg',
+      text: 'Hey Brett! Packing Bay 3 has all 85 orders on the staging tables right now. Custom foam blocks are fitted and boxed in our 36x12x10 cartons under our negotiated DIM factor rate. Here’s a live photo proof right off the pack bench:',
+      imageUrl: '/images/target-motorcycle-parts.jpg',
     },
     {
       id: '3',
-      sender: 'Elena Vance (Founder @ Aurélien Skincare)',
+      sender: 'Brett Vance (Founder @ Vance Moto Performance)',
       avatarColor: '#3B82F6',
       isStaff: false,
       time: '11:48 AM',
-      text: 'That looks absolutely stunning!! Thank you Marcus. So relieved we don’t have to submit 48-hour Zendesk tickets anymore.',
+      text: 'That packaging is bulletproof! Old 3PL was dinging us 32 lbs DIM weight on those 8.5 lb exhaust pipes. You guys literally cut our carrier invoice in half, and we’ve had zero customer returns.',
     },
     {
       id: '4',
@@ -46,7 +46,7 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
       avatarColor: '#FF6B00',
       isStaff: true,
       time: '11:49 AM',
-      text: 'Anytime! Tracking numbers will push into your Shopify store automatically at 12:45 PM before UPS dock sweep. 🚀',
+      text: 'Anytime! Tracking pushes to Shopify at 12:45 PM before the FedEx Home Delivery and USPS trailers roll out. 🚀',
     },
   ]);
 
@@ -54,9 +54,9 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
   const [isTyping, setIsTyping] = useState(false);
 
   const quickPrompts = [
-    'Can we hold order #4920 for an urgent address change?',
-    'Could you send photo proof of the new sticker placement?',
-    'What’s the current inventory count for SKU-VELVET-ROBE?',
+    'Can we hold order #8492 for an urgent address change on the exhaust kit?',
+    'What’s the current pallet inventory count for SKU-EXH-FATBOY-BLK?',
+    'Could you verify carton breakdown on our inbound pallet delivery?',
   ];
 
   const handleSendMessage = (textToSend?: string) => {
@@ -65,7 +65,7 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
 
     const userMsg: SlackMessage = {
       id: Date.now().toString(),
-      sender: 'You (DTC Founder)',
+      sender: 'You (Brand Founder)',
       avatarColor: '#8B5CF6',
       isStaff: false,
       time: 'Just now',
@@ -82,12 +82,14 @@ export const WarehouseFloorSlackDemo: React.FC = () => {
       let replyImg: string | undefined = undefined;
 
       if (text.toLowerCase().includes('hold') || text.toLowerCase().includes('address')) {
-        replyText = 'Order has been pulled from conveyor bay #2 and put on hold! Send over the revised address and we will relabel it before the 1:00 PM trailer sweep.';
-      } else if (text.toLowerCase().includes('photo') || text.toLowerCase().includes('sticker') || text.toLowerCase().includes('proof')) {
+        replyText = 'Order #8492 has been pulled from staging bay #3 and placed on hold! Send over the revised address and we will relabel it before the 1:00 PM trailer sweep.';
+      } else if (text.toLowerCase().includes('photo') || text.toLowerCase().includes('sticker') || text.toLowerCase().includes('proof') || text.toLowerCase().includes('pack')) {
         replyText = 'Here is the high-res photo proof of the packaging line right off our Pontiac packing bench:';
-        replyImg = '/images/boutique-unboxing.jpg';
+        replyImg = '/images/target-motorcycle-parts.jpg';
       } else if (text.toLowerCase().includes('count') || text.toLowerCase().includes('sku') || text.toLowerCase().includes('inventory')) {
-        replyText = 'Scanned bin #C-14: Exactly 342 units counted and verified in physical stock. WMS inventory count is 100% synchronized.';
+        replyText = 'Scanned high-bay rack #A-14: Exactly 184 units of SKU-EXH-FATBOY-BLK counted across 4 pallets. WMS inventory count is 100% synchronized.';
+      } else if (text.toLowerCase().includes('pallet') || text.toLowerCase().includes('inbound') || text.toLowerCase().includes('carton')) {
+        replyText = 'Inbound freight dock confirmed: 4 pallets received, 68 cartons unloaded, and all 5 SKUs verified against ASN within 30 minutes.';
       }
 
       const floorReply: SlackMessage = {

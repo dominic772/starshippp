@@ -328,11 +328,11 @@ export const ContactFormSection: React.FC = () => {
                     fontWeight: 600,
                   }}
                 >
-                  PRODUCT TYPES & PACKAGING REQUIREMENTS (OPTIONAL)
+                  PRODUCT TYPES, BOX DIMENSIONS & STORAGE NEEDS (OPTIONAL)
                 </label>
                 <textarea
                   rows={3}
-                  placeholder="e.g., Apparel items, custom tissue wrap & sticker seal. Need to migrate before next quarter."
+                  placeholder="e.g. Motorcycle exhaust systems & fenders, 400 SKUs, high-cube boxes hitting DIM penalties. Need ~5,000 to 7,000 sq ft bulk storage and USPS / FedEx rates."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   style={{

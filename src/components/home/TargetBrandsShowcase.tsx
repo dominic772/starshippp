@@ -11,10 +11,10 @@ import {
   ChevronLeft, 
   ChevronRight,
   Send,
-  Sparkles,
-  Shirt,
-  Crown,
-  Flame,
+  Wrench,
+  Shield,
+  Sun,
+  Disc,
 } from 'lucide-react';
 
 interface TargetBrandsShowcaseProps {
@@ -38,76 +38,76 @@ interface ProductShowcaseItem {
 
 const TARGET_PRODUCTS: ProductShowcaseItem[] = [
   {
-    id: 'skincare',
-    category: 'Cosmetics & Skincare',
-    badge: 'Fragile Glass & Serums',
-    icon: Sparkles,
-    title: 'Clean Beauty & Amber Glass Unboxing',
+    id: 'motorcycle',
+    category: 'Motorcycle & Powersports',
+    badge: 'High DIM • Low Actual Weight',
+    icon: Wrench,
+    title: 'Exhaust Systems, Fenders & Saddlebag Kits',
+    orderVolume: '300 to 3,500 Orders / Month',
+    image: '/images/target-motorcycle-parts.jpg',
+    description: 'Slip-on performance exhausts, extended touring fenders, fairings, and saddlebag kits that ship in large corrugated cartons with low actual weight, incurring severe retail carrier DIM penalties.',
+    mega3plFlaw: 'Mega-3PLs apply default 139/166 dim factors, tripling the billable shipping weight on an 8 lb exhaust pipe to 32+ lbs, while slapping punitive oversized carton storage surcharges.',
+    starshipppEdge: [
+      'Aggressive negotiated carrier DIM factor delivering 35% to 55% postage savings',
+      'High-density foam nesting and reinforced corners to prevent transit scratches and dents',
+      'Huge high-bay storage footprint at our central facility at a fraction of coastal 3PL rates',
+      'Zero customer return headaches: specialized parts verification before dock loading'
+    ],
+    sopHighlight: 'SOP-MOTO-01: Dual-point foam corner lock + dimensional carrier barcode scan'
+  },
+  {
+    id: 'automotive',
+    category: 'Automotive Body Panels & Aero',
+    badge: 'Oversized Cartons • Zero Flex',
+    icon: Shield,
+    title: 'Bumpers, Carbon Spoilers & Aero Splitters',
+    orderVolume: '250 to 2,000 Orders / Month',
+    image: '/images/target-automotive-panels.jpg',
+    description: 'Precision carbon fiber rear wings, front splitters, side skirts, and replacement bumper covers requiring large-format storage footprint and careful structural packaging.',
+    mega3plFlaw: 'Mega-3PLs reject large automotive SKUs outright or charge astronomical $65+/pallet storage penalties with untrained pickers who snap delicate tabs and splitters.',
+    starshipppEdge: [
+      'Specialized wide-carton staging benches with rigid foam blocking and edge protectors',
+      'Cost-effective storage accommodating 5,000 to 10,000+ sq ft automotive inventories',
+      'Carrier trailer direct-load for FedEx Home Delivery & USPS Ground Advantage',
+      'Experienced warehouse team familiar with automotive fitment and complex SKU lists'
+    ],
+    sopHighlight: 'SOP-AERO-03: Full-perimeter foam rail block + carbon weave surface barrier'
+  },
+  {
+    id: 'outdoor',
+    category: 'Outdoor Furniture & Patio Gear',
+    badge: 'High-Cube Storage • Near-Zero Returns',
+    icon: Sun,
+    title: 'Pre-Assembled Patio Sets, Cushions & Canopy Frames',
     orderVolume: '300 to 2,500 Orders / Month',
-    image: '/images/target-skincare-unboxing.jpg',
-    description: 'Boutique organic skincare, delicate serum droppers, and facial crèmes requiring climate-monitored storage, batch lot tracking, and zero-breakage cushioning.',
-    mega3plFlaw: 'Mega-3PLs toss glass bottles into oversized brown boxes with a single deflated air pillow, leading to a 4.2% breakage rate, customer refunds, and a $1.25/unit "fragile surcharge".',
+    image: '/images/target-outdoor-furniture.jpg',
+    description: 'Lightweight aluminum outdoor chairs, commercial patio cushions, and canopy hardware. Bulky cubic volume with high consumer satisfaction and negligible return propensity.',
+    mega3plFlaw: 'Mega-3PLs treat bulky outdoor products as warehouse clutter, penalizing cubic storage volume and misplacing multi-carton modular sets.',
     starshipppEdge: [
-      'Snug corrugated mailers nested with custom zig-zag crinkle paper bed',
-      'Batch lot & expiration date scanning for 100% FDA compliance',
-      'Printed brand insert & thank-you note placed precisely on top of contents',
-      'Zero broken glass guarantee with precision bubble wrap wraps'
+      'Strict exclusion of assemble-yourself flatpack returns, dedicated to low-return durable gear',
+      'Economical bulk pallet racking with cost-effective warehouse floor space designed for high-cube goods',
+      'Multi-carton matching barcode scans ensuring cushions and frames ship together',
+      'Direct freight dock coordination for LTL replenishment and domestic parcel distribution'
     ],
-    sopHighlight: 'SOP-CS-04: Dual-point dropper seal inspection + cushioned mailer nesting'
+    sopHighlight: 'SOP-OUT-02: Multi-box parent/child SKU barcode pairing + weather-seal wrap'
   },
   {
-    id: 'apparel',
-    category: 'Apparel & Streetwear',
-    badge: 'Multi-SKU & Drops',
-    icon: Shirt,
-    title: 'Curated Streetwear & High-End Fashion',
+    id: 'wheels',
+    category: 'Wheels, Rims & Bulky Lifestyle',
+    badge: 'Heavy & Bulky Parcels • Multi-SKU',
+    icon: Disc,
+    title: 'Aftermarket Alloy Wheels, Rims & Hard Cases',
     orderVolume: '400 to 3,000 Orders / Month',
-    image: '/images/target-apparel-packaging.jpg',
-    description: 'Designer hoodies, cut-and-sew tees, and capsule collections requiring precise variant barcode verification, garment steaming, and premium presentation.',
-    mega3plFlaw: 'Mega-3PLs stuff garments into flimsy grey polybags wrinkled and uninspected. Barcode misses cause 12% wrong-size dispatch errors that ruin customer trust.',
+    image: '/images/target-wheels-tires.jpg',
+    description: 'Custom forged alloy wheels, wheel-and-tire packages, and oversized equipment hard cases with extensive SKU variants across multiple bolt patterns and finishes.',
+    mega3plFlaw: 'Mega-3PL automated sortation belts scratch machined rim faces and drop heavy wheel cartons, triggering costly damage claims and angry enthusiast reviews.',
     starshipppEdge: [
-      'Crisp fold & slide into premium frosted matte zip-lock polybags',
-      'Double optical barcode scan (Hangtag + SKU polybag label) on every unit',
-      'Branded vinyl sticker pack and lookbook card carefully staged on top',
-      'Same-day returns inspection, re-folding, and inventory restock'
+      'Precision face-cushion disc guards and reinforced double-wall corrugated boxing',
+      'Open-API WMS with real-time barcode telemetry across 1,000+ complex SKUs',
+      'USPS Ground Advantage & FedEx Home Delivery commercial discounted rates',
+      'Seamless international shipping capabilities with pre-cleared customs documentation'
     ],
-    sopHighlight: 'SOP-AP-02: Precision fold to 12x15" footprint + sticker bundle inclusion'
-  },
-  {
-    id: 'unboxing',
-    category: 'Custom Luxury Goods',
-    badge: 'Wax Seals & Tissue Wrap',
-    icon: Crown,
-    title: 'Artisan Goods & High-AOV Keepsakes',
-    orderVolume: '300 to 1,800 Orders / Month',
-    image: '/images/target-luxury-waxseal.jpg',
-    description: 'Artisan leather goods, hand-poured luxury candles, and personalized artisan gifts where the packaging is the product.',
-    mega3plFlaw: 'Mega-3PLs outright refuse custom unboxing SOPs, or charge an exorbitant $2.50+ fee only to haphazardly smash tissue paper and miss personalized inserts.',
-    starshipppEdge: [
-      'Custom burnt orange tissue wrap hand-folded with crisp geometric creases',
-      'Embossed metallic gold wax seal stamp applied to each gift envelope',
-      'Personalized handwritten/printed calligraphic recipient cards inserted',
-      'White-glove placement: every unboxing looks like an influencer PR package'
-    ],
-    sopHighlight: 'SOP-LUX-09: Embossed wax seal alignment + tissue origami fold'
-  },
-  {
-    id: 'tiktok',
-    category: 'TikTok Shop & Viral DTC',
-    badge: '24-Hour Dispatch SLA',
-    icon: Flame,
-    title: 'Fast-Paced Social Commerce & Tumblers',
-    orderVolume: '500 to 3,000 Orders / Month',
-    image: '/images/target-tiktok-viral.jpg',
-    description: 'Trendy insulated drinkware, viral creator accessories, and lifestyle drops experiencing dramatic flash-sale volume spikes.',
-    mega3plFlaw: 'Mega-3PLs take 48 to 72 hours just to acknowledge sudden flash-sale spikes, triggering immediate TikTok Shop Late Dispatch Rate (LDR) violations and account bans.',
-    starshipppEdge: [
-      'Same-day 1:00 PM EST fulfillment guarantee synchronized to TikTok Shop API',
-      'Vibrant branded box tape, bubble-sleeve tumbler protection, and QR review inserts',
-      'Elastic burst capacity: we scale up pickers instantly during viral weekend spikes',
-      'Zero penalties for order spikes or post-drop volume fluctuations'
-    ],
-    sopHighlight: 'SOP-TTS-01: Auto-ingest orders via webhook + 24hr carrier dock dispatch'
+    sopHighlight: 'SOP-RIM-04: Non-scratch felt face wrap + heavy-duty reinforced box strap'
   }
 ];
 
@@ -500,12 +500,12 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
                 <DollarSign size={20} />
               </div>
               <div>
-                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>$0 Penalties vs $1,500 Fines</h4>
-                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: '#34D399' }}>ZERO MINIMUM PENALTIES</div>
+                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>$250 Minimum vs $1,500 Fines</h4>
+                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: '#34D399' }}>FAIR & TRANSPARENT</div>
               </div>
             </div>
             <p style={{ fontSize: '0.9rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.55, textShadow: '0 1px 3px rgba(0,0,0,0.85)' }}>
-              Mega-3PLs charge brutal $1,500/month "minimum spend" penalties if your monthly order count dips. Starshippp has $0 monthly minimums. Grow at your own cadence, navigate seasonal valleys, and never pay a penalty for shipping fewer units.
+              Mega-3PLs charge brutal $1,500 to $2,500/month "minimum spend" penalties if order volume dips. Starshippp has an accessible $250/mo minimum account commitment. We are fair partners who ensure your inventory is protected without extractive idle fees.
             </p>
           </div>
 
@@ -534,12 +534,12 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
                 <Zap size={20} />
               </div>
               <div>
-                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>High-Touch Custom Unboxing</h4>
-                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--status-cyan)' }}>CUSTOM UNBOXING SOPS</div>
+                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>Negotiated Carrier DIM Relief</h4>
+                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--status-cyan)' }}>CRUSH DIMENSIONAL RATES</div>
               </div>
             </div>
             <p style={{ fontSize: '0.9rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.55, textShadow: '0 1px 3px rgba(0,0,0,0.85)' }}>
-              Your brand is not an Amazon brown box. We follow your custom unboxing manual to the millimeter: stamped wax seals, crisp tissue folds, sticker packs, and handwritten cards. Turn every delivery into an organic unboxing video for TikTok & Instagram.
+              Shipping big boxes doesn’t have to bankrupt your margins. We’ve negotiated Tier-1 carrier DIM divisors with USPS Ground Advantage and FedEx Home Delivery, cutting billable weight on bulky lightweight goods by up to 55%. Premium custom packaging and kitting are also available on demand.
             </p>
           </div>
         </div>

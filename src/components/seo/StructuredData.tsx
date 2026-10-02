@@ -35,8 +35,8 @@ interface StructuredDataProps {
 }
 
 export const StructuredData: React.FC<StructuredDataProps> = ({
-  pageTitle = 'starshippp.com | Boutique 3PL & Fulfillment Hub | Pontiac, Michigan',
-  pageDescription = 'The boutique 3PL built for DTC founders — not enterprise conglomerates. $0 monthly minimums, direct Slack access to our Pontiac warehouse floor, and custom luxury unboxing for 300 to 3,000 orders/month. Get rates today.',
+  pageTitle = 'starshippp.com | Bulky & DIM-Weight 3PL Fulfillment | Pontiac, Michigan',
+  pageDescription = 'Specialized 3PL for large boxes and low weight. Negotiated carrier DIM factor relief, cheap bulk storage, transparent $250/mo minimum, and direct floor Slack access in Pontiac, MI.',
   canonicalUrl = 'https://starshippp.com',
   faqs = [],
   breadcrumbs = [],
@@ -68,7 +68,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({
         logo: 'https://starshippp.com/images/starshippp-logo.png',
         slogan: 'Precision, Postage, Partnership. The Anti-Mega-3PL.',
         description:
-          'A modern, tech-native boutique 3PL and fulfillment hub located in Pontiac, Michigan specializing in DTC brands doing 300 to 3,000 orders/month.',
+          'A modern, tech-native boutique 3PL and fulfillment hub located in Pontiac, Michigan specializing in bulky, high-cube, and DIM-weight e-commerce.',
         foundingLocation: {
           '@type': 'Place',
           name: 'Pontiac, Michigan',
@@ -88,7 +88,7 @@ export const StructuredData: React.FC<StructuredDataProps> = ({
         name: 'starshippp.com Pontiac Fulfillment Center',
         image: 'https://starshippp.com/images/og-social-card.jpg',
         telephone: '+1-248-555-0199',
-        priceRange: '$$ - $0 Monthly Minimum Penalties',
+        priceRange: '$$ - $250 Fair Monthly Minimum',
         address: {
           '@type': 'PostalAddress',
           streetAddress: '391 E Wilson Ave',
@@ -114,14 +114,14 @@ export const StructuredData: React.FC<StructuredDataProps> = ({
       {
         '@type': 'LogisticsService',
         '@id': `${canonicalUrl}#service`,
-        name: 'Boutique E-commerce Pick, Pack & Ship',
+        name: 'Bulky & DIM-Weight E-commerce Pick, Pack & Ship',
         provider: {
           '@id': 'https://starshippp.com/#organization',
         },
-        serviceType: 'DTC Fulfillment & High-Touch Custom Unboxing',
+        serviceType: 'Bulky & Large Box 3PL Fulfillment',
         areaServed: 'United States',
         description:
-          'Boutique 3PL offering $0 monthly order minimum penalties, custom luxury unboxing (wax seals, custom tissue), same-day 1:00 PM EST SLA dispatch, and direct floor Slack channel access.',
+          'Specialized 3PL offering negotiated carrier DIM factor relief, transparent $250/mo account commitment, high-bay bulk storage, USPS Ground Advantage & FedEx Home Delivery, and direct floor Slack access.',
         ...(rating
           ? {
               aggregateRating: {

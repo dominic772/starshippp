@@ -55,7 +55,7 @@ export const ApparelFashionPage: React.FC<{
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--hero-subtitle-color)', maxWidth: 720, marginBottom: '2.25rem' }}>
-            Starshippp delivers specialized apparel and fashion fulfillment with high-accuracy SKU variant matrix scanning, garment steaming, crystal polybagging, and same-day returns processing—eliminating wrong-size shipping errors for growing clothing brands.
+            Starshippp delivers specialized apparel and fashion fulfillment with high-accuracy SKU variant matrix scanning, garment steaming, crystal polybagging, and same-day returns processing, eliminating wrong-size shipping errors for growing clothing brands.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>

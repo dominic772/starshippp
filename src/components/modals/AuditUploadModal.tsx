@@ -209,7 +209,7 @@ export const AuditUploadModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     Scanning Billing Surcharges & DIM Weights...
                   </div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--brand-orange-light)' }}>
-                    Benchmarking against Starshippp Commercial Plus rates & $0 minimums
+                    Benchmarking against Starshippp Tier-1 rates & $250 fair minimums
                   </div>
                 </div>
               </div>
@@ -314,7 +314,7 @@ export const AuditUploadModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                       color: 'var(--text-white)',
                     }}
                   >
-                    <option value="300-500 orders/mo">300 to 500 orders/mo (Boutique Launch)</option>
+                    <option value="300-500 orders/mo">300 to 500 orders/mo (Bulky & Mid-Volume Growth)</option>
                     <option value="500-1,500 orders/mo">500 to 1,500 orders/mo (Scaling DTC)</option>
                     <option value="1,500-3,000 orders/mo">1,500 to 3,000 orders/mo (High Velocity)</option>
                     <option value="3,000+ orders/mo">3,000+ orders/mo (Omnichannel Enterprise)</option>

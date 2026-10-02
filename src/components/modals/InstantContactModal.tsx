@@ -363,7 +363,7 @@ export const InstantContactModal: React.FC<InstantContactModalProps> = ({
                   style={{ width: 18, height: 18, accentColor: 'var(--brand-orange)', cursor: 'pointer' }}
                 />
                 <label htmlFor="customUnboxingCheckbox" style={{ fontSize: '0.88rem', color: 'var(--text-primary)', cursor: 'pointer' }}>
-                  <strong style={{ color: 'var(--text-white)' }}>Custom Boutique Unboxing required:</strong> Tissue paper wrapping, wax seals, custom inserts, or branded tape.
+                  <strong style={{ color: 'var(--text-white)' }}>Custom Packaging / Specialized Protective Kitting (Add-On):</strong> Foam corner blocks, custom corrugated inserts, branded tape, or high-touch unboxing.
                 </label>
               </div>
 
@@ -383,7 +383,7 @@ export const InstantContactModal: React.FC<InstantContactModalProps> = ({
                 </label>
                 <textarea
                   rows={2}
-                  placeholder="e.g., Skincare glass bottles, 12 active SKUs, looking to migrate next month."
+                  placeholder="e.g. Motorcycle slip-on exhausts & fairings, 85 SKUs, ~4,000 sq ft storage, looking to cut carrier DIM penalties."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   style={{

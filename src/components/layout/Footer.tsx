@@ -49,13 +49,15 @@ export const Footer: React.FC<FooterProps> = ({
               <StarshipppLogo 
                 variant="horizontal" 
                 colorMode="dark" 
-                height={42} 
+                height={71} 
                 showTagline={true} 
+                taglineText="3PL, WAREHOUSING & LOGISTICS"
+                taglineColor="#FF8500"
               />
             </div>
 
             <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '1.25rem' }}>
-              The anti-mega-3PL. Built specifically for high-growth DTC brands doing 300 to 3,000 orders/month. Zero monthly minimum penalties, zero hidden receiving surcharges, and direct warehouse-floor Slack access.
+              The anti-mega-3PL built for large boxes, low weights, and high-footprint catalogs. Fair $250/mo minimums, transparent pallet intake, negotiated carrier DIM factor relief, and direct warehouse-floor Slack access.
             </p>
 
             <div
@@ -95,11 +97,29 @@ export const Footer: React.FC<FooterProps> = ({
             <ul style={{ listStyle: 'none', display: 'grid', gap: '0.65rem', fontSize: '0.88rem' }}>
               <li>
                 <a
-                  href="/shopify-3pl-fulfillment/"
-                  onClick={(e) => { e.preventDefault(); onNavigate('/shopify-3pl-fulfillment/'); window.scrollTo(0,0); }}
-                  style={{ color: 'var(--text-secondary)' }}
+                  href="/motorcycle-powersports-fulfillment/"
+                  onClick={(e) => { e.preventDefault(); onNavigate('/motorcycle-powersports-fulfillment/'); window.scrollTo(0,0); }}
+                  style={{ color: 'var(--text-white)', fontWeight: 600 }}
                 >
-                  Shopify 3PL Fulfillment
+                  Motorcycle & Powersports
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/automotive-parts-fulfillment/"
+                  onClick={(e) => { e.preventDefault(); onNavigate('/automotive-parts-fulfillment/'); window.scrollTo(0,0); }}
+                  style={{ color: 'var(--text-white)', fontWeight: 600 }}
+                >
+                  Automotive Panels & Aero
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/bulky-oversized-fulfillment/"
+                  onClick={(e) => { e.preventDefault(); onNavigate('/bulky-oversized-fulfillment/'); window.scrollTo(0,0); }}
+                  style={{ color: 'var(--brand-orange-light)', fontWeight: 600 }}
+                >
+                  Bulky & DIM Weight Parcels
                 </a>
               </li>
               <li>
@@ -113,29 +133,11 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="/tiktok-shop-fulfillment/"
-                  onClick={(e) => { e.preventDefault(); onNavigate('/tiktok-shop-fulfillment/'); window.scrollTo(0,0); }}
+                  href="/shopify-3pl-fulfillment/"
+                  onClick={(e) => { e.preventDefault(); onNavigate('/shopify-3pl-fulfillment/'); window.scrollTo(0,0); }}
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                  TikTok Shop SLA Engine
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/apparel-fashion-fulfillment/"
-                  onClick={(e) => { e.preventDefault(); onNavigate('/apparel-fashion-fulfillment/'); window.scrollTo(0,0); }}
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  Apparel & Variant Matrix
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/cosmetics-skincare-fulfillment/"
-                  onClick={(e) => { e.preventDefault(); onNavigate('/cosmetics-skincare-fulfillment/'); window.scrollTo(0,0); }}
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  Cosmetics & Lot Tracking
+                  Shopify 3PL Fulfillment
                 </a>
               </li>
               <li>
@@ -144,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={(e) => { e.preventDefault(); onNavigate('/custom-unboxing-3pl/'); window.scrollTo(0,0); }}
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                  High-Touch Custom Unboxing
+                  Custom Packaging (Add-On)
                 </a>
               </li>
               <li>

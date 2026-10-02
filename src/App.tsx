@@ -3,6 +3,9 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
 import { MichiganFulfillmentPage } from './pages/MichiganFulfillmentPage';
+import { MotorcyclePowersportsPage } from './pages/MotorcyclePowersportsPage';
+import { AutomotivePanelsPage } from './pages/AutomotivePanelsPage';
+import { BulkyDimWeightPage } from './pages/BulkyDimWeightPage';
 import { ApparelFashionPage } from './pages/ApparelFashionPage';
 import { CosmeticsSkincarePage } from './pages/CosmeticsSkincarePage';
 import { TikTokShopPage } from './pages/TikTokShopPage';
@@ -72,6 +75,27 @@ export function App() {
       case '/michigan-fulfillment/':
         return (
           <MichiganFulfillmentPage
+            onOpenAuditModal={() => setIsAuditModalOpen(true)}
+            onOpenSettings={() => setIsSettingsModalOpen(true)}
+          />
+        );
+      case '/motorcycle-powersports-fulfillment/':
+        return (
+          <MotorcyclePowersportsPage
+            onOpenAuditModal={() => setIsAuditModalOpen(true)}
+            onOpenSettings={() => setIsSettingsModalOpen(true)}
+          />
+        );
+      case '/automotive-parts-fulfillment/':
+        return (
+          <AutomotivePanelsPage
+            onOpenAuditModal={() => setIsAuditModalOpen(true)}
+            onOpenSettings={() => setIsSettingsModalOpen(true)}
+          />
+        );
+      case '/bulky-oversized-fulfillment/':
+        return (
+          <BulkyDimWeightPage
             onOpenAuditModal={() => setIsAuditModalOpen(true)}
             onOpenSettings={() => setIsSettingsModalOpen(true)}
           />

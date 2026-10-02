@@ -7,7 +7,7 @@ const UNBOXING_FAQS: FaqItem[] = [
   {
     question: 'How much does Starshippp charge for custom unboxing kitting, tissue folding, and wax seals?',
     answer:
-      'Unlike legacy mega-3PLs that charge punitive fees of $0.85 to $1.85 per kitting touchpoint, starshippp.com includes boutique unboxing touches (tissue paper wrap, branded sticker placement, and insert card) standard in our base pick & pack fee. Custom hot-wax seals are applied for an ultra-low flat fee of just $0.35/box.',
+      'We offer custom packaging, tailored kitting, branded tissue wraps, and wax seals as a dedicated premium add-on service. Rather than forcing expensive kitting into base rates or gouging founders with surprise fees, we provide transparent, flat per-touch add-on pricing tailored to your brand’s exact packaging SOPs.',
   },
   {
     question: 'How does high-touch unboxing impact customer retention and repeat purchase rates?',
@@ -55,7 +55,7 @@ export const CustomUnboxingPage: React.FC<{
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--hero-subtitle-color)', maxWidth: 720, marginBottom: '2.25rem' }}>
-            Mega-3PLs treat your brand like an anonymous brown box thrown onto a truck. Starshippp provides custom luxury unboxing fulfillment—wrapping each order in crisp branded tissue, pressing custom wax seals, and positioning insert cards with millimeter precision for maximum customer retention.
+            Looking for more than a standard box? Starshippp offers high-touch custom unboxing and tailored kitting as a dedicated premium add-on service. We execute your brand guidelines to the millimeter: branded tissue folding, embossed wax seals, and personalized insert cards.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>

@@ -12,7 +12,7 @@ const SHOPIFY_FAQS: FaqItem[] = [
   {
     question: 'How are Shopify order tracking numbers and fulfillment statuses updated?',
     answer:
-      'The exact millisecond an outbound package is scanned and weighed at our Pontiac dispatch bay, Starshippp writes back the carrier name (USPS, UPS, FedEx, DHL), tracking number, and marked-as-fulfilled status directly to your Shopify Admin. Automated customer dispatch notifications trigger instantaneously.',
+      'The exact millisecond an outbound package is scanned and weighed at our warehouse dispatch bay, Starshippp writes back the carrier name (USPS, UPS, FedEx, DHL), tracking number, and marked-as-fulfilled status directly to your Shopify Admin. Automated customer dispatch notifications trigger instantaneously.',
   },
   {
     question: 'Do you support Shopify bundles, kitting, and multi-location inventory routing?',
@@ -22,7 +22,7 @@ const SHOPIFY_FAQS: FaqItem[] = [
   {
     question: 'Why choose Starshippp over legacy Shopify 3PL networks or ShipBob?',
     answer:
-      'Mega-3PLs enforce $1,500 to $2,500 monthly spend penalties, charge steep receiving surcharges per pallet, and route support through impersonal Zendesk ticketing queues. Starshippp offers $0 monthly minimum penalties, direct Pontiac floor Slack access, and boutique custom unboxing tailored for brands doing 300 to 3,000 orders/month.',
+      'Mega-3PLs enforce $1,500 to $2,500 monthly spend penalties, charge steep receiving surcharges per pallet, and route support through impersonal Zendesk ticketing queues. Starshippp offers a fair $250 monthly minimum, direct floor Slack access, and transparent receiving for growing brands doing 300 to 3,500 orders/month.',
   },
 ];
 
@@ -34,8 +34,8 @@ export const ShopifyFulfillmentPage: React.FC<{
   return (
     <div style={{ paddingTop: '5.5rem' }}>
       <StructuredData
-        pageTitle="Shopify 3PL Fulfillment Center | Real-Time Sync & $0 Minimums | starshippp.com"
-        pageDescription="The premier Shopify 3PL fulfillment partner for DTC brands doing 300 to 3,000 orders/month. Instant 60-second Shopify integration, automated tracking writebacks, and direct floor Slack."
+        pageTitle="Shopify 3PL Fulfillment Center | Real-Time Sync & $250 Minimum | starshippp.com"
+        pageDescription="The premier Shopify 3PL fulfillment partner for DTC brands doing 300 to 3,500 orders/month. Instant 60-second Shopify integration, automated tracking writebacks, and direct floor Slack."
         canonicalUrl="https://starshippp.com/shopify-3pl-fulfillment/"
         faqs={SHOPIFY_FAQS}
         breadcrumbs={[
@@ -46,15 +46,15 @@ export const ShopifyFulfillmentPage: React.FC<{
         howTo={{
           name: 'Connecting Your Shopify Store to Starshippp in 3 Simple Steps',
           description:
-            'How to connect your Shopify store to Starshippp 3PL warehouse in Pontiac, Michigan with zero downtime or developer assistance.',
+            'How to connect your Shopify store to Starshippp 3PL warehouse with zero downtime or developer assistance.',
           steps: [
             {
               name: 'Step 1: One-Click OAuth Store Connection',
               text: 'Authorize the Starshippp app in your Shopify admin. Product catalog and active SKUs mirror into our WMS within 60 seconds.',
             },
             {
-              name: 'Step 2: Inventory Inbound to Pontiac Freight Docks',
-              text: 'Ship factory cartons or pallets to our Michigan facility. We barcode, check-in, and stow inventory within 24 hours of delivery with $0 receiving fees.',
+              name: 'Step 2: Inventory Inbound to Freight Docks',
+              text: 'Ship factory cartons or pallets to our Michigan facility. We barcode, check-in, and stow inventory within 24 hours with transparent pallet receiving fees.',
             },
             {
               name: 'Step 3: Automated Real-Time Fulfillment & Tracking Writebacks',
@@ -78,7 +78,7 @@ export const ShopifyFulfillmentPage: React.FC<{
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--hero-subtitle-color)', maxWidth: 740, marginBottom: '2.25rem' }}>
-            Native Shopify app integration with 60-second onboarding. Zero manual CSV exports, zero $1,500 monthly minimum penalties, direct two-way sync with Shopify, instant tracking writebacks, and direct warehouse-floor Slack access from Pontiac, Michigan.
+            Native Shopify app integration with 60-second onboarding. Zero manual CSV exports, zero $1,500 monthly minimum penalties, direct two-way sync with Shopify, instant tracking writebacks, and direct warehouse-floor Slack access.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -150,8 +150,8 @@ export const ShopifyFulfillmentPage: React.FC<{
                 <tbody style={{ fontSize: '0.9rem' }}>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Monthly Spend Minimum</td>
-                    <td style={{ padding: '1.1rem', color: '#34D399', fontWeight: 700 }}>$0 / mo (Zero idle penalties)</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$1,500 – $2,500 / mo penalty</td>
+                    <td style={{ padding: '1.1rem', color: '#34D399', fontWeight: 700 }}>$250 / mo (Fair & Sustainable)</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$1,500 to $2,500 / mo penalty</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Support Channel</td>
@@ -160,12 +160,12 @@ export const ShopifyFulfillmentPage: React.FC<{
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Inbound Receiving Fees</td>
-                    <td style={{ padding: '1.1rem', color: '#34D399', fontWeight: 700 }}>$0 Pallet Receiving Surcharge</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$35 – $45 / Pallet + SKU scan fees</td>
+                    <td style={{ padding: '1.1rem', color: '#34D399', fontWeight: 700 }}>Transparent $25 to $35 / Pallet + SKU Audit</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$35 to $45 / Pallet + SKU scan fees</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-                    <td style={{ padding: '1.1rem', fontWeight: 600 }}>Custom Unboxing Experience</td>
-                    <td style={{ padding: '1.1rem', color: '#34D399', fontWeight: 700 }}>Tissue wrap, wax seals, custom inserts included</td>
+                    <td style={{ padding: '1.1rem', fontWeight: 600 }}>Custom Packaging & Unboxing</td>
+                    <td style={{ padding: '1.1rem', color: '#34D399', fontWeight: 700 }}>Available Premium Add-On</td>
                     <td style={{ padding: '1.1rem', color: '#F87171' }}>Standard brown boxes; expensive kitting fees</td>
                   </tr>
                   <tr>

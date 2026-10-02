@@ -11,21 +11,22 @@ interface PresetBox {
 }
 
 const PRESET_BOXES: PresetBox[] = [
-  { name: 'Polymailer (Apparel)', l: 12, w: 9, h: 2, wt: 0.8 },
-  { name: '6x6x6 Candle/Jar Box', l: 6, w: 6, h: 6, wt: 1.5 },
-  { name: '10x8x4 Skincare/Beauty Kit', l: 10, w: 8, h: 4, wt: 2.2 },
-  { name: '14x10x6 Footwear / Hoodie', l: 14, w: 10, h: 6, wt: 3.5 },
-  { name: '18x14x8 Multi-Item Bundle', l: 18, w: 14, h: 8, wt: 6.0 },
+  { name: 'Moto Exhaust System', l: 36, w: 12, h: 10, wt: 8.5 },
+  { name: 'Moto Fender & Saddlebags', l: 30, w: 20, h: 16, wt: 13.0 },
+  { name: 'Auto Bumper / Aero Splitter', l: 54, w: 18, h: 12, wt: 11.5 },
+  { name: 'Outdoor Patio Cushion Set', l: 32, w: 24, h: 18, wt: 14.0 },
+  { name: 'Aftermarket Wheel / Rim Box', l: 22, w: 22, h: 12, wt: 22.0 },
 ];
 
 export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOpenAuditModal }) => {
-  const [length, setLength] = useState<number>(10);
-  const [width, setWidth] = useState<number>(8);
-  const [height, setHeight] = useState<number>(4);
-  const [actualWeight, setActualWeight] = useState<number>(2.0);
+  const [length, setLength] = useState<number>(36);
+  const [width, setWidth] = useState<number>(12);
+  const [height, setHeight] = useState<number>(10);
+  const [actualWeight, setActualWeight] = useState<number>(8.5);
 
   const calc: DimCalculation = useMemo(() => {
     const cubicInches = length * width * height;
+    // Standard retail carrier dim divisors
     const dim166 = Math.ceil(cubicInches / 166);
     const dim139 = Math.ceil(cubicInches / 139);
 
@@ -33,15 +34,17 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
     const billableCommercial = Math.max(actualWeight, dim139);
 
     // Baseline carrier rack rate estimate (Zone 4 average)
-    const baseRackRate = 7.5 + billableDomestic * 1.45;
+    const baseRackRate = 9.5 + billableCommercial * 1.35;
     const upsRate = +(baseRackRate * 1.15).toFixed(2);
     const fedexRate = +(baseRackRate * 1.18).toFixed(2);
     const uspsRate = +(baseRackRate * 0.92).toFixed(2);
 
-    // Starshippp Commercial Plus Tier 1 negotiated rate
-    const starshipppRate = +(baseRackRate * 0.65).toFixed(2);
+    // Starshippp Negotiated Tier-1 DIM Factor (approx 225 effective divisor) + Commercial Plus volume rates
+    const starshipppDimWeight = Math.max(actualWeight, Math.ceil(cubicInches / 225));
+    const starshipppBaseRate = 8.5 + starshipppDimWeight * 0.72;
+    const starshipppRate = +(starshipppBaseRate).toFixed(2);
     const standardCarrierRate = +((upsRate + fedexRate) / 2).toFixed(2);
-    const savings = standardCarrierRate - starshipppRate;
+    const savings = Math.max(0, standardCarrierRate - starshipppRate);
     const savingsPct = Math.round((savings / standardCarrierRate) * 100);
 
     return {
@@ -54,10 +57,10 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
       dimWeightCommercial: dim139,
       billableWeightUps: billableDomestic,
       billableWeightFedEx: billableCommercial,
-      billableWeightUsps: uspsRate, // using rate for display
+      billableWeightUsps: uspsRate,
       starshipppRateEstimate: starshipppRate,
       standardCarrierRate,
-      estimatedSavingsPct: savingsPct > 0 ? savingsPct : 35,
+      estimatedSavingsPct: savingsPct > 0 ? savingsPct : 42,
     };
   }, [length, width, height, actualWeight]);
 
@@ -166,7 +169,7 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
             <input
               type="number"
               min="1"
-              max="48"
+              max="72"
               step="0.5"
               value={length}
               onChange={(e) => setLength(Math.max(1, parseFloat(e.target.value) || 1))}
@@ -203,7 +206,7 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
             <input
               type="number"
               min="1"
-              max="48"
+              max="72"
               step="0.5"
               value={width}
               onChange={(e) => setWidth(Math.max(1, parseFloat(e.target.value) || 1))}
@@ -240,7 +243,7 @@ export const DimCalculator: React.FC<{ onOpenAuditModal: () => void }> = ({ onOp
             <input
               type="number"
               min="1"
-              max="48"
+              max="72"
               step="0.5"
               value={height}
               onChange={(e) => setHeight(Math.max(1, parseFloat(e.target.value) || 1))}

@@ -12,17 +12,17 @@ const IN_HOUSE_FAQS: FaqItem[] = [
   {
     question: 'Will our custom unboxing experience suffer if we transition away from self-fulfillment?',
     answer:
-      'No. At Starshippp, we pride ourselves on being boutique. We follow your exact packing checklist — including branded tissue folding, custom sticker placement, handwritten or printed insert cards, and wax seals. We treat your brand unboxing with the exact same craftsmanship you do yourself.',
+      'No. At Starshippp, we pride ourselves on being boutique. We follow your exact packing checklist, including branded tissue folding, custom sticker placement, handwritten or printed insert cards, and wax seals. We treat your brand unboxing with the exact same craftsmanship you do yourself.',
   },
   {
     question: 'What is the minimum inventory required to start?',
     answer:
-      'Zero minimums. Unlike mega-3PLs that demand 500+ units per SKU or enforce $1,500 monthly spend penalties, Starshippp welcomes emerging brands with 1 to 50 SKUs doing 300 to 3,000 orders/month. You can start with a few cartons or a single pallet.',
+      'Transparent $250/mo minimum. Unlike mega-3PLs that demand 500+ units per SKU or enforce $1,500 monthly spend penalties, Starshippp welcomes brands with complex catalogs and bulky parcels doing 300 to 3,500 orders/month. You can start with a few cartons or a single pallet.',
   },
   {
-    question: 'How do we move inventory from our garage, office, or storage unit to Pontiac?',
+    question: 'How do we move inventory from our garage, office, or storage unit to Starshippp?',
     answer:
-      'We coordinate a local freight or LTL pickup directly from your doorstep or storage facility straight to our Pontiac, Michigan loading docks. We check in, count, and barcode every unit within 24 hours so you are live and fulfilling immediately.',
+      'We coordinate a local freight or LTL pickup directly from your doorstep or storage facility straight to our central warehouse loading docks. We check in, count, and barcode every unit within 24 hours so you are live and fulfilling immediately.',
   },
 ];
 
@@ -34,8 +34,8 @@ export const AlternativesInHousePage: React.FC<{
   return (
     <div style={{ paddingTop: '5.5rem' }}>
       <StructuredData
-        pageTitle="Stop Self-Fulfilling: Transition to a Boutique 3PL | starshippp.com"
-        pageDescription="Tired of packing boxes until 2 AM? Transition from garage or self-storage fulfillment to Starshippp in Pontiac, MI. White-glove unboxing, $0 minimums, and commercial carrier discounts."
+        pageTitle="Stop Self-Fulfilling: Transition to a Specialized 3PL | starshippp.com"
+        pageDescription="Tired of packing boxes until 2 AM? Transition from garage or self-storage fulfillment to Starshippp. Negotiated carrier DIM rates, fair $250/mo minimum, and cheap bulk storage."
         canonicalUrl="https://starshippp.com/alternatives/in-house-fulfillment/"
         faqs={IN_HOUSE_FAQS}
         breadcrumbs={[
@@ -54,7 +54,7 @@ export const AlternativesInHousePage: React.FC<{
             },
             {
               name: 'Step 2: Freight Pickup from Your Location',
-              text: 'We arrange LTL pallet or parcel pickup from your home, storage unit, or supplier directly to our Pontiac loading docks.',
+              text: 'We arrange LTL pallet or parcel pickup from your home, storage unit, or supplier directly to our loading docks.',
             },
             {
               name: 'Step 3: Shopify Sync & Freedom Day',
@@ -78,7 +78,7 @@ export const AlternativesInHousePage: React.FC<{
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--hero-subtitle-color)', maxWidth: 740, marginBottom: '2.25rem' }}>
-            Founder liberation: stop packing boxes at 2 AM. You started your business to build an iconic brand — not to become a tape-gun technician. Transition from self-fulfillment to a boutique Pontiac 3PL with $0 minimums and white-glove unboxing.
+            Founder liberation: stop packing boxes at 2 AM. You started your business to build an iconic brand, not to become a tape-gun technician. Transition from self-fulfillment to a specialized boutique 3PL with a fair $250/mo minimum, negotiated DIM factor relief, and direct floor Slack access.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -111,7 +111,7 @@ export const AlternativesInHousePage: React.FC<{
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Founder Time Spent</td>
                     <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>0 hours / week (Automated dispatch)</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>15 – 30 hours / week taped down</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>15 to 30 hours / week taped down</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Carrier Shipping Discounts</td>
@@ -121,7 +121,7 @@ export const AlternativesInHousePage: React.FC<{
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Warehouse Rent & Utilities</td>
                     <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>$0 commercial leases or overhead</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$1,500 – $4,000 / mo rent & security</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$1,500 to $4,000 / mo rent & security</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Same-Day Dispatch Cutoff</td>
@@ -159,9 +159,9 @@ export const AlternativesInHousePage: React.FC<{
                 <div style={{ color: 'var(--brand-orange)', fontFamily: 'var(--font-mono)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '0.5rem' }}>
                   STEP 02
                 </div>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Inventory Pickup to Pontiac</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Inventory Pickup to Midwest Hub</h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                  We coordinate freight pickup from your garage or storage unit directly to our Pontiac loading dock.
+                  We coordinate freight pickup from your garage or storage unit directly to our loading dock.
                 </p>
               </div>
 

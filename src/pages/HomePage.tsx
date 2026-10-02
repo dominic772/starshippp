@@ -37,8 +37,8 @@ export const HomePage: React.FC<HomePageProps> = ({
     <div>
       {/* Schema Injection */}
       <StructuredData
-        pageTitle="starshippp.com | Boutique 3PL & Fulfillment Hub | Pontiac, Michigan"
-        pageDescription="The anti-mega-3PL located in Pontiac, Michigan. $0 monthly minimums, zero hidden receiving surcharges, direct warehouse-floor Slack access, and custom luxury unboxing for 300 to 3,000 orders/mo."
+        pageTitle="starshippp.com | Bulky & DIM-Weight 3PL Fulfillment | Midwest Hub"
+        pageDescription="Specialized 3PL for large boxes and low weight. Negotiated carrier DIM factor relief, cheap bulk storage, transparent $250/mo minimum, and direct warehouse-floor Slack access."
         canonicalUrl="https://starshippp.com"
         faqs={STARSHIPPP_FAQS}
         includeTools={true}

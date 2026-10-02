@@ -7,12 +7,12 @@ const SHIPMONK_FAQS: FaqItem[] = [
   {
     question: 'Why do DTC brands switch from ShipMonk to Starshippp?',
     answer:
-      'Brands leave ShipMonk due to steep software platform subscription fees, hidden account management charges, punitive $2,000+ monthly minimum invoice penalties, and delayed ticketing support. Starshippp offers $0 software fees, $0 monthly minimums, and direct Slack access to our Pontiac, Michigan warehouse floor.',
+      'Brands leave ShipMonk due to steep software platform subscription fees, hidden account management charges, punitive $2,000+ monthly minimum invoice penalties, and delayed ticketing support. Starshippp offers $0 software fees, an accessible $250/mo minimum, and direct Slack access to our warehouse floor.',
   },
   {
     question: 'How do you transfer inventory from ShipMonk without pausing sales?',
     answer:
-      'We execute a 3-step Zero-Downtime Migration Protocol. We duplicate your SKU catalog into Starshippp, arrange freight pickup directly from ShipMonk fulfillment centers, and maintain fulfillment buffer until units arrive in Pontiac. Orders switch seamlessly upon our 24-hour scan check-in.',
+      'We execute a 3-step Zero-Downtime Migration Protocol. We duplicate your SKU catalog into Starshippp, arrange freight pickup directly from ShipMonk fulfillment centers, and maintain fulfillment buffer until units arrive at our facility. Orders switch seamlessly upon our 24-hour scan check-in.',
   },
   {
     question: 'Does Starshippp charge separate monthly software or portal access fees?',
@@ -22,7 +22,7 @@ const SHIPMONK_FAQS: FaqItem[] = [
   {
     question: 'How does Starshippp pricing compare to ShipMonk for custom unboxing?',
     answer:
-      'ShipMonk penalizes custom unboxing with multi-tier kitting fees and strict packaging guidelines. Starshippp specializes in luxury unboxing (tissue wrapping, wax sealing, sticker placements, and custom marketing inserts) at flat, predictable rates.',
+      'ShipMonk penalizes custom unboxing with multi-tier kitting fees and strict packaging guidelines. Starshippp offers premium unboxing and custom packaging at flat, predictable rates.',
   },
 ];
 
@@ -34,8 +34,8 @@ export const AlternativesShipmonkPage: React.FC<{
   return (
     <div style={{ paddingTop: '5.5rem' }}>
       <StructuredData
-        pageTitle="The ShipMonk Alternative | Zero Software Fees & $0 Minimums | starshippp.com"
-        pageDescription="Looking for a ShipMonk alternative? Starshippp eliminates monthly software fees, invoice minimum penalties, and support ticket delays with direct floor Slack in Pontiac, MI."
+        pageTitle="The ShipMonk Alternative | Zero Software Fees & $250 Minimum | starshippp.com"
+        pageDescription="Looking for a ShipMonk alternative? Starshippp eliminates monthly software fees, invoice minimum penalties, and support ticket delays with direct floor Slack access."
         canonicalUrl="https://starshippp.com/alternatives/shipmonk/"
         faqs={SHIPMONK_FAQS}
         breadcrumbs={[
@@ -54,7 +54,7 @@ export const AlternativesShipmonkPage: React.FC<{
             },
             {
               name: 'Step 2: Coordinated Freight Relocation',
-              text: 'Issue an inventory extraction request from ShipMonk routed straight to our Pontiac, Michigan loading bay.',
+              text: 'Issue an inventory extraction request from ShipMonk routed straight to our loading bay.',
             },
             {
               name: 'Step 3: 24-Hour Inbound Check-In',
@@ -78,7 +78,7 @@ export const AlternativesShipmonkPage: React.FC<{
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--hero-subtitle-color)', maxWidth: 740, marginBottom: '2.25rem' }}>
-            The boutique 3PL alternative to ShipMonk. Stop paying monthly software platform subscriptions and $2,000 minimum spend fees. Starshippp delivers high-touch boutique fulfillment with direct warehouse Slack access and $0 minimums from Pontiac, Michigan.
+            The boutique 3PL alternative to ShipMonk. Stop paying monthly software platform subscriptions and $2,000 minimum spend fees. Starshippp delivers high-touch boutique fulfillment with direct warehouse Slack access and $0 platform fees.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -110,8 +110,8 @@ export const AlternativesShipmonkPage: React.FC<{
                 <tbody style={{ fontSize: '0.9rem' }}>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Monthly Spend Minimum</td>
-                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>$0 / mo (Zero idle fees)</td>
-                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$1,500 – $2,500 / mo penalty</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>$250 / mo (Fair & Sustainable)</td>
+                    <td style={{ padding: '1.1rem', color: '#F87171' }}>$1,500 to $2,500 / mo penalty</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Software & Platform Fees</td>
@@ -125,12 +125,12 @@ export const AlternativesShipmonkPage: React.FC<{
                   </tr>
                   <tr style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Custom Packaging & Inserts</td>
-                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Tissue wrap, wax seal & cards standard</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>Available Premium Add-On</td>
                     <td style={{ padding: '1.1rem', color: '#F87171' }}>Strict kitting markups per touchpoint</td>
                   </tr>
                   <tr>
                     <td style={{ padding: '1.1rem', fontWeight: 600 }}>Midwest Ground Reach</td>
-                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>1–2 days to 68% of US population</td>
+                    <td style={{ padding: '1.1rem', color: '#10B981', fontWeight: 700 }}>1 to 2 days to 68% of US population</td>
                     <td style={{ padding: '1.1rem', color: 'var(--text-secondary)' }}>Multi-node inventory splitting required</td>
                   </tr>
                 </tbody>
@@ -159,7 +159,7 @@ export const AlternativesShipmonkPage: React.FC<{
                 <div style={{ color: 'var(--brand-orange)', fontFamily: 'var(--font-mono)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '0.5rem' }}>
                   STEP 02
                 </div>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Freight Transfer to Pontiac</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Freight Transfer to Midwest Hub</h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                   Pallets roll from ShipMonk to our Michigan facility while buffer stock covers active orders.
                 </p>

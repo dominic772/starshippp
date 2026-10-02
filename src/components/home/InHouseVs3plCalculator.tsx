@@ -16,10 +16,10 @@ export const InHouseVs3plCalculator: React.FC<{ onOpenAuditModal: () => void }> 
     const monthlySuppliesCost = monthlyOrders * suppliesCostPerBox;
     const totalInHouseCost = Math.round(monthlyLaborCost + monthlySuppliesCost + monthlyStorageCost);
 
-    // Starshippp all-in cost (Boutique flat pick/pack $2.65 includes standard packaging supplies + bulk storage $0.40/pallet equivalent)
+    // Starshippp all-in cost ($250/mo minimum account baseline, flat pick/pack + bulk storage)
     const starshipppPickPack = monthlyOrders * 2.65;
     const starshipppStorage = Math.max(150, (monthlyOrders / 400) * 120);
-    const starshipppAllInCost = Math.round(starshipppPickPack + starshipppStorage);
+    const starshipppAllInCost = Math.max(250, Math.round(starshipppPickPack + starshipppStorage));
 
     const monthlySavings = Math.max(0, totalInHouseCost - starshipppAllInCost);
     const annualSavings = monthlySavings * 12;

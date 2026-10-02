@@ -882,19 +882,19 @@ input[type="range"]::-moz-range-thumb {
   stroke-width: 2.4px;
 }
 
-/* 6. Top Menu Telemetry Radar Indicator */
+/* 6. Top Menu Telemetry Radar Indicator (Green Starship Active) */
 .nav-telemetry-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.2rem 0.55rem;
-  background: rgba(0, 229, 255, 0.06);
-  border: 1px solid rgba(0, 229, 255, 0.22);
+  padding: 0.22rem 0.6rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.35);
   border-radius: 2px;
   font-family: var(--font-mono);
   font-size: 0.64rem;
   font-weight: 700;
-  color: #38BDF8;
+  color: #34D399;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -904,14 +904,21 @@ input[type="range"]::-moz-range-thumb {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #00E5FF;
-  box-shadow: 0 0 8px #00E5FF;
+  background-color: #10B981;
+  box-shadow: 0 0 8px #10B981;
   animation: radarBlip 2s ease-in-out infinite;
 }
 
 @keyframes radarBlip {
-  0%, 100% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.35); opacity: 1; box-shadow: 0 0 12px #00E5FF, 0 0 20px rgba(0, 229, 255, 0.6); }
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+    box-shadow: 0 0 10px #10B981, 0 0 18px rgba(52, 211, 153, 0.6);
+  }
 }
 
 /* ==========================================================================

@@ -350,7 +350,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Live Floor Ops Telemetry Radar Indicator */}
           <div className="nav-telemetry-badge" title="Live Starshippp fulfillment operations floor status">
             <span className="nav-telemetry-blip" />
-            <span>Floor Ops Live</span>
+            <span>Starship Active</span>
           </div>
 
           {/* High-Polish Primary CTA: Get Quote */}

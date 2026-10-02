@@ -104,10 +104,10 @@ export const StarshipppLogo: React.FC<StarshipppLogoProps> = ({
               width: 'auto',
               objectFit: 'contain',
               display: 'block',
-              transition: 'filter 0.28s ease',
+              transition: 'filter 0.25s ease',
               filter: isHovered
-                ? 'drop-shadow(0 0 26px rgba(255, 120, 0, 0.88)) brightness(1.08)'
-                : undefined,
+                ? 'drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 6px rgba(255, 120, 0, 0.25))'
+                : 'drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25))',
             }}
           />
 
@@ -128,8 +128,8 @@ export const StarshipppLogo: React.FC<StarshipppLogoProps> = ({
               marginTop: 4,
               fontWeight: 800,
               textShadow: isHovered
-                ? '0 0 16px rgba(255, 122, 0, 0.8)'
-                : '0 0 12px rgba(255, 122, 0, 0.55)',
+                ? '0 0 6px rgba(255, 122, 0, 0.35)'
+                : '0 1px 2px rgba(0, 0, 0, 0.6)',
               whiteSpace: 'nowrap',
               transition: 'all 0.25s ease',
             }}

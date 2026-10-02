@@ -867,12 +867,16 @@ input[type="range"]::-moz-range-thumb {
   animation: starshipFlameBreathing 4.5s ease-in-out infinite;
 }
 
+.starshippp-logo-speed:hover .starship-img-glow {
+  animation: none;
+}
+
 @keyframes starshipFlameBreathing {
   0%, 100% {
-    filter: drop-shadow(0 0 14px rgba(255, 107, 0, 0.4));
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
   }
   50% {
-    filter: drop-shadow(0 0 22px rgba(255, 130, 0, 0.72)) drop-shadow(0 0 4px rgba(255, 200, 0, 0.45));
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 6px rgba(255, 130, 0, 0.25));
   }
 }
 

@@ -39,6 +39,51 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data (JSON-LD) for Google Search & Google Business Profile Linking -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LogisticsService",
+          "@id": "https://starshippp.com/#organization",
+          "name": "Starshippp",
+          "alternateName": "Starshippp 3PL & Warehousing",
+          "url": "https://starshippp.com/",
+          "logo": "https://starshippp.com/favicon.png",
+          "image": "https://starshippp.com/images/og-social-card.jpg",
+          "description": "Radical transparency 3PL and boutique e-commerce fulfillment warehouse in Pontiac, Michigan. Direct warehouse floor Slack access, mobile app telemetry, and negotiated carrier DIM factor relief.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "391 E Wilson Ave",
+            "addressLocality": "Pontiac",
+            "addressRegion": "MI",
+            "postalCode": "48341",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 42.6305,
+            "longitude": -83.2801
+          },
+          "areaServed": [
+            { "@type": "AdministrativeArea", "name": "Michigan" },
+            { "@type": "Country", "name": "United States" }
+          ],
+          "openingHours": "Mo-Fr 06:00-19:00",
+          "priceRange": "$$"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://starshippp.com/#website",
+          "url": "https://starshippp.com/",
+          "name": "Starshippp",
+          "publisher": { "@id": "https://starshippp.com/#organization" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

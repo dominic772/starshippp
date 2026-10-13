@@ -6,15 +6,16 @@ import {
   ArrowRight, 
   MessageSquare, 
   DollarSign, 
-  Box, 
-  Zap, 
-  ChevronLeft, 
+  Box,
+ChevronLeft, 
   ChevronRight,
   Send,
   Wrench,
   Shield,
   Sun,
   Disc,
+  Printer,
+  Anchor,
 } from 'lucide-react';
 
 interface TargetBrandsShowcaseProps {
@@ -48,7 +49,7 @@ const TARGET_PRODUCTS: ProductShowcaseItem[] = [
     description: 'Slip-on performance exhausts, extended touring fenders, fairings, and saddlebag kits that ship in large corrugated cartons with low actual weight, incurring severe retail carrier DIM penalties.',
     mega3plFlaw: 'Mega-3PLs apply default 139/166 dim factors, tripling the billable shipping weight on an 8 lb exhaust pipe to 32+ lbs, while slapping punitive oversized carton storage surcharges.',
     starshipppEdge: [
-      'Aggressive negotiated carrier DIM factor delivering 35% to 55% postage savings',
+      'Aggressive negotiated carrier DIM divisor (250) delivering 35% to 55% postage savings',
       'High-density foam nesting and reinforced corners to prevent transit scratches and dents',
       'Huge high-bay storage footprint at our central facility at a fraction of coastal 3PL rates',
       'Zero customer return headaches: specialized parts verification before dock loading'
@@ -67,11 +68,47 @@ const TARGET_PRODUCTS: ProductShowcaseItem[] = [
     mega3plFlaw: 'Mega-3PLs reject large automotive SKUs outright or charge astronomical $65+/pallet storage penalties with untrained pickers who snap delicate tabs and splitters.',
     starshipppEdge: [
       'Specialized wide-carton staging benches with rigid foam blocking and edge protectors',
-      'Cost-effective storage accommodating 5,000 to 10,000+ sq ft automotive inventories',
+      'Cost-effective offsite bulk storage accommodating 5,000 to 10,000+ sq ft automotive inventories',
       'Carrier trailer direct-load for FedEx Home Delivery & USPS Ground Advantage',
       'Experienced warehouse team familiar with automotive fitment and complex SKU lists'
     ],
     sopHighlight: 'SOP-AERO-03: Full-perimeter foam rail block + carbon weave surface barrier'
+  },
+  {
+    id: 'pod',
+    category: 'In-House Print-On-Demand (POD)',
+    badge: 'Direct-to-Garment • Custom Packaging • Beats Printful',
+    icon: Printer,
+    title: 'Custom Merch, Heavy Vinyl Stickers & Luxury Packaging',
+    orderVolume: '100 to 3,000 Items / Month',
+    image: '/images/target-merch-pod.jpg',
+    description: 'On-demand DTG t-shirts, hoodies, heavy-duty vinyl stickers, custom corrugated boxes, and wax-sealed unboxing inserts manufactured directly on the Pontiac warehouse floor.',
+    mega3plFlaw: 'Traditional 3PLs cannot print; print brokers like Printful charge 60% markups and take 5 to 7 days before items even ship, preventing single-box order consolidation.',
+    starshipppEdge: [
+      'Zero split shipments: print on-demand items and merge into the same box as pre-stocked inventory',
+      'Industrial dual-platen DTG presses and precision optical vinyl contour cutters on-site',
+      'Direct wholesale garment pricing ($4.20 - $5.80/tee) saving $7 to $10+ per printed unit',
+      'Same-day printing and dispatch for orders received before 1:00 PM EST'
+    ],
+    sopHighlight: 'SOP-POD-01: Optical contour calibration + 320°F wash-fast curing inspection'
+  },
+  {
+    id: 'ftz',
+    category: 'Bonded Foreign Trade Zone (FTZ)',
+    badge: '2-Year Duty Deferral • Micro-Release',
+    icon: Anchor,
+    title: 'Overseas Containers & High-Value Imported Inventory',
+    orderVolume: '1 to 20+ Containers / Year',
+    image: '/images/target-heavy-freight.jpg',
+    description: 'Container freight imported from China, Europe, or Asia requiring customs duty deferral. Release customs duties incrementally carton-by-carton only as products sell.',
+    mega3plFlaw: 'Port customs demand 100% of tariff taxes ($20,000 - $80,000+) upfront upon container arrival, locking up founder cash reserves on unsold inventory.',
+    starshipppEdge: [
+      'Up to 2-year duty deferral: store imported containers legally outside U.S. customs territory',
+      'Carton-by-carton micro-releases: pay customs duties only on the exact units shipped each day',
+      'Eliminate upfront cash crunches for seasonal roadshows, new product lines, and flash drops',
+      'Zero U.S. duty on Canadian cross-border exports via Ambassador Bridge corridor'
+    ],
+    sopHighlight: 'SOP-FTZ-02: Bonded intake tally + CBP Form 214/7501 automated micro-clearance'
   },
   {
     id: 'outdoor',
@@ -118,7 +155,7 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
 
-  // Auto rotate carousel every 6 seconds unless user is hovering/interacting
+  // Auto rotate carousel every 6.5 seconds unless user is hovering/interacting
   useEffect(() => {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
@@ -176,11 +213,11 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
           </h2>
 
           <p style={{ fontSize: '1.15rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.6, maxWidth: 760, margin: '0 auto', textShadow: '0 2px 10px rgba(0,0,0,0.85)' }}>
-            Starshippp is built specifically for brands neglected by mega-warehouses. While multi-billion-dollar fulfillment conglomerates are engineered for 50,000-order commodity accounts, brands shipping <strong style={{ color: '#FFFFFF', fontWeight: 800 }}>300 to 3,000 orders/month</strong> get relegated to offshore ticket queues, punitive idle fees, and careless packaging. With our mobile app and dedicated Slack floor channels, you get direct VIP access and radical transparency every day.
+            Starshippp is engineered specifically for brands neglected by mega-warehouses. While multi-billion-dollar fulfillment conglomerates penalize bulky parcels, enforce $1,500 monthly dead fees, and refuse on-demand manufacturing, we provide <strong style={{ color: '#FFFFFF', fontWeight: 800 }}>negotiated 250 DIM relief, in-house print-on-demand, bonded FTZ duty deferrals</strong>, and direct floor access on dedicated Slack channels.
           </p>
         </div>
 
-        {/* Unified Product Showcase Box (Merged Category Navigation + Active Detail in One Box) */}
+        {/* Unified Product Showcase Box */}
         <div
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
@@ -432,11 +469,11 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
           </div>
         </div>
 
-        {/* 3 Callout Pillars: Why Brands Fire Mega-3PLs & Move to Starshippp */}
+        {/* 4 Callout Pillars: The Complete Starshippp Advantage */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '1.5rem',
             marginTop: '3.5rem',
           }}
@@ -466,12 +503,12 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
                 <MessageSquare size={20} />
               </div>
               <div>
-                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>App or Slack: Zero Ticket Queues</h4>
-                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--brand-orange-light)' }}>YOUR CHOICE OF COMMUNICATION</div>
+                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>Direct Floor Slack & App</h4>
+                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--brand-orange-light)' }}>NO TICKET QUEUES</div>
               </div>
             </div>
             <p style={{ fontSize: '0.9rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.55, textShadow: '0 1px 3px rgba(0,0,0,0.85)' }}>
-              Tired of 72-hour email ticket queues with automated bots? Choose how you stay connected. Use our mobile app for automated daily payouts and real-time order tracking, or hop into a shared Slack channel directly with our warehouse packing floor leads. Need to hold an order or swap an SKU? Ping us and get a confirmation photo in minutes.
+              Tired of 72-hour email ticket queues with automated bots? Chat directly with our warehouse packing floor leads in dedicated Slack, or use our high-speed mobile app for automated daily payouts and real-time inventory telemetry.
             </p>
           </div>
 
@@ -501,11 +538,11 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
               </div>
               <div>
                 <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>$250 Minimum vs $1,500 Fines</h4>
-                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: '#34D399' }}>FAIR & TRANSPARENT</div>
+                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: '#34D399' }}>ZERO VOLUME REQUIREMENTS</div>
               </div>
             </div>
             <p style={{ fontSize: '0.9rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.55, textShadow: '0 1px 3px rgba(0,0,0,0.85)' }}>
-              Mega-3PLs charge brutal $1,500 to $2,500/month "minimum spend" penalties if order volume dips. Starshippp has an accessible $250/mo minimum account commitment. We are fair partners who ensure your inventory is protected without extractive idle fees.
+              Mega-3PLs charge brutal $1,500 to $2,500/month penalties if volume drops. Starshippp welcomes startups and established brands with an honest $250/mo minimum. Even shipping 30 packages/month, you get full enterprise treatment.
             </p>
           </div>
 
@@ -516,7 +553,7 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
               padding: '1.75rem',
               backgroundColor: 'rgba(12, 18, 36, 0.8)',
               border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderTop: '3px solid var(--status-cyan)',
+              borderTop: '3px solid #FFA733',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -524,22 +561,56 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
                 style={{
                   width: 40,
                   height: 40,
-                  backgroundColor: 'rgba(0, 240, 255, 0.15)',
+                  backgroundColor: 'rgba(255, 167, 51, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: 'var(--status-cyan)',
+                  color: '#FFA733',
                 }}
               >
-                <Zap size={20} />
+                <Printer size={20} />
               </div>
               <div>
-                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>Negotiated Carrier DIM Relief</h4>
-                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--status-cyan)' }}>CRUSH DIMENSIONAL RATES</div>
+                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>In-House POD & Packaging</h4>
+                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: '#FFA733' }}>WAY BETTER THAN PRINTFUL</div>
               </div>
             </div>
             <p style={{ fontSize: '0.9rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.55, textShadow: '0 1px 3px rgba(0,0,0,0.85)' }}>
-              Shipping big boxes doesn’t have to bankrupt your margins. We’ve negotiated Tier-1 carrier DIM divisors with USPS Ground Advantage and FedEx Home Delivery, cutting billable weight on bulky lightweight goods by up to 55%. Premium custom packaging and kitting are also available on demand.
+              On-demand t-shirts, outdoor stickers, and custom unboxing made directly in our Pontiac facility. Print, cure, and consolidate with stocked goods in 1 box with zero split-shipping fees and wholesale blank costs.
+            </p>
+          </div>
+
+          {/* Pillar 4 */}
+          <div
+            className="glass-panel"
+            style={{
+              padding: '1.75rem',
+              backgroundColor: 'rgba(12, 18, 36, 0.8)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderTop: '3px solid #38BDF8',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: 'rgba(56, 189, 248, 0.15)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#38BDF8',
+                }}
+              >
+                <Anchor size={20} />
+              </div>
+              <div>
+                <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: 2 }}>Bonded FTZ Customs Deferral</h4>
+                <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: '#38BDF8' }}>MICRO-RELEASE DUTY PER CARTON</div>
+              </div>
+            </div>
+            <p style={{ fontSize: '0.9rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1.55, textShadow: '0 1px 3px rgba(0,0,0,0.85)' }}>
+              Import containers duty-free for up to 2 years in our Michigan FTZ zone. Pay customs tariffs incrementally carton-by-carton or pallet-by-pallet only as orders sell, preserving tens of thousands in operating cash.
             </p>
           </div>
         </div>
@@ -547,3 +618,4 @@ export const TargetBrandsShowcase: React.FC<TargetBrandsShowcaseProps> = ({
     </section>
   );
 };
+

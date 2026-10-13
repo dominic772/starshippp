@@ -17,8 +17,6 @@ import {
   CheckCircle2, 
   Shield, 
   Lock, 
-  Key, 
-  LogIn, 
   AlertTriangle, 
   ShieldCheck,
   Building2 
@@ -38,44 +36,44 @@ export const ManagementPortalPage: React.FC<ManagementPortalPageProps> = ({ onBa
   const [isPingingAll, setIsPingingAll] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  // Security Gateway & Authentication State
+  // Security Gateway & Authentication State: STRICT STARSHIPPP DOMAIN SSO ONLY
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       return sessionStorage.getItem('starshippp_portal_auth') === 'true';
     }
     return false;
   });
-  const [passwordInput, setPasswordInput] = useState<string>('');
   const [authError, setAuthError] = useState<string | null>(null);
   const [isAuthenticatingSSO, setIsAuthenticatingSSO] = useState<boolean>(false);
+  const [ssoEmailInput, setSsoEmailInput] = useState<string>('');
 
-  const handlePasswordSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const validPasswords = ['starshippp2026', 'starshippp', 'pontiac2026', 'admin'];
-    if (validPasswords.includes(passwordInput.trim().toLowerCase())) {
-      sessionStorage.setItem('starshippp_portal_auth', 'true');
-      setIsAuthenticated(true);
-      setAuthError(null);
-      showToast('✓ Executive access granted. Welcome to Pontiac HQ.');
-    } else {
-      setAuthError('Access Denied: Invalid security passphrase. Incident logged.');
-    }
-  };
-
-  const handleSSOSignIn = async () => {
+  const handleSSOSignIn = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     setIsAuthenticatingSSO(true);
     setAuthError(null);
+
+    const email = ssoEmailInput.trim().toLowerCase();
+    const authorizedUsers = ['jknapp@starshippp.com', 'dserra@starshippp.com'];
+
     await new Promise((resolve) => setTimeout(resolve, 800));
-    sessionStorage.setItem('starshippp_portal_auth', 'true');
-    setIsAuthenticated(true);
-    setIsAuthenticatingSSO(false);
-    showToast('✓ Domain SSO authenticated: @starshippp.com directory verified.');
+
+    if (authorizedUsers.includes(email) || (email.endsWith('@starshippp.com') && email.length > '@starshippp.com'.length)) {
+      sessionStorage.setItem('starshippp_portal_auth', 'true');
+      sessionStorage.setItem('starshippp_portal_user', email);
+      setIsAuthenticated(true);
+      setIsAuthenticatingSSO(false);
+      showToast(`✓ Corporate SSO Verified: ${email} authenticated.`);
+    } else {
+      setIsAuthenticatingSSO(false);
+      setAuthError('Access Denied: Email not authorized in @starshippp.com directory.');
+    }
   };
 
   const handleSignOut = () => {
     sessionStorage.removeItem('starshippp_portal_auth');
+    sessionStorage.removeItem('starshippp_portal_user');
     setIsAuthenticated(false);
-    setPasswordInput('');
+    setSsoEmailInput('');
     setAuthError(null);
   };
 
@@ -290,70 +288,29 @@ export const ManagementPortalPage: React.FC<ManagementPortalPageProps> = ({ onBa
             </p>
 
             {/* SSO Corporate Login Option */}
-            <button
-              onClick={handleSSOSignIn}
-              disabled={isAuthenticatingSSO}
-              className="btn-solid-dark"
-              style={{
-                width: '100%',
-                padding: '0.85rem 1.25rem',
-                fontSize: '0.92rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.65rem',
-                marginBottom: '1.25rem',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                backgroundColor: '#141E34',
-                cursor: 'pointer',
-              }}
-            >
-              <Building2 size={16} color="var(--brand-orange)" />
-              <span>
-                {isAuthenticatingSSO ? 'Verifying Corporate SSO Directory...' : 'Sign in with @starshippp.com SSO'}
-              </span>
-            </button>
-
-            {/* Divider */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                margin: '1.25rem 0',
-                gap: '0.75rem',
-                color: 'var(--text-muted)',
-                fontSize: '0.72rem',
-                fontFamily: 'var(--font-mono)',
-              }}
-            >
-              <div style={{ flex: 1, height: 1, backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
-              <span>OR ENTER ACCESS PASSPHRASE</span>
-              <div style={{ flex: 1, height: 1, backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
-            </div>
-
-            {/* Master Passphrase Form */}
-            <form onSubmit={handlePasswordSubmit} style={{ display: 'grid', gap: '0.75rem' }}>
+            <form onSubmit={handleSSOSignIn} style={{ display: 'grid', gap: '0.85rem' }}>
               <div style={{ position: 'relative' }}>
                 <input
-                  type="password"
-                  value={passwordInput}
-                  onChange={(e) => setPasswordInput(e.target.value)}
-                  placeholder="Enter executive access passphrase..."
+                  type="email"
+                  value={ssoEmailInput}
+                  onChange={(e) => setSsoEmailInput(e.target.value)}
+                  placeholder="name@starshippp.com"
                   autoFocus
+                  required
                   style={{
                     width: '100%',
-                    padding: '0.8rem 1rem',
+                    padding: '0.85rem 1rem',
                     paddingLeft: '2.5rem',
                     backgroundColor: 'rgba(5, 8, 17, 0.9)',
-                    border: authError ? '1px solid #EF4444' : '1px solid rgba(255, 255, 255, 0.15)',
+                    border: authError ? '1px solid #EF4444' : '1px solid rgba(255, 255, 255, 0.18)',
                     color: '#FFFFFF',
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.9rem',
+                    fontSize: '0.92rem',
                     outline: 'none',
                   }}
                 />
-                <Key
-                  size={15}
+                <Building2
+                  size={16}
                   color="var(--brand-orange)"
                   style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)' }}
                 />
@@ -378,19 +335,24 @@ export const ManagementPortalPage: React.FC<ManagementPortalPageProps> = ({ onBa
 
               <button
                 type="submit"
+                disabled={isAuthenticatingSSO}
                 className="btn-primary"
                 style={{
                   width: '100%',
-                  padding: '0.85rem',
+                  padding: '0.9rem 1.25rem',
                   fontSize: '0.95rem',
+                  fontWeight: 700,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '0.5rem',
+                  gap: '0.65rem',
+                  cursor: isAuthenticatingSSO ? 'wait' : 'pointer',
                 }}
               >
-                <LogIn size={16} />
-                <span>Authorize Executive Access</span>
+                <ShieldCheck size={17} />
+                <span>
+                  {isAuthenticatingSSO ? 'Verifying Corporate SSO Directory...' : 'Authenticate with @starshippp.com SSO'}
+                </span>
               </button>
             </form>
 

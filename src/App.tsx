@@ -14,10 +14,14 @@ import { AlternativesShipbobPage } from './pages/AlternativesShipbobPage';
 import { AlternativesShipmonkPage } from './pages/AlternativesShipmonkPage';
 import { AlternativesInHousePage } from './pages/AlternativesInHousePage';
 import { ShopifyFulfillmentPage } from './pages/ShopifyFulfillmentPage';
+import { PrintOnDemandPage } from './pages/PrintOnDemandPage';
+import { BondedFtzPage } from './pages/BondedFtzPage';
 import { ManagementPortalPage } from './pages/ManagementPortalPage';
+import { WmsDashboardPage } from './pages/WmsDashboardPage';
 import { AuditUploadModal } from './components/modals/AuditUploadModal';
 import { InstantContactModal } from './components/modals/InstantContactModal';
 import { PexelsConfigModal } from './components/video/PexelsConfigModal';
+import { ApiSandboxModal } from './components/modals/ApiSandboxModal';
 
 export function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
@@ -31,6 +35,8 @@ export function App() {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState<boolean>(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState<boolean>(false);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState<boolean>(false);
+  const [isSandboxModalOpen, setIsSandboxModalOpen] = useState<boolean>(false);
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('starshippp_theme', 'dark');
@@ -100,6 +106,22 @@ export function App() {
             onOpenSettings={() => setIsSettingsModalOpen(true)}
           />
         );
+      case '/print-on-demand-fulfillment/':
+        return (
+          <PrintOnDemandPage
+            onOpenAuditModal={() => setIsAuditModalOpen(true)}
+            onOpenSettings={() => setIsSettingsModalOpen(true)}
+            onOpenSandboxModal={() => setIsSandboxModalOpen(true)}
+          />
+        );
+      case '/bonded-ftz-fulfillment/':
+        return (
+          <BondedFtzPage
+            onOpenAuditModal={() => setIsAuditModalOpen(true)}
+            onOpenSettings={() => setIsSettingsModalOpen(true)}
+            onOpenSandboxModal={() => setIsSandboxModalOpen(true)}
+          />
+        );
       case '/apparel-fashion-fulfillment/':
         return (
           <ApparelFashionPage
@@ -159,6 +181,10 @@ export function App() {
       case '/portal/':
       case '/management/':
         return <ManagementPortalPage onBackToWebsite={() => navigate('/')} />;
+      case '/wms/':
+      case '/dashboard/':
+      case '/operations/':
+        return <WmsDashboardPage onBackToWebsite={() => navigate('/')} />;
       case '/':
       default:
         return (
@@ -171,6 +197,12 @@ export function App() {
     }
   };
 
+  const isWmsMode = ['/wms', '/wms/', '/dashboard', '/dashboard/', '/operations', '/operations/'].includes(currentPath);
+
+  if (isWmsMode) {
+    return <WmsDashboardPage onBackToWebsite={() => navigate('/')} />;
+  }
+
   return (
     <div className="starshippp-app" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* Navigation Header */}
@@ -179,6 +211,7 @@ export function App() {
         onNavigate={navigate}
         onOpenAuditModal={() => setIsAuditModalOpen(true)}
         onOpenContactModal={() => setIsContactModalOpen(true)}
+        onOpenSandboxModal={() => setIsSandboxModalOpen(true)}
       />
 
       {/* Main Page Content */}
@@ -206,6 +239,12 @@ export function App() {
       <PexelsConfigModal
         isOpen={isSettingsModalOpen}
         onClose={() => setIsSettingsModalOpen(false)}
+      />
+
+      {/* Live Interactive Developer API Sandbox Modal */}
+      <ApiSandboxModal
+        isOpen={isSandboxModalOpen}
+        onClose={() => setIsSandboxModalOpen(false)}
       />
     </div>
   );

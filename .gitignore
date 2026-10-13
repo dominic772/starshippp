@@ -29,3 +29,9 @@ Raw_Video/
 .agents/
 *.kdbx
 tools/
+oauth-credentials.json
+gsc-token.json
+gsc-credentials.json
+
+.vercel
+.env*

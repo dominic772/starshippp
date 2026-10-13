@@ -10,7 +10,12 @@
     "preview": "vite preview",
     "ffmpeg": "tools\\ffmpeg.cmd",
     "ffprobe": "tools\\ffprobe.cmd",
-    "process-videos": "node tools/build-video-assets.js"
+    "process-videos": "node tools/build-video-assets.js",
+    "google:auth": "node tools/gsc-auth.js",
+    "gsc:inspect": "node tools/gsc-inspect.js",
+    "gsc:index-all": "node tools/gsc-index-all.js",
+    "gsc:analytics": "node tools/gsc-cli.js",
+    "lead:test-email": "node tools/send-lead-email.js"
   },
   "dependencies": {
     "lucide-react": "^1.48.0",

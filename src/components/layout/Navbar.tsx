@@ -4,8 +4,10 @@ import {
   Menu, 
   X, 
   Send,
-  ArrowRight,
-  Lock,
+  Terminal,
+  Copy,
+  Check,
+  Zap,
 } from 'lucide-react';
 import { StarshipppLogo } from '../ui/StarshipppLogo';
 
@@ -15,6 +17,7 @@ interface NavbarProps {
   onOpenAuditModal: () => void;
   onOpenTourModal?: () => void;
   onOpenContactModal?: () => void;
+  onOpenSandboxModal?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -23,10 +26,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenAuditModal: _onOpenAuditModal,
   onOpenTourModal: _onOpenTourModal,
   onOpenContactModal,
+  onOpenSandboxModal,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [copiedKey, setCopiedKey] = useState(false);
+  const mockApiKey = 'sk_live_starship_4a9f82c1e847a9d3';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,10 +58,19 @@ export const Navbar: React.FC<NavbarProps> = ({
     }
   };
 
+  const handleCopyMockKey = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(mockApiKey);
+    setCopiedKey(true);
+    setTimeout(() => setCopiedKey(false), 2000);
+  };
+
   const verticals = [
     { title: 'Motorcycle & Powersports', path: '/motorcycle-powersports-fulfillment/', desc: 'Exhausts, fenders & saddlebags with negotiated DIM relief' },
     { title: 'Automotive Body Panels & Aero', path: '/automotive-parts-fulfillment/', desc: 'Bumpers, splitters & spoilers with high-cube storage' },
     { title: 'Bulky & DIM-Weight Parcels', path: '/bulky-oversized-fulfillment/', desc: 'Large boxes, low actual weight, cut carrier DIM markups' },
+    { title: 'Print On Demand (POD) In-House', path: '/print-on-demand-fulfillment/', desc: 'Direct-to-garment apparel, vinyl stickers & same-day kitting' },
+    { title: 'Bonded FTZ Customs Deferral', path: '/bonded-ftz-fulfillment/', desc: 'Micro-release duty carton-by-carton as items sell' },
     { title: 'Michigan & Midwest Freight Hub', path: '/michigan-fulfillment/', desc: '1-Day ground reach to 68% of US via USPS & FedEx' },
     { title: 'Shopify 3PL Fulfillment', path: '/shopify-3pl-fulfillment/', desc: 'Native 60-sec sync, instant tracking & $250 fair minimum' },
     { title: 'Anti-ShipBob Alternative', path: '/alternatives/shipbob/', desc: 'Escape $1,500 minimum penalties & punitive DIM rates' },
@@ -72,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         left: 0,
         right: 0,
         zIndex: 900,
-        backgroundColor: isScrolled ? 'rgba(5, 8, 17, 0.94)' : 'rgba(5, 8, 17, 0.82)',
+        backgroundColor: isScrolled ? 'rgba(5, 8, 17, 0.96)' : 'rgba(5, 8, 17, 0.88)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
         borderBottom: `1px solid ${
@@ -84,20 +99,133 @@ export const Navbar: React.FC<NavbarProps> = ({
         transition: 'all 0.25s ease',
       }}
     >
+      {/* Top Interactive Developer Mock API Key Bar */}
+      <div
+        style={{
+          backgroundColor: '#040712',
+          borderBottom: '1px solid rgba(255, 107, 0, 0.25)',
+          padding: '0.3rem 1.25rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          fontSize: '0.72rem',
+          fontFamily: 'var(--font-mono)',
+          color: 'var(--text-dim)',
+          flexWrap: 'wrap',
+          gap: '0.5rem',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#34D399', fontWeight: 700 }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#34D399', display: 'inline-block', boxShadow: '0 0 6px #34D399' }} />
+            <span>OPEN API v2.4 (LIVE)</span>
+          </div>
+          <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>|</span>
+          <span className="telemetry-hide-sm" style={{ color: 'var(--text-secondary)' }}>
+            Instant DIM 250 Rates &middot; Warehouse Floor Dispatch &middot; Bonded FTZ
+          </span>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              backgroundColor: 'rgba(15, 23, 42, 0.8)',
+              border: '1px solid rgba(255, 107, 0, 0.35)',
+              padding: '0.18rem 0.55rem',
+              borderRadius: 3,
+            }}
+          >
+            <span style={{ color: 'var(--text-dim)', fontSize: '0.66rem' }}>KEY:</span>
+            <code style={{ color: '#FFA733', fontSize: '0.68rem', letterSpacing: '0.02em' }}>
+              {mockApiKey.substring(0, 16)}...
+            </code>
+            <button
+              onClick={handleCopyMockKey}
+              title="Copy mock API key"
+              style={{
+                background: 'none',
+                border: 'none',
+                color: copiedKey ? '#34D399' : 'var(--text-dim)',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                padding: '0.1rem 0.25rem',
+                marginLeft: '0.2rem',
+              }}
+            >
+              {copiedKey ? <Check size={11} /> : <Copy size={11} />}
+              <span style={{ fontSize: '0.62rem', marginLeft: '0.2rem' }}>
+                {copiedKey ? 'COPIED' : 'COPY'}
+              </span>
+            </button>
+          </div>
+
+          {onOpenSandboxModal && (
+            <button
+              onClick={onOpenSandboxModal}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                backgroundColor: 'rgba(255, 107, 0, 0.15)',
+                border: '1px solid rgba(255, 107, 0, 0.5)',
+                color: '#FF8500',
+                padding: '0.18rem 0.55rem',
+                borderRadius: 3,
+                fontSize: '0.68rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+              }}
+            >
+              <Terminal size={11} />
+              <span>TEST API LIVE &rarr;</span>
+            </button>
+          )}
+
+          <button
+            onClick={() => handleLinkClick('/wms/')}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.35rem',
+              backgroundColor: 'rgba(52, 211, 153, 0.15)',
+              border: '1px solid rgba(52, 211, 153, 0.5)',
+              color: '#34D399',
+              padding: '0.18rem 0.65rem',
+              borderRadius: 3,
+              fontSize: '0.68rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+              marginLeft: '0.4rem',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(52, 211, 153, 0.25)')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(52, 211, 153, 0.15)')}
+          >
+            <Zap size={11} />
+            <span>LAUNCH WMS DASHBOARD ⚡</span>
+          </button>
+        </div>
+      </div>
+
       {/* Main Navbar */}
       <div
         className="container"
         style={{
-          minHeight: 80,
+          minHeight: 74,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '1rem',
-          paddingTop: '0.35rem',
-          paddingBottom: '0.35rem',
+          paddingTop: '0.25rem',
+          paddingBottom: '0.25rem',
         }}
       >
-        {/* Brand Logo - Crisp Single Line Lockup */}
+        {/* Brand Logo */}
         <div
           onClick={() => handleLinkClick('/')}
           style={{ cursor: 'pointer', flexShrink: 0, display: 'flex', alignItems: 'center' }}
@@ -106,14 +234,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           <StarshipppLogo 
             variant="horizontal" 
             colorMode="dark" 
-            height={61} 
+            height={56} 
             showTagline={true}
             taglineText="3PL, WAREHOUSING & LOGISTICS"
             taglineColor="#FF8500"
           />
         </div>
 
-        {/* Desktop Nav Links - Single Line, 10 Characters Max per Item */}
+        {/* Desktop Nav Links */}
         <nav
           style={{
             display: 'flex',
@@ -140,6 +268,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 padding: '0.45rem 0',
                 whiteSpace: 'nowrap',
                 transition: 'color 0.15s ease',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
               }}
             >
               <span>Solutions</span>
@@ -161,12 +292,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                   position: 'absolute',
                   top: '100%',
                   left: 0,
-                  width: 350,
-                  maxHeight: 'calc(100vh - 80px)',
+                  width: 380,
+                  maxHeight: 'calc(100vh - 100px)',
                   overflowY: 'auto',
                   backgroundColor: '#090E1E',
                   border: '1px solid rgba(255, 107, 0, 0.35)',
-                  boxShadow: '0 20px 45px rgba(0, 0, 0, 0.4)',
+                  boxShadow: '0 20px 45px rgba(0, 0, 0, 0.7)',
                   padding: '0.6rem',
                   display: 'grid',
                   gap: '0.35rem',
@@ -179,30 +310,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onClick={() => handleLinkClick(v.path)}
                     style={{
                       padding: '0.65rem 0.85rem',
-                      borderRadius: 0,
+                      borderRadius: 4,
                       cursor: 'pointer',
-                      transition: 'all 0.15s ease',
-                      backgroundColor: currentPath === v.path ? 'rgba(255, 107, 0, 0.12)' : 'transparent',
+                      transition: 'background-color 0.15s ease',
+                      backgroundColor: currentPath === v.path ? 'rgba(255, 107, 0, 0.15)' : 'transparent',
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = currentPath === v.path ? 'rgba(255, 107, 0, 0.12)' : 'transparent';
-                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 107, 0, 0.1)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = currentPath === v.path ? 'rgba(255, 107, 0, 0.15)' : 'transparent')}
                   >
-                    <div
-                      style={{
-                        fontSize: '0.86rem',
-                        fontWeight: 700,
-                        color: currentPath === v.path ? 'var(--brand-orange)' : '#FFFFFF',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                      }}
-                    >
-                      <span>{v.title}</span>
-                      <ArrowRight size={12} style={{ opacity: 0.6 }} />
+                    <div style={{ fontSize: '0.86rem', fontWeight: 700, color: '#fff' }}>
+                      {v.title}
                     </div>
                     <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: 2 }}>
                       {v.desc}
@@ -224,6 +341,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               whiteSpace: 'nowrap',
               fontFamily: 'var(--font-heading)',
               transition: 'color 0.15s ease',
+              textDecoration: 'none',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-orange)')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--nav-link-color)')}
@@ -242,6 +360,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               whiteSpace: 'nowrap',
               fontFamily: 'var(--font-heading)',
               transition: 'color 0.15s ease',
+              textDecoration: 'none',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-orange)')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--nav-link-color)')}
@@ -260,6 +379,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               whiteSpace: 'nowrap',
               fontFamily: 'var(--font-heading)',
               transition: 'color 0.15s ease',
+              textDecoration: 'none',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-orange)')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--nav-link-color)')}
@@ -278,12 +398,70 @@ export const Navbar: React.FC<NavbarProps> = ({
               whiteSpace: 'nowrap',
               fontFamily: 'var(--font-heading)',
               transition: 'color 0.15s ease',
+              textDecoration: 'none',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-orange)')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--nav-link-color)')}
           >
             Floor Live
           </a>
+
+          {/* Interactive Developer Sandbox Direct Nav */}
+          {onOpenSandboxModal && (
+            <button
+              onClick={onOpenSandboxModal}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                fontSize: '0.92rem',
+                fontWeight: 600,
+                color: '#38BDF8',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                fontFamily: 'var(--font-heading)',
+                transition: 'all 0.15s ease',
+                padding: '0.45rem 0',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#7DD3FC')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#38BDF8')}
+            >
+              <Terminal size={14} />
+              <span>API Sandbox</span>
+            </button>
+          )}
+
+          {/* WMS Dashboard Direct Trigger */}
+          <button
+            onClick={() => handleLinkClick('/wms/')}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.35rem',
+              fontSize: '0.92rem',
+              fontWeight: 700,
+              color: '#34D399',
+              background: 'rgba(52, 211, 153, 0.1)',
+              border: '1px solid rgba(52, 211, 153, 0.35)',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontFamily: 'var(--font-heading)',
+              transition: 'all 0.15s ease',
+              padding: '0.35rem 0.75rem',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(52, 211, 153, 0.2)';
+              e.currentTarget.style.borderColor = '#34D399';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(52, 211, 153, 0.1)';
+              e.currentTarget.style.borderColor = 'rgba(52, 211, 153, 0.35)';
+            }}
+          >
+            <Zap size={14} />
+            <span>WMS Console</span>
+          </button>
 
           {/* Contact */}
           <a
@@ -303,46 +481,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               whiteSpace: 'nowrap',
               fontFamily: 'var(--font-heading)',
               transition: 'color 0.15s ease',
+              textDecoration: 'none',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-orange)')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--nav-link-color)')}
           >
             Contact
           </a>
-
-          {/* Staff SSO / Internal Portal Login */}
-          <button
-            onClick={() => handleLinkClick('/portal/')}
-            style={{
-              fontSize: '0.74rem',
-              fontFamily: 'var(--font-mono)',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.04em',
-              color: currentPath.startsWith('/portal') ? 'var(--brand-orange)' : 'var(--text-secondary)',
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(255, 255, 255, 0.12)',
-              padding: '0.3rem 0.6rem',
-              borderRadius: 0,
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.35rem',
-              transition: 'all 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--brand-orange)';
-              e.currentTarget.style.color = 'var(--brand-orange)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
-              e.currentTarget.style.color = currentPath.startsWith('/portal') ? 'var(--brand-orange)' : 'var(--text-secondary)';
-            }}
-            title="Authorized Starshippp Personnel Access (SSO / Secure Gateway)"
-          >
-            <Lock size={11} color="var(--brand-orange)" />
-            <span>Staff Login</span>
-          </button>
         </nav>
 
         {/* Action Controls & High-Polish CTA */}
@@ -358,8 +503,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={onOpenContactModal}
             className="btn-primary"
             style={{
-              padding: '0.7rem 1.45rem',
-              fontSize: '0.98rem',
+              padding: '0.65rem 1.35rem',
+              fontSize: '0.95rem',
               fontWeight: 800,
               whiteSpace: 'nowrap',
             }}
@@ -424,12 +569,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               Floor Live
             </button>
-            <button
-              onClick={() => { setMobileMenuOpen(false); handleLinkClick('/portal/'); }}
-              style={{ padding: '0.5rem 0.85rem', background: 'rgba(255, 107, 0, 0.15)', border: '1px solid var(--brand-orange)', color: 'var(--brand-orange-light)', fontSize: '0.88rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
-            >
-              <Lock size={12} /> Staff Login
-            </button>
+            {onOpenSandboxModal && (
+              <button
+                onClick={() => { setMobileMenuOpen(false); onOpenSandboxModal(); }}
+                style={{ padding: '0.4rem 0.75rem', background: 'rgba(56, 189, 248, 0.15)', border: '1px solid #38BDF8', color: '#38BDF8', fontSize: '0.85rem', fontWeight: 700 }}
+              >
+                API Sandbox
+              </button>
+            )}
           </div>
 
           <div style={{ height: 1, backgroundColor: 'rgba(255, 255, 255, 0.1)', margin: '0.2rem 0' }} />
@@ -452,6 +599,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: flex !important; }
           .telemetry-item { display: none !important; }
+          .telemetry-hide-sm { display: none !important; }
         }
       `}</style>
     </header>

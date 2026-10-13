@@ -222,14 +222,6 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => { onNavigate('/portal/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  style={{ color: '#38BDF8', fontWeight: 700, textAlign: 'left', fontSize: '0.88rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}
-                >
-                  <span>⚡ Executive Management Portal (API Telemetry)</span>
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={onOpenSettings}
                   style={{ color: 'var(--text-secondary)', textAlign: 'left', fontSize: '0.88rem' }}
                 >

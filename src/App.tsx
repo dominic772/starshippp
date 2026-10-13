@@ -17,7 +17,6 @@ import { ShopifyFulfillmentPage } from './pages/ShopifyFulfillmentPage';
 import { PrintOnDemandPage } from './pages/PrintOnDemandPage';
 import { BondedFtzPage } from './pages/BondedFtzPage';
 import { ManagementPortalPage } from './pages/ManagementPortalPage';
-import { WmsDashboardPage } from './pages/WmsDashboardPage';
 import { AuditUploadModal } from './components/modals/AuditUploadModal';
 import { InstantContactModal } from './components/modals/InstantContactModal';
 import { PexelsConfigModal } from './components/video/PexelsConfigModal';
@@ -181,10 +180,6 @@ export function App() {
       case '/portal/':
       case '/management/':
         return <ManagementPortalPage onBackToWebsite={() => navigate('/')} />;
-      case '/wms/':
-      case '/dashboard/':
-      case '/operations/':
-        return <WmsDashboardPage onBackToWebsite={() => navigate('/')} />;
       case '/':
       default:
         return (
@@ -196,12 +191,6 @@ export function App() {
         );
     }
   };
-
-  const isWmsMode = ['/wms', '/wms/', '/dashboard', '/dashboard/', '/operations', '/operations/'].includes(currentPath);
-
-  if (isWmsMode) {
-    return <WmsDashboardPage onBackToWebsite={() => navigate('/')} />;
-  }
 
   return (
     <div className="starshippp-app" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>

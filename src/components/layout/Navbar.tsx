@@ -7,7 +7,6 @@ import {
   Terminal,
   Copy,
   Check,
-  Zap,
 } from 'lucide-react';
 import { StarshipppLogo } from '../ui/StarshipppLogo';
 
@@ -185,30 +184,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>TEST API LIVE &rarr;</span>
             </button>
           )}
-
-          <button
-            onClick={() => handleLinkClick('/wms/')}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.35rem',
-              backgroundColor: 'rgba(52, 211, 153, 0.15)',
-              border: '1px solid rgba(52, 211, 153, 0.5)',
-              color: '#34D399',
-              padding: '0.18rem 0.65rem',
-              borderRadius: 3,
-              fontSize: '0.68rem',
-              fontWeight: 700,
-              cursor: 'pointer',
-              transition: 'all 0.15s ease',
-              marginLeft: '0.4rem',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(52, 211, 153, 0.25)')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(52, 211, 153, 0.15)')}
-          >
-            <Zap size={11} />
-            <span>LAUNCH WMS DASHBOARD ⚡</span>
-          </button>
         </div>
       </div>
 
@@ -431,37 +406,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>API Sandbox</span>
             </button>
           )}
-
-          {/* WMS Dashboard Direct Trigger */}
-          <button
-            onClick={() => handleLinkClick('/wms/')}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.35rem',
-              fontSize: '0.92rem',
-              fontWeight: 700,
-              color: '#34D399',
-              background: 'rgba(52, 211, 153, 0.1)',
-              border: '1px solid rgba(52, 211, 153, 0.35)',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              fontFamily: 'var(--font-heading)',
-              transition: 'all 0.15s ease',
-              padding: '0.35rem 0.75rem',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(52, 211, 153, 0.2)';
-              e.currentTarget.style.borderColor = '#34D399';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(52, 211, 153, 0.1)';
-              e.currentTarget.style.borderColor = 'rgba(52, 211, 153, 0.35)';
-            }}
-          >
-            <Zap size={14} />
-            <span>WMS Console</span>
-          </button>
 
           {/* Contact */}
           <a
